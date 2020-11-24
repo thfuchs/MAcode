@@ -27,9 +27,9 @@ cv_setting <- list(
 #   cv_setting = cv_setting,
 #   tuning_grid = tuning_grid
 # )
-# save(results, min_params, file = "inst/results/20200911_tuning_lstm.rda")
+# save(results, min_params, file = "results/20200911_tuning_lstm.rda")
 
-load(file = "inst/results/20200911_tuning_lstm.rda")
+load(file = "results/20200911_tuning_lstm.rda")
 
 # Plot tuning results
 library(ggplot2)
@@ -76,9 +76,9 @@ eval_DT %>%
 #     )
 #   }
 # )
-# saveRDS(basic, file = "inst/results/20200911_eval_pred_lstm.rds")
+# saveRDS(basic, file = "results/20200911_eval_pred_lstm.rds")
 
-basic <- readRDS("inst/results/20200911_eval_pred_lstm.rds")
+basic <- readRDS("results/20200911_eval_pred_lstm.rds")
 
 basic_mae <- purrr::map_df(
   basic,
@@ -113,12 +113,12 @@ plot_prediction_samples(
 #   patience = 100,
 #   forecast_future = FALSE,
 #   save_model = TRUE,
-#   filepath = "inst/models/best_lstm.hdf5"
+#   filepath = "models/best_lstm.hdf5"
 # )
-# save(predictions, best_model_metrics, file = "inst/results/20200911_best_lstm.rda")
+# save(predictions, best_model_metrics, file = "results/20200911_best_lstm.rda")
 
-load("inst/results/20200911_best_lstm.rda")
-model <- keras::load_model_hdf5("inst/models/best_lstm.hdf5")
+load("results/20200911_best_lstm.rda")
+model <- keras::load_model_hdf5("models/best_lstm.hdf5")
 summary(model)
 
 best_model_metrics
@@ -143,13 +143,13 @@ plot_prediction(
 #   dropout = min_params$dropout,
 #   recurrent_dropout = min_params$dropout,
 #   save_model = TRUE,
-#   filepath = "inst/models/best_lstm_all.hdf5",
+#   filepath = "models/best_lstm_all.hdf5",
 #   forecast_future = TRUE,
 #   forecast_length = 4
 # )
-# save(predictions_all, file = "inst/results/20200909_best_lstm_all.rda")
+# save(predictions_all, file = "results/20200909_best_lstm_all.rda")
 
-load("inst/results/20200909_best_lstm_all.rda")
+load("results/20200909_best_lstm_all.rda")
 
 plot_prediction(
   data = predictions_all[, index := as.Date(index)],

@@ -1,7 +1,11 @@
+library(tsRNN)
+library(data.table)
+library(magrittr)
+
 ### EBIT -----------------------------------------------------------------------
 
-load(file = "inst/baseline/fc_baselines_ebit.rda")
-load(file = "inst/arima/fc_arima_ebit.rda")
+load(file = "baseline/fc_baselines_ebit.rda")
+load(file = "arima/fc_arima_ebit.rda")
 
 # Accuracy Results
 acc_baselines <- purrr::map_df(

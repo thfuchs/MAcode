@@ -43,8 +43,8 @@ multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 # fc_baselines_ebit <- purrr::compact(forecast)
 # str(fc_baselines_ebit, max.level = 1)
 #
-# save(fc_baselines_ebit, file = "inst/baseline/fc_baselines_ebit.rda")
-load(file = "inst/baseline/fc_baselines_ebit.rda")
+# save(fc_baselines_ebit, file = "baseline/fc_baselines_ebit.rda")
+load(file = "baseline/fc_baselines_ebit.rda")
 
 # Accuracy Measures
 str_point_acc <- c("smape", "mase")

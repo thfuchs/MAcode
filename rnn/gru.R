@@ -27,9 +27,9 @@ cv_setting <- list(
 #   cv_setting = cv_setting,
 #   tuning_grid = tuning_grid
 # )
-# save(results, min_params, file = "inst/results/20200915_tuning_gru.rda")
+# save(results, min_params, file = "results/20200915_tuning_gru.rda")
 
-load(file = "inst/results/20200915_tuning_gru.rda")
+load(file = "results/20200915_tuning_gru.rda")
 
 # Plot tuning results
 library(ggplot2)
@@ -75,9 +75,9 @@ basic <- purrr::map(
     )
   }
 )
-saveRDS(basic, file = "inst/results/20200915_eval_pred_gru.rds")
+saveRDS(basic, file = "results/20200915_eval_pred_gru.rds")
 
-basic <- readRDS("inst/results/20200915_eval_pred_gru.rds")
+basic <- readRDS("results/20200915_eval_pred_gru.rds")
 
 basic_mae <- purrr::map_df(
   basic,
@@ -112,12 +112,12 @@ plot_prediction_samples(
 #     patience = 100,
 #     forecast_future = FALSE,
 #     save_model = TRUE,
-#     filepath = "inst/models/best_gru.hdf5"
+#     filepath = "models/best_gru.hdf5"
 # )
-# save(predictions, best_model_metrics, file = "inst/results/20200915_best_gru.rda")
+# save(predictions, best_model_metrics, file = "results/20200915_best_gru.rda")
 
-load("inst/results/20200915_best_gru.rda")
-model <- keras::load_model_hdf5("inst/models/best_gru.hdf5")
+load("results/20200915_best_gru.rda")
+model <- keras::load_model_hdf5("models/best_gru.hdf5")
 summary(model)
 
 best_model_metrics
@@ -142,14 +142,14 @@ c(predictions_all, best_model_metrics_all) %<-% predict_keras_rnn(
   dropout = min_params$dropout,
   recurrent_dropout = min_params$dropout,
   save_model = TRUE,
-  filepath = "inst/models/best_gru_all.hdf5",
+  filepath = "models/best_gru_all.hdf5",
   patience = 100,
   forecast_future = TRUE,
   forecast_length = 4
 )
-# save(predictions_all, file = "inst/results/20200915_best_gru_all.rda")
+# save(predictions_all, file = "results/20200915_best_gru_all.rda")
 
-load("inst/results/20200915_best_gru_all.rda")
+load("results/20200915_best_gru_all.rda")
 
 plot_prediction(
   data = predictions_all[, index := as.Date(index)],

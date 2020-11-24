@@ -34,11 +34,11 @@ frequency <- 4
 #   frequency = frequency,
 #   multiple_h = multiple_h,
 #   test_dropout = 0.1,
-#   save_model = "inst/models"
+#   save_model = "models"
 # )
-# save(fc_unh_rnn, file = "inst/results/20201122_fc_unh_rnn.rda")
+# save(fc_unh_rnn, file = "results/20201122_fc_unh_rnn.rda")
 
-load(file = "inst/results/20201122_fc_unh_rnn.rda")
+load(file = "results/20201122_fc_unh_rnn.rda")
 
 str_point_acc <- c("smape", "mase")
 str_dist_acc <- c("smis", "acd")
@@ -102,9 +102,9 @@ plot_prediction_samples(
 #     list(forecast = fc, accuracy = acc)
 #   }
 # )
-# saveRDS(basic, file = "inst/results/20201117_eval_pred_simple.rds")
+# saveRDS(basic, file = "results/20201117_eval_pred_simple.rds")
 
-basic <- readRDS("inst/results/20201117_eval_pred_simple.rds")
+basic <- readRDS("results/20201117_eval_pred_simple.rds")
 
 basic_mae <- purrr::map_df(
   basic,
@@ -139,12 +139,12 @@ plot_prediction_samples(
 #     patience = 100,
 #     forecast_future = FALSE,
 #     save_model = TRUE,
-#     filepath = "inst/models/best_simple.hdf5"
+#     filepath = "models/best_simple.hdf5"
 # )
-# save(predictions, best_model_metrics, file = "inst/results/20200915_best_simple.rda")
+# save(predictions, best_model_metrics, file = "results/20200915_best_simple.rda")
 
-load("inst/results/20200915_best_simple.rda")
-model <- keras::load_model_hdf5("inst/models/best_simple.hdf5")
+load("results/20200915_best_simple.rda")
+model <- keras::load_model_hdf5("models/best_simple.hdf5")
 summary(model)
 
 best_model_metrics
@@ -169,14 +169,14 @@ c(predictions_all, best_model_metrics_all) %<-% predict_keras_rnn(
   dropout = min_params$dropout,
   recurrent_dropout = min_params$dropout,
   save_model = TRUE,
-  filepath = "inst/models/best_simple_all.hdf5",
+  filepath = "models/best_simple_all.hdf5",
   patience = 100,
   forecast_future = TRUE,
   forecast_length = 4
 )
-# save(predictions_all, file = "inst/results/20200915_best_simple_all.rda")
+# save(predictions_all, file = "results/20200915_best_simple_all.rda")
 
-load("inst/results/20200915_best_simple_all.rda")
+load("results/20200915_best_simple_all.rda")
 
 plot_prediction(
   data = predictions_all[, index := as.Date(index)],

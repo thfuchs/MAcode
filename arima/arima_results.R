@@ -40,8 +40,8 @@ multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 # fc_arima_ebit <- purrr::compact(forecast)
 # str(fc_arima_ebit, max.level = 1)
 #
-# save(fc_arima_ebit, file = "inst/arima/fc_arima_ebit.rda")
-load(file = "inst/arima/fc_arima_ebit.rda")
+# save(fc_arima_ebit, file = "arima/fc_arima_ebit.rda")
+load(file = "arima/fc_arima_ebit.rda")
 
 # Accuracy Measures (Overall average)
 str_point_acc <- c("smape", "mase")
