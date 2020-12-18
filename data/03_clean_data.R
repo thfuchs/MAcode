@@ -84,6 +84,6 @@ if (nrow(data_eps[!complete.cases(value), .N, by = "ticker"]) > 0) rlang::abort(
   message = "Quick check (1c) failed.\nCheck missing values in data_eps")
 
 ### Save cleaned data ----------------------------------------------------------
-save(data_ebit, file = "data/data_ebit.rda")
-save(data_ni, file = "data/data_ni.rda")
-save(data_eps, file = "data/data_eps.rda")
+saveRDS(data_ebit, file = "data/data_ebit.rds", compress = "xz")
+saveRDS(data_ni, file = "data/data_ni.rds", compress = "xz")
+saveRDS(data_eps, file = "data/data_eps.rds", compress = "xz")
