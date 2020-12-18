@@ -1,0 +1,1103 @@
+Ticker;Index;SECURITY_NAME; GICS_SECTOR_NAME ; GICS_INDUSTRY_NAME ; COUNTRY_FULL_NAME 
+BA UN Equity;SPX; Boeing Co/The ; Industrials ; Aerospace & Defense ; UNITED STATES 
+CAT UN Equity;SPX; Caterpillar Inc ; Industrials ; Machinery ; UNITED STATES 
+JPM UN Equity;SPX; JPMorgan Chase & Co ; Financials ; Banks ; UNITED STATES 
+CVX UN Equity;SPX; Chevron Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+KO UN Equity;SPX; Coca-Cola Co/The ; Consumer Staples ; Beverages ; UNITED STATES 
+ABBV UN Equity;SPX; AbbVie Inc ; Health Care ; Biotechnology ; UNITED STATES 
+DIS UN Equity;SPX; Walt Disney Co/The ; Communication Services ; Entertainment ; UNITED STATES 
+FLT UN Equity;SPX; FleetCor Technologies Inc ; Information Technology ; IT Services ; UNITED STATES 
+EXR UN Equity;SPX; Extra Space Storage Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+XOM UN Equity;SPX; Exxon Mobil Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+PSX UN Equity;SPX; Phillips 66 ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+GE UN Equity;SPX; General Electric Co ; Industrials ; Industrial Conglomerates ; UNITED STATES 
+HPQ UN Equity;SPX; HP Inc ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+HD UN Equity;SPX; Home Depot Inc/The ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+IBM UN Equity;SPX; International Business Machine ; Information Technology ; IT Services ; UNITED STATES 
+CXO UN Equity;SPX; Concho Resources Inc ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+JNJ UN Equity;SPX; Johnson & Johnson ; Health Care ; Pharmaceuticals ; UNITED STATES 
+MCD UN Equity;SPX; McDonald's Corp ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+MRK UN Equity;SPX; Merck & Co Inc ; Health Care ; Pharmaceuticals ; UNITED STATES 
+MMM UN Equity;SPX; 3M Co ; Industrials ; Industrial Conglomerates ; UNITED STATES 
+AWK UN Equity;SPX; American Water Works Co Inc ; Utilities ; Water Utilities ; UNITED STATES 
+BAC UN Equity;SPX; Bank of America Corp ; Financials ; Banks ; UNITED STATES 
+BKR UN Equity;SPX; Baker Hughes Co ; Energy ; Energy Equipment & Services ; UNITED STATES 
+PFE UN Equity;SPX; Pfizer Inc ; Health Care ; Pharmaceuticals ; UNITED STATES 
+PG UN Equity;SPX; Procter & Gamble Co/The ; Consumer Staples ; Household Products ; UNITED STATES 
+T UN Equity;SPX; AT&T Inc ; Communication Services ; Diversified Telecommunication ; UNITED STATES 
+TRV UN Equity;SPX; Travelers Cos Inc/The ; Financials ; Insurance ; UNITED STATES 
+RTX UN Equity;SPX; Raytheon Technologies Corp ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ADI UW Equity;SPX; Analog Devices Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+WMT UN Equity;SPX; Walmart Inc ; Consumer Staples ; Food & Staples Retailing ; UNITED STATES 
+CSCO UW Equity;SPX; Cisco Systems Inc ; Information Technology ; Communications Equipment ; UNITED STATES 
+INTC UW Equity;SPX; Intel Corp ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+GM UN Equity;SPX; General Motors Co ; Consumer Discretionary ; Automobiles ; UNITED STATES 
+MSFT UW Equity;SPX; Microsoft Corp ; Information Technology ; Software ; UNITED STATES 
+DG UN Equity;SPX; Dollar General Corp ; Consumer Discretionary ; Multiline Retail ; UNITED STATES 
+CI UN Equity;SPX; Cigna Corp ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+KMI UN Equity;SPX; Kinder Morgan Inc ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+C UN Equity;SPX; Citigroup Inc ; Financials ; Banks ; UNITED STATES 
+AIG UN Equity;SPX; American International Group I ; Financials ; Insurance ; UNITED STATES 
+HON UN Equity;SPX; Honeywell International Inc ; Industrials ; Industrial Conglomerates ; UNITED STATES 
+MO UN Equity;SPX; Altria Group Inc ; Consumer Staples ; Tobacco ; UNITED STATES 
+HCA UN Equity;SPX; HCA Healthcare Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+UAA UN Equity;SPX; Under Armour Inc ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+IP UN Equity;SPX; International Paper Co ; Materials ; Containers & Packaging ; UNITED STATES 
+HPE UN Equity;SPX; Hewlett Packard Enterprise Co ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+ABT UN Equity;SPX; Abbott Laboratories ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+AFL UN Equity;SPX; Aflac Inc ; Financials ; Insurance ; UNITED STATES 
+APD UN Equity;SPX; Air Products and Chemicals Inc ; Materials ; Chemicals ; UNITED STATES 
+RCL UN Equity;SPX; Royal Caribbean Cruises Ltd ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+HES UN Equity;SPX; Hess Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ADM UN Equity;SPX; Archer-Daniels-Midland Co ; Consumer Staples ; Food Products ; UNITED STATES 
+ADP UW Equity;SPX; Automatic Data Processing Inc ; Information Technology ; IT Services ; UNITED STATES 
+VRSK UW Equity;SPX; Verisk Analytics Inc ; Industrials ; Professional Services ; UNITED STATES 
+AZO UN Equity;SPX; AutoZone Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+AVY UN Equity;SPX; Avery Dennison Corp ; Materials ; Containers & Packaging ; UNITED STATES 
+MSCI UN Equity;SPX; MSCI Inc ; Financials ; Capital Markets ; UNITED STATES 
+BLL UN Equity;SPX; Ball Corp ; Materials ; Containers & Packaging ; UNITED STATES 
+CARR UN Equity;SPX; Carrier Global Corp ; Industrials ; Building Products ; UNITED STATES 
+BK UN Equity;SPX; Bank of New York Mellon Corp/T ; Financials ; Capital Markets ; UNITED STATES 
+OTIS UN Equity;SPX; Otis Worldwide Corp ; Industrials ; Machinery ; UNITED STATES 
+BAX UN Equity;SPX; Baxter International Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+BDX UN Equity;SPX; Becton Dickinson and Co ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+BRK/B UN Equity;SPX; Berkshire Hathaway Inc ; Financials ; Diversified Financial Services ; UNITED STATES 
+BBY UN Equity;SPX; Best Buy Co Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+BSX UN Equity;SPX; Boston Scientific Corp ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+BMY UN Equity;SPX; Bristol-Myers Squibb Co ; Health Care ; Pharmaceuticals ; UNITED STATES 
+FBHS UN Equity;SPX; Fortune Brands Home & Security ; Industrials ; Building Products ; UNITED STATES 
+BF/B UN Equity;SPX; Brown-Forman Corp ; Consumer Staples ; Beverages ; UNITED STATES 
+COG UN Equity;SPX; Cabot Oil & Gas Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+CPB UN Equity;SPX; Campbell Soup Co ; Consumer Staples ; Food Products ; UNITED STATES 
+KSU UN Equity;SPX; Kansas City Southern ; Industrials ; Road & Rail ; UNITED STATES 
+HLT UN Equity;SPX; Hilton Worldwide Holdings Inc ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+CCL UN Equity;SPX; Carnival Corp ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+QRVO UW Equity;SPX; Qorvo Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+LUMN UN Equity;SPX; CenturyLink Inc ; Communication Services ; Diversified Telecommunication ; UNITED STATES 
+UDR UN Equity;SPX; UDR Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+CLX UN Equity;SPX; Clorox Co/The ; Consumer Staples ; Household Products ; UNITED STATES 
+PAYC UN Equity;SPX; Paycom Software Inc ; Information Technology ; Software ; UNITED STATES 
+CMS UN Equity;SPX; CMS Energy Corp ; Utilities ; Multi-Utilities ; UNITED STATES 
+NWL UW Equity;SPX; Newell Brands Inc ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+CL UN Equity;SPX; Colgate-Palmolive Co ; Consumer Staples ; Household Products ; UNITED STATES 
+CMA UN Equity;SPX; Comerica Inc ; Financials ; Banks ; UNITED STATES 
+IPGP UW Equity;SPX; IPG Photonics Corp ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+CAG UN Equity;SPX; Conagra Brands Inc ; Consumer Staples ; Food Products ; UNITED STATES 
+ED UN Equity;SPX; Consolidated Edison Inc ; Utilities ; Multi-Utilities ; UNITED STATES 
+SLG UN Equity;SPX; SL Green Realty Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+GLW UN Equity;SPX; Corning Inc ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+CMI UN Equity;SPX; Cummins Inc ; Industrials ; Machinery ; UNITED STATES 
+DHR UN Equity;SPX; Danaher Corp ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+TGT UN Equity;SPX; Target Corp ; Consumer Discretionary ; Multiline Retail ; UNITED STATES 
+DE UN Equity;SPX; Deere & Co ; Industrials ; Machinery ; UNITED STATES 
+D UN Equity;SPX; Dominion Energy Inc ; Utilities ; Multi-Utilities ; UNITED STATES 
+DOV UN Equity;SPX; Dover Corp ; Industrials ; Machinery ; UNITED STATES 
+LNT UW Equity;SPX; Alliant Energy Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+DUK UN Equity;SPX; Duke Energy Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+REG UW Equity;SPX; Regency Centers Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ETN UN Equity;SPX; Eaton Corp PLC ; Industrials ; Electrical Equipment ; UNITED STATES 
+ECL UN Equity;SPX; Ecolab Inc ; Materials ; Chemicals ; UNITED STATES 
+PKI UN Equity;SPX; PerkinElmer Inc ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+EMR UN Equity;SPX; Emerson Electric Co ; Industrials ; Electrical Equipment ; UNITED STATES 
+EOG UN Equity;SPX; EOG Resources Inc ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+AON UN Equity;SPX; Aon PLC ; Financials ; Insurance ; UNITED STATES 
+ETR UN Equity;SPX; Entergy Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+EFX UN Equity;SPX; Equifax Inc ; Industrials ; Professional Services ; UNITED STATES 
+IQV UN Equity;SPX; IQVIA Holdings Inc ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+IT UN Equity;SPX; Gartner Inc ; Information Technology ; IT Services ; UNITED STATES 
+FDX UN Equity;SPX; FedEx Corp ; Industrials ; Air Freight & Logistics ; UNITED STATES 
+FMC UN Equity;SPX; FMC Corp ; Materials ; Chemicals ; UNITED STATES 
+F UN Equity;SPX; Ford Motor Co ; Consumer Discretionary ; Automobiles ; UNITED STATES 
+NEE UN Equity;SPX; NextEra Energy Inc ; Utilities ; Electric Utilities ; UNITED STATES 
+BEN UN Equity;SPX; Franklin Resources Inc ; Financials ; Capital Markets ; UNITED STATES 
+FCX UN Equity;SPX; Freeport-McMoRan Inc ; Materials ; Metals & Mining ; UNITED STATES 
+GPS UN Equity;SPX; Gap Inc/The ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+DXCM UW Equity;SPX; DexCom Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+GD UN Equity;SPX; General Dynamics Corp ; Industrials ; Aerospace & Defense ; UNITED STATES 
+GIS UN Equity;SPX; General Mills Inc ; Consumer Staples ; Food Products ; UNITED STATES 
+GPC UN Equity;SPX; Genuine Parts Co ; Consumer Discretionary ; Distributors ; UNITED STATES 
+ATO UN Equity;SPX; Atmos Energy Corp ; Utilities ; Gas Utilities ; UNITED STATES 
+GWW UN Equity;SPX; WW Grainger Inc ; Industrials ; Trading Companies & Distributo ; UNITED STATES 
+ HAL UN Equity ;SPX; Halliburton Co ; Energy ; Energy Equipment & Services ; UNITED STATES 
+ LHX UN Equity ;SPX; L3Harris Technologies Inc ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ PEAK UN Equity ;SPX; Healthpeak Properties Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ CTLT UN Equity ;SPX; Catalent Inc ; Health Care ; Pharmaceuticals ; UNITED STATES 
+ FTV UN Equity ;SPX; Fortive Corp ; Industrials ; Machinery ; UNITED STATES 
+ HSY UN Equity ;SPX; Hershey Co/The ; Consumer Staples ; Food Products ; UNITED STATES 
+ SYF UN Equity ;SPX; Synchrony Financial ; Financials ; Consumer Finance ; UNITED STATES 
+ HRL UN Equity ;SPX; Hormel Foods Corp ; Consumer Staples ; Food Products ; UNITED STATES 
+ AJG UN Equity ;SPX; Arthur J Gallagher & Co ; Financials ; Insurance ; UNITED STATES 
+ MDLZ UW Equity ;SPX; Mondelez International Inc ; Consumer Staples ; Food Products ; UNITED STATES 
+ CNP UN Equity ;SPX; CenterPoint Energy Inc ; Utilities ; Multi-Utilities ; UNITED STATES 
+ HUM UN Equity ;SPX; Humana Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ WLTW UW Equity ;SPX; Willis Towers Watson PLC ; Financials ; Insurance ; BRITAIN 
+ ITW UN Equity ;SPX; Illinois Tool Works Inc ; Industrials ; Machinery ; UNITED STATES 
+ CDW UW Equity ;SPX; CDW Corp/DE ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+ TT UN Equity ;SPX; Trane Technologies PLC ; Industrials ; Building Products ; IRELAND 
+ IPG UN Equity ;SPX; Interpublic Group of Cos Inc/T ; Communication Services ; Media ; UNITED STATES 
+ IFF UN Equity ;SPX; International Flavors & Fragra ; Materials ; Chemicals ; UNITED STATES 
+ J UN Equity ;SPX; Jacobs Engineering Group Inc ; Industrials ; Construction & Engineering ; UNITED STATES 
+ HBI UN Equity ;SPX; Hanesbrands Inc ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ K UN Equity ;SPX; Kellogg Co ; Consumer Staples ; Food Products ; UNITED STATES 
+ BR UN Equity ;SPX; Broadridge Financial Solutions ; Information Technology ; IT Services ; UNITED STATES 
+ PRGO UN Equity ;SPX; Perrigo Co PLC ; Health Care ; Pharmaceuticals ; IRELAND 
+ KMB UN Equity ;SPX; Kimberly-Clark Corp ; Consumer Staples ; Household Products ; UNITED STATES 
+ KIM UN Equity ;SPX; Kimco Realty Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ ORCL UN Equity ;SPX; Oracle Corp ; Information Technology ; Software ; UNITED STATES 
+ KR UN Equity ;SPX; Kroger Co/The ; Consumer Staples ; Food & Staples Retailing ; UNITED STATES 
+ LEG UN Equity ;SPX; Leggett & Platt Inc ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ LEN UN Equity ;SPX; Lennar Corp ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ LLY UN Equity ;SPX; Eli Lilly and Co ; Health Care ; Pharmaceuticals ; UNITED STATES 
+ LB UN Equity ;SPX; L Brands Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ CHTR UW Equity ;SPX; Charter Communications Inc ; Communication Services ; Media ; UNITED STATES 
+ LNC UN Equity ;SPX; Lincoln National Corp ; Financials ; Insurance ; UNITED STATES 
+ L UN Equity ;SPX; Loews Corp ; Financials ; Insurance ; UNITED STATES 
+ LOW UN Equity ;SPX; Lowe's Cos Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ XRX UN Equity ;SPX; Xerox Holdings Corp ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+ IEX UN Equity ;SPX; IDEX Corp ; Industrials ; Machinery ; UNITED STATES 
+ MMC UN Equity ;SPX; Marsh & McLennan Cos Inc ; Financials ; Insurance ; UNITED STATES 
+ MAS UN Equity ;SPX; Masco Corp ; Industrials ; Building Products ; UNITED STATES 
+ SPGI UN Equity ;SPX; S&P Global Inc ; Financials ; Capital Markets ; UNITED STATES 
+ MDT UN Equity ;SPX; Medtronic PLC ; Health Care ; Health Care Equipment & Suppli ; IRELAND 
+ VTRS UW Equity ;SPX; Viatris Inc ; Health Care ; Pharmaceuticals ; UNITED STATES 
+ CVS UN Equity ;SPX; CVS Health Corp ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ DD UN Equity ;SPX; DuPont de Nemours Inc ; Materials ; Chemicals ; UNITED STATES 
+ MU UW Equity ;SPX; Micron Technology Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ MSI UN Equity ;SPX; Motorola Solutions Inc ; Information Technology ; Communications Equipment ; UNITED STATES 
+ CBOE UF Equity ;SPX; Cboe Global Markets Inc ; Financials ; Capital Markets ; UNITED STATES 
+ LH UN Equity ;SPX; Laboratory Corp of America Hol ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ NEM UN Equity ;SPX; Newmont Corp ; Materials ; Metals & Mining ; UNITED STATES 
+ NKE UN Equity ;SPX; NIKE Inc ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ NI UN Equity ;SPX; NiSource Inc ; Utilities ; Multi-Utilities ; UNITED STATES 
+ NSC UN Equity ;SPX; Norfolk Southern Corp ; Industrials ; Road & Rail ; UNITED STATES 
+ PFG UW Equity ;SPX; Principal Financial Group Inc ; Financials ; Insurance ; UNITED STATES 
+ ES UN Equity ;SPX; Eversource Energy ; Utilities ; Electric Utilities ; UNITED STATES 
+ NOC UN Equity ;SPX; Northrop Grumman Corp ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ WFC UN Equity ;SPX; Wells Fargo & Co ; Financials ; Banks ; UNITED STATES 
+ NUE UN Equity ;SPX; Nucor Corp ; Materials ; Metals & Mining ; UNITED STATES 
+ PVH UN Equity ;SPX; PVH Corp ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ OXY UN Equity ;SPX; Occidental Petroleum Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ OMC UN Equity ;SPX; Omnicom Group Inc ; Communication Services ; Media ; UNITED STATES 
+ OKE UN Equity ;SPX; ONEOK Inc ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ RJF UN Equity ;SPX; Raymond James Financial Inc ; Financials ; Capital Markets ; UNITED STATES 
+ PH UN Equity ;SPX; Parker-Hannifin Corp ; Industrials ; Machinery ; UNITED STATES 
+ ROL UN Equity ;SPX; Rollins Inc ; Industrials ; Commercial Services & Supplies ; UNITED STATES 
+ PPL UN Equity ;SPX; PPL Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+ COP UN Equity ;SPX; ConocoPhillips ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ PHM UN Equity ;SPX; PulteGroup Inc ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ PNW UN Equity ;SPX; Pinnacle West Capital Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+ PNC UN Equity ;SPX; PNC Financial Services Group I ; Financials ; Banks ; UNITED STATES 
+ PPG UN Equity ;SPX; PPG Industries Inc ; Materials ; Chemicals ; UNITED STATES 
+ PGR UN Equity ;SPX; Progressive Corp/The ; Financials ; Insurance ; UNITED STATES 
+ PEG UN Equity ;SPX; Public Service Enterprise Grou ; Utilities ; Multi-Utilities ; UNITED STATES 
+ RHI UN Equity ;SPX; Robert Half International Inc ; Industrials ; Professional Services ; UNITED STATES 
+ EIX UN Equity ;SPX; Edison International ; Utilities ; Electric Utilities ; UNITED STATES 
+ SLB UN Equity ;SPX; Schlumberger NV ; Energy ; Energy Equipment & Services ; UNITED STATES 
+ SCHW UN Equity ;SPX; Charles Schwab Corp/The ; Financials ; Capital Markets ; UNITED STATES 
+ SHW UN Equity ;SPX; Sherwin-Williams Co/The ; Materials ; Chemicals ; UNITED STATES 
+ WST UN Equity ;SPX; West Pharmaceutical Services I ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ SJM UN Equity ;SPX; J M Smucker Co/The ; Consumer Staples ; Food Products ; UNITED STATES 
+ SNA UN Equity ;SPX; Snap-on Inc ; Industrials ; Machinery ; UNITED STATES 
+ AME UN Equity ;SPX; AMETEK Inc ; Industrials ; Electrical Equipment ; UNITED STATES 
+ SO UN Equity ;SPX; Southern Co/The ; Utilities ; Electric Utilities ; UNITED STATES 
+ TFC UN Equity ;SPX; Truist Financial Corp ; Financials ; Banks ; UNITED STATES 
+ LUV UN Equity ;SPX; Southwest Airlines Co ; Industrials ; Airlines ; UNITED STATES 
+ WRB UN Equity ;SPX; W R Berkley Corp ; Financials ; Insurance ; UNITED STATES 
+ SWK UN Equity ;SPX; Stanley Black & Decker Inc ; Industrials ; Machinery ; UNITED STATES 
+ PSA UN Equity ;SPX; Public Storage ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ ANET UN Equity ;SPX; Arista Networks Inc ; Information Technology ; Communications Equipment ; UNITED STATES 
+ 1844053D US Equity ;SPX; Apartment Investment and Manag ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ SYY UN Equity ;SPX; Sysco Corp ; Consumer Staples ; Food & Staples Retailing ; UNITED STATES 
+ CTVA UN Equity ;SPX; Corteva Inc ; Materials ; Chemicals ; UNITED STATES 
+ TXN UW Equity ;SPX; Texas Instruments Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ TXT UN Equity ;SPX; Textron Inc ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ TMO UN Equity ;SPX; Thermo Fisher Scientific Inc ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+ TIF UN Equity ;SPX; Tiffany & Co ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ TJX UN Equity ;SPX; TJX Cos Inc/The ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ GL UN Equity ;SPX; Globe Life Inc ; Financials ; Insurance ; UNITED STATES 
+ JCI UN Equity ;SPX; Johnson Controls International ; Industrials ; Building Products ; UNITED STATES 
+ ULTA UW Equity ;SPX; Ulta Beauty Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ UNP UN Equity ;SPX; Union Pacific Corp ; Industrials ; Road & Rail ; UNITED STATES 
+ KEYS UN Equity ;SPX; Keysight Technologies Inc ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+ UNH UN Equity ;SPX; UnitedHealth Group Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ UNM UN Equity ;SPX; Unum Group ; Financials ; Insurance ; UNITED STATES 
+ MRO UN Equity ;SPX; Marathon Oil Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ VAR UN Equity ;SPX; Varian Medical Systems Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ BIO UN Equity ;SPX; Bio-Rad Laboratories Inc ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+ VTR UN Equity ;SPX; Ventas Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ VFC UN Equity ;SPX; VF Corp ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ VNO UN Equity ;SPX; Vornado Realty Trust ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ VMC UN Equity ;SPX; Vulcan Materials Co ; Materials ; Construction Materials ; UNITED STATES 
+ WY UN Equity ;SPX; Weyerhaeuser Co ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ WHR UN Equity ;SPX; Whirlpool Corp ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ WMB UN Equity ;SPX; Williams Cos Inc/The ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ WEC UN Equity ;SPX; WEC Energy Group Inc ; Utilities ; Multi-Utilities ; UNITED STATES 
+ ADBE UW Equity ;SPX; Adobe Inc ; Information Technology ; Software ; UNITED STATES 
+ AES UN Equity ;SPX; AES Corp/The ; Utilities ; Independent Power and Renewabl ; UNITED STATES 
+ AMGN UW Equity ;SPX; Amgen Inc ; Health Care ; Biotechnology ; UNITED STATES 
+ AAPL UW Equity ;SPX; Apple Inc ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+ ADSK UW Equity ;SPX; Autodesk Inc ; Information Technology ; Software ; UNITED STATES 
+ CTAS UW Equity ;SPX; Cintas Corp ; Industrials ; Commercial Services & Supplies ; UNITED STATES 
+ CMCSA UW Equity ;SPX; Comcast Corp ; Communication Services ; Media ; UNITED STATES 
+ TAP UN Equity ;SPX; Molson Coors Beverage Co ; Consumer Staples ; Beverages ; UNITED STATES 
+ KLAC UW Equity ;SPX; KLA Corp ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ MAR UW Equity ;SPX; Marriott International Inc/MD ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ MKC UN Equity ;SPX; McCormick & Co Inc/MD ; Consumer Staples ; Food Products ; UNITED STATES 
+ PCAR UW Equity ;SPX; PACCAR Inc ; Industrials ; Machinery ; UNITED STATES 
+ COST UW Equity ;SPX; Costco Wholesale Corp ; Consumer Staples ; Food & Staples Retailing ; UNITED STATES 
+ FRC UN Equity ;SPX; First Republic Bank/CA ; Financials ; Banks ; UNITED STATES 
+ SYK UN Equity ;SPX; Stryker Corp ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ TSN UN Equity ;SPX; Tyson Foods Inc ; Consumer Staples ; Food Products ; UNITED STATES 
+ LW UN Equity ;SPX; Lamb Weston Holdings Inc ; Consumer Staples ; Food Products ; UNITED STATES 
+ AMAT UW Equity ;SPX; Applied Materials Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ AAL UW Equity ;SPX; American Airlines Group Inc ; Industrials ; Airlines ; UNITED STATES 
+ CAH UN Equity ;SPX; Cardinal Health Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ CERN UW Equity ;SPX; Cerner Corp ; Health Care ; Health Care Technology ; UNITED STATES 
+ CINF UW Equity ;SPX; Cincinnati Financial Corp ; Financials ; Insurance ; UNITED STATES 
+ VIAC UW Equity ;SPX; ViacomCBS Inc ; Communication Services ; Media ; UNITED STATES 
+ DHI UN Equity ;SPX; DR Horton Inc ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ FLS UN Equity ;SPX; Flowserve Corp ; Industrials ; Machinery ; UNITED STATES 
+ EA UW Equity ;SPX; Electronic Arts Inc ; Communication Services ; Entertainment ; UNITED STATES 
+ EXPD UW Equity ;SPX; Expeditors International of Wa ; Industrials ; Air Freight & Logistics ; UNITED STATES 
+ FAST UW Equity ;SPX; Fastenal Co ; Industrials ; Trading Companies & Distributo ; UNITED STATES 
+ MTB UN Equity ;SPX; M&T Bank Corp ; Financials ; Banks ; UNITED STATES 
+ XEL UW Equity ;SPX; Xcel Energy Inc ; Utilities ; Electric Utilities ; UNITED STATES 
+ FISV UW Equity ;SPX; Fiserv Inc ; Information Technology ; IT Services ; UNITED STATES 
+ FITB UW Equity ;SPX; Fifth Third Bancorp ; Financials ; Banks ; UNITED STATES 
+ GILD UW Equity ;SPX; Gilead Sciences Inc ; Health Care ; Biotechnology ; UNITED STATES 
+ HAS UW Equity ;SPX; Hasbro Inc ; Consumer Discretionary ; Leisure Products ; UNITED STATES 
+ HBAN UW Equity ;SPX; Huntington Bancshares Inc/OH ; Financials ; Banks ; UNITED STATES 
+ WELL UN Equity ;SPX; Welltower Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ BIIB UW Equity ;SPX; Biogen Inc ; Health Care ; Biotechnology ; UNITED STATES 
+ NTRS UW Equity ;SPX; Northern Trust Corp ; Financials ; Capital Markets ; UNITED STATES 
+ PKG UN Equity ;SPX; Packaging Corp of America ; Materials ; Containers & Packaging ; UNITED STATES 
+ PAYX UW Equity ;SPX; Paychex Inc ; Information Technology ; IT Services ; UNITED STATES 
+ PBCT UW Equity ;SPX; People's United Financial Inc ; Financials ; Banks ; UNITED STATES 
+ QCOM UW Equity ;SPX; QUALCOMM Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ ROP UN Equity ;SPX; Roper Technologies Inc ; Industrials ; Industrial Conglomerates ; UNITED STATES 
+ ROST UW Equity ;SPX; Ross Stores Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ IDXX UW Equity ;SPX; IDEXX Laboratories Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ SBUX UW Equity ;SPX; Starbucks Corp ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ KEY UN Equity ;SPX; KeyCorp ; Financials ; Banks ; UNITED STATES 
+ FOXA UW Equity ;SPX; Fox Corp ; Communication Services ; Media ; UNITED STATES 
+ FOX UW Equity ;SPX; Fox Corp ; Communication Services ; Media ; UNITED STATES 
+ STT UN Equity ;SPX; State Street Corp ; Financials ; Capital Markets ; UNITED STATES 
+ NCLH UN Equity ;SPX; Norwegian Cruise Line Holdings ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ USB UN Equity ;SPX; US Bancorp ; Financials ; Banks ; UNITED STATES 
+ AOS UN Equity ;SPX; A O Smith Corp ; Industrials ; Building Products ; UNITED STATES 
+ NLOK UW Equity ;SPX; NortonLifeLock Inc ; Information Technology ; Software ; UNITED STATES 
+ TROW UW Equity ;SPX; T Rowe Price Group Inc ; Financials ; Capital Markets ; UNITED STATES 
+ WM UN Equity ;SPX; Waste Management Inc ; Industrials ; Commercial Services & Supplies ; UNITED STATES 
+ STZ UN Equity ;SPX; Constellation Brands Inc ; Consumer Staples ; Beverages ; UNITED STATES 
+ XLNX UW Equity ;SPX; Xilinx Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ XRAY UW Equity ;SPX; DENTSPLY SIRONA Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ ZION UW Equity ;SPX; Zions Bancorp NA ; Financials ; Banks ; UNITED STATES 
+ ALK UN Equity ;SPX; Alaska Air Group Inc ; Industrials ; Airlines ; UNITED STATES 
+ IVZ UN Equity ;SPX; Invesco Ltd ; Financials ; Capital Markets ; UNITED STATES 
+ LIN UN Equity ;SPX; Linde PLC ; Materials ; Chemicals ; BRITAIN 
+ INTU UW Equity ;SPX; Intuit Inc ; Information Technology ; Software ; UNITED STATES 
+ MS UN Equity ;SPX; Morgan Stanley ; Financials ; Capital Markets ; UNITED STATES 
+ MCHP UW Equity ;SPX; Microchip Technology Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ CB UN Equity ;SPX; Chubb Ltd ; Financials ; Insurance ; SWITZERLAND 
+ HOLX UW Equity ;SPX; Hologic Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ CFG UN Equity ;SPX; Citizens Financial Group Inc ; Financials ; Banks ; UNITED STATES 
+ ORLY UW Equity ;SPX; O'Reilly Automotive Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ ALL UN Equity ;SPX; Allstate Corp/The ; Financials ; Insurance ; UNITED STATES 
+ FLIR UW Equity ;SPX; FLIR Systems Inc ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+ EQR UN Equity ;SPX; Equity Residential ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ BWA UN Equity ;SPX; BorgWarner Inc ; Consumer Discretionary ; Auto Components ; UNITED STATES 
+ HST UW Equity ;SPX; Host Hotels & Resorts Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ INCY UW Equity ;SPX; Incyte Corp ; Health Care ; Biotechnology ; UNITED STATES 
+ SPG UN Equity ;SPX; Simon Property Group Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ EMN UN Equity ;SPX; Eastman Chemical Co ; Materials ; Chemicals ; UNITED STATES 
+ TWTR UN Equity ;SPX; Twitter Inc ; Communication Services ; Interactive Media & Services ; UNITED STATES 
+ AVB UN Equity ;SPX; AvalonBay Communities Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ PRU UN Equity ;SPX; Prudential Financial Inc ; Financials ; Insurance ; UNITED STATES 
+ UPS UN Equity ;SPX; United Parcel Service Inc ; Industrials ; Air Freight & Logistics ; UNITED STATES 
+ AIV UN Equity ;SPX; Apartment Investment and Manag ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ WBA UW Equity ;SPX; Walgreens Boots Alliance Inc ; Consumer Staples ; Food & Staples Retailing ; UNITED STATES 
+ STE UN Equity ;SPX; STERIS PLC ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ MCK UN Equity ;SPX; McKesson Corp ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ LMT UN Equity ;SPX; Lockheed Martin Corp ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ ABC UN Equity ;SPX; AmerisourceBergen Corp ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ COF UN Equity ;SPX; Capital One Financial Corp ; Financials ; Consumer Finance ; UNITED STATES 
+ WAT UN Equity ;SPX; Waters Corp ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+ DLTR UW Equity ;SPX; Dollar Tree Inc ; Consumer Discretionary ; Multiline Retail ; UNITED STATES 
+ DRI UN Equity ;SPX; Darden Restaurants Inc ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ DPZ UN Equity ;SPX; Domino's Pizza Inc ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ NVR UN Equity ;SPX; NVR Inc ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ NTAP UW Equity ;SPX; NetApp Inc ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+ CTXS UW Equity ;SPX; Citrix Systems Inc ; Information Technology ; Software ; UNITED STATES 
+ DXC UN Equity ;SPX; DXC Technology Co ; Information Technology ; IT Services ; UNITED STATES 
+ ODFL UW Equity ;SPX; Old Dominion Freight Line Inc ; Industrials ; Road & Rail ; UNITED STATES 
+ DVA UN Equity ;SPX; DaVita Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ HIG UN Equity ;SPX; Hartford Financial Services Gr ; Financials ; Insurance ; UNITED STATES 
+ IRM UN Equity ;SPX; Iron Mountain Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ EL UN Equity ;SPX; Estee Lauder Cos Inc/The ; Consumer Staples ; Personal Products ; UNITED STATES 
+ CDNS UW Equity ;SPX; Cadence Design Systems Inc ; Information Technology ; Software ; UNITED STATES 
+ TYL UN Equity ;SPX; Tyler Technologies Inc ; Information Technology ; Software ; UNITED STATES 
+ UHS UN Equity ;SPX; Universal Health Services Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ SWKS UW Equity ;SPX; Skyworks Solutions Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ NOV UN Equity ;SPX; National Oilwell Varco Inc ; Energy ; Energy Equipment & Services ; UNITED STATES 
+ DGX UN Equity ;SPX; Quest Diagnostics Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ ATVI UW Equity ;SPX; Activision Blizzard Inc ; Communication Services ; Entertainment ; UNITED STATES 
+ ROK UN Equity ;SPX; Rockwell Automation Inc ; Industrials ; Electrical Equipment ; UNITED STATES 
+ KHC UW Equity ;SPX; Kraft Heinz Co/The ; Consumer Staples ; Food Products ; UNITED STATES 
+ AMT UN Equity ;SPX; American Tower Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ HFC UN Equity ;SPX; HollyFrontier Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ REGN UW Equity ;SPX; Regeneron Pharmaceuticals Inc ; Health Care ; Biotechnology ; UNITED STATES 
+ AMZN UW Equity ;SPX; Amazon.com Inc ; Consumer Discretionary ; Internet & Direct Marketing Re ; UNITED STATES 
+ JKHY UW Equity ;SPX; Jack Henry & Associates Inc ; Information Technology ; IT Services ; UNITED STATES 
+ RL UN Equity ;SPX; Ralph Lauren Corp ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ BXP UN Equity ;SPX; Boston Properties Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ APH UN Equity ;SPX; Amphenol Corp ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+ HWM UN Equity ;SPX; Howmet Aerospace Inc ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ PXD UN Equity ;SPX; Pioneer Natural Resources Co ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ VLO UN Equity ;SPX; Valero Energy Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ SNPS UW Equity ;SPX; Synopsys Inc ; Information Technology ; Software ; UNITED STATES 
+ WU UN Equity ;SPX; Western Union Co/The ; Information Technology ; IT Services ; UNITED STATES 
+ ETSY UW Equity ;SPX; Etsy Inc ; Consumer Discretionary ; Internet & Direct Marketing Re ; UNITED STATES 
+ CHRW UW Equity ;SPX; CH Robinson Worldwide Inc ; Industrials ; Air Freight & Logistics ; UNITED STATES 
+ ACN UN Equity ;SPX; Accenture PLC ; Information Technology ; IT Services ; IRELAND 
+ TDG UN Equity ;SPX; TransDigm Group Inc ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ YUM UN Equity ;SPX; Yum! Brands Inc ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ PLD UN Equity ;SPX; Prologis Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ FE UN Equity ;SPX; FirstEnergy Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+ VRSN UW Equity ;SPX; VeriSign Inc ; Information Technology ; IT Services ; UNITED STATES 
+ PWR UN Equity ;SPX; Quanta Services Inc ; Industrials ; Construction & Engineering ; UNITED STATES 
+ HSIC UW Equity ;SPX; Henry Schein Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ AEE UN Equity ;SPX; Ameren Corp ; Utilities ; Multi-Utilities ; UNITED STATES 
+ ANSS UW Equity ;SPX; ANSYS Inc ; Information Technology ; Software ; UNITED STATES 
+ NVDA UW Equity ;SPX; NVIDIA Corp ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ SEE UN Equity ;SPX; Sealed Air Corp ; Materials ; Containers & Packaging ; UNITED STATES 
+ CTSH UW Equity ;SPX; Cognizant Technology Solutions ; Information Technology ; IT Services ; UNITED STATES 
+ SIVB UW Equity ;SPX; SVB Financial Group ; Financials ; Banks ; UNITED STATES 
+ ISRG UW Equity ;SPX; Intuitive Surgical Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ TTWO UW Equity ;SPX; Take-Two Interactive Software ; Communication Services ; Entertainment ; UNITED STATES 
+ RSG UN Equity ;SPX; Republic Services Inc ; Industrials ; Commercial Services & Supplies ; UNITED STATES 
+ EBAY UW Equity ;SPX; eBay Inc ; Consumer Discretionary ; Internet & Direct Marketing Re ; UNITED STATES 
+ GS UN Equity ;SPX; Goldman Sachs Group Inc/The ; Financials ; Capital Markets ; UNITED STATES 
+ SBAC UW Equity ;SPX; SBA Communications Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ SRE UN Equity ;SPX; Sempra Energy ; Utilities ; Multi-Utilities ; UNITED STATES 
+ MCO UN Equity ;SPX; Moody's Corp ; Financials ; Capital Markets ; UNITED STATES 
+ BKNG UW Equity ;SPX; Booking Holdings Inc ; Consumer Discretionary ; Internet & Direct Marketing Re ; UNITED STATES 
+ FFIV UW Equity ;SPX; F5 Networks Inc ; Information Technology ; Communications Equipment ; UNITED STATES 
+ AKAM UW Equity ;SPX; Akamai Technologies Inc ; Information Technology ; IT Services ; UNITED STATES 
+ MKTX UW Equity ;SPX; MarketAxess Holdings Inc ; Financials ; Capital Markets ; UNITED STATES 
+ DVN UN Equity ;SPX; Devon Energy Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ GOOGL UW Equity ;SPX; Alphabet Inc ; Communication Services ; Interactive Media & Services ; UNITED STATES 
+ TFX UN Equity ;SPX; Teleflex Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ ALLE UN Equity ;SPX; Allegion plc ; Industrials ; Building Products ; IRELAND 
+ NFLX UW Equity ;SPX; Netflix Inc ; Communication Services ; Entertainment ; UNITED STATES 
+ A UN Equity ;SPX; Agilent Technologies Inc ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+ ANTM UN Equity ;SPX; Anthem Inc ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ CME UW Equity ;SPX; CME Group Inc ; Financials ; Capital Markets ; UNITED STATES 
+ JNPR UN Equity ;SPX; Juniper Networks Inc ; Information Technology ; Communications Equipment ; UNITED STATES 
+ BLK UN Equity ;SPX; BlackRock Inc ; Financials ; Capital Markets ; UNITED STATES 
+ DTE UN Equity ;SPX; DTE Energy Co ; Utilities ; Multi-Utilities ; UNITED STATES 
+ CE UN Equity ;SPX; Celanese Corp ; Materials ; Chemicals ; UNITED STATES 
+ NDAQ UW Equity ;SPX; Nasdaq Inc ; Financials ; Capital Markets ; UNITED STATES 
+ PM UN Equity ;SPX; Philip Morris International In ; Consumer Staples ; Tobacco ; UNITED STATES 
+ IR UN Equity ;SPX; Ingersoll Rand Inc ; Industrials ; Machinery ; UNITED STATES 
+ CRM UN Equity ;SPX; salesforce.com Inc ; Information Technology ; Software ; UNITED STATES 
+ HII UN Equity ;SPX; Huntington Ingalls Industries ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ MET UN Equity ;SPX; MetLife Inc ; Financials ; Insurance ; UNITED STATES 
+ UA UN Equity ;SPX; Under Armour Inc ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ TPR UN Equity ;SPX; Tapestry Inc ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; UNITED STATES 
+ CSX UW Equity ;SPX; CSX Corp ; Industrials ; Road & Rail ; UNITED STATES 
+ EW UN Equity ;SPX; Edwards Lifesciences Corp ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ AMP UN Equity ;SPX; Ameriprise Financial Inc ; Financials ; Capital Markets ; UNITED STATES 
+ ZBRA UW Equity ;SPX; Zebra Technologies Corp ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+ FTI UN Equity ;SPX; TechnipFMC PLC ; Energy ; Energy Equipment & Services ; BRITAIN 
+ ZBH UN Equity ;SPX; Zimmer Biomet Holdings Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ CBRE UN Equity ;SPX; CBRE Group Inc ; Real Estate ; Real Estate Management & Devel ; UNITED STATES 
+ MA UN Equity ;SPX; Mastercard Inc ; Information Technology ; IT Services ; UNITED STATES 
+ KMX UN Equity ;SPX; CarMax Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ ICE UN Equity ;SPX; Intercontinental Exchange Inc ; Financials ; Capital Markets ; UNITED STATES 
+ FIS UN Equity ;SPX; Fidelity National Information ; Information Technology ; IT Services ; UNITED STATES 
+ CMG UN Equity ;SPX; Chipotle Mexican Grill Inc ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ WYNN UW Equity ;SPX; Wynn Resorts Ltd ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ LYV UN Equity ;SPX; Live Nation Entertainment Inc ; Communication Services ; Entertainment ; UNITED STATES 
+ AIZ UN Equity ;SPX; Assurant Inc ; Financials ; Insurance ; UNITED STATES 
+ NRG UN Equity ;SPX; NRG Energy Inc ; Utilities ; Electric Utilities ; UNITED STATES 
+ MNST UW Equity ;SPX; Monster Beverage Corp ; Consumer Staples ; Beverages ; UNITED STATES 
+ RF UN Equity ;SPX; Regions Financial Corp ; Financials ; Banks ; UNITED STATES 
+ MOS UN Equity ;SPX; Mosaic Co/The ; Materials ; Chemicals ; UNITED STATES 
+ EXPE UW Equity ;SPX; Expedia Group Inc ; Consumer Discretionary ; Internet & Direct Marketing Re ; UNITED STATES 
+ EVRG UN Equity ;SPX; Evergy Inc ; Utilities ; Electric Utilities ; UNITED STATES 
+ DISCA UW Equity ;SPX; Discovery Inc ; Communication Services ; Media ; UNITED STATES 
+ CF UN Equity ;SPX; CF Industries Holdings Inc ; Materials ; Chemicals ; UNITED STATES 
+ LDOS UN Equity ;SPX; Leidos Holdings Inc ; Information Technology ; IT Services ; UNITED STATES 
+ GOOG UW Equity ;SPX; Alphabet Inc ; Communication Services ; Interactive Media & Services ; UNITED STATES 
+ TEL UN Equity ;SPX; TE Connectivity Ltd ; Information Technology ; Electronic Equipment, Instrume ; SWITZERLAND 
+ COO UN Equity ;SPX; Cooper Cos Inc/The ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ DFS UN Equity ;SPX; Discover Financial Services ; Financials ; Consumer Finance ; UNITED STATES 
+ V UN Equity ;SPX; Visa Inc ; Information Technology ; IT Services ; UNITED STATES 
+ MAA UN Equity ;SPX; Mid-America Apartment Communit ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ XYL UN Equity ;SPX; Xylem Inc/NY ; Industrials ; Machinery ; UNITED STATES 
+ MPC UN Equity ;SPX; Marathon Petroleum Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ AMD UW Equity ;SPX; Advanced Micro Devices Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ TSCO UW Equity ;SPX; Tractor Supply Co ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ RMD UN Equity ;SPX; ResMed Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ MTD UN Equity ;SPX; Mettler-Toledo International I ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+ CPRT UW Equity ;SPX; Copart Inc ; Industrials ; Commercial Services & Supplies ; UNITED STATES 
+ FTNT UW Equity ;SPX; Fortinet Inc ; Information Technology ; Software ; UNITED STATES 
+ ALB UN Equity ;SPX; Albemarle Corp ; Materials ; Chemicals ; UNITED STATES 
+ APA UW Equity ;SPX; Apache Corp ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ ESS UN Equity ;SPX; Essex Property Trust Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ O UN Equity ;SPX; Realty Income Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ STX UW Equity ;SPX; Seagate Technology PLC ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+ WRK UN Equity ;SPX; Westrock Co ; Materials ; Containers & Packaging ; UNITED STATES 
+ INFO UN Equity ;SPX; IHS Markit Ltd ; Industrials ; Professional Services ; BRITAIN 
+ WAB UN Equity ;SPX; Westinghouse Air Brake Technol ; Industrials ; Machinery ; UNITED STATES 
+ POOL UW Equity ;SPX; Pool Corp ; Consumer Discretionary ; Distributors ; UNITED STATES 
+ WDC UW Equity ;SPX; Western Digital Corp ; Information Technology ; Technology Hardware, Storage & ; UNITED STATES 
+ PEP UW Equity ;SPX; PepsiCo Inc ; Consumer Staples ; Beverages ; UNITED STATES 
+ FANG UW Equity ;SPX; Diamondback Energy Inc ; Energy ; Oil, Gas & Consumable Fuels ; UNITED STATES 
+ MXIM UW Equity ;SPX; Maxim Integrated Products Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ NOW UN Equity ;SPX; ServiceNow Inc ; Information Technology ; Software ; UNITED STATES 
+ CHD UN Equity ;SPX; Church & Dwight Co Inc ; Consumer Staples ; Household Products ; UNITED STATES 
+ DRE UN Equity ;SPX; Duke Realty Corp ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ FRT UN Equity ;SPX; Federal Realty Investment Trus ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ MGM UN Equity ;SPX; MGM Resorts International ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ AEP UW Equity ;SPX; American Electric Power Co Inc ; Utilities ; Electric Utilities ; UNITED STATES 
+ VNT UN Equity ;SPX; Vontier Corp ; Information Technology ; Electronic Equipment, Instrume ; UNITED STATES 
+ JBHT UW Equity ;SPX; JB Hunt Transport Services Inc ; Industrials ; Road & Rail ; UNITED STATES 
+ LRCX UW Equity ;SPX; Lam Research Corp ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ MHK UN Equity ;SPX; Mohawk Industries Inc ; Consumer Discretionary ; Household Durables ; UNITED STATES 
+ PNR UN Equity ;SPX; Pentair PLC ; Industrials ; Machinery ; BRITAIN 
+ VRTX UW Equity ;SPX; Vertex Pharmaceuticals Inc ; Health Care ; Biotechnology ; UNITED STATES 
+ AMCR UN Equity ;SPX; Amcor PLC ; Materials ; Containers & Packaging ; BRITAIN 
+ FB UW Equity ;SPX; Facebook Inc ; Communication Services ; Interactive Media & Services ; UNITED STATES 
+ TMUS UW Equity ;SPX; T-Mobile US Inc ; Communication Services ; Wireless Telecommunication Ser ; UNITED STATES 
+ URI UN Equity ;SPX; United Rentals Inc ; Industrials ; Trading Companies & Distributo ; UNITED STATES 
+ ARE UN Equity ;SPX; Alexandria Real Estate Equitie ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ ABMD UW Equity ;SPX; ABIOMED Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ DAL UN Equity ;SPX; Delta Air Lines Inc ; Industrials ; Airlines ; UNITED STATES 
+ UAL UW Equity ;SPX; United Airlines Holdings Inc ; Industrials ; Airlines ; UNITED STATES 
+ NWS UW Equity ;SPX; News Corp ; Communication Services ; Media ; UNITED STATES 
+ CNC UN Equity ;SPX; Centene Corp ; Health Care ; Health Care Providers & Servic ; UNITED STATES 
+ MLM UN Equity ;SPX; Martin Marietta Materials Inc ; Materials ; Construction Materials ; UNITED STATES 
+ TER UW Equity ;SPX; Teradyne Inc ; Information Technology ; Semiconductors & Semiconductor ; UNITED STATES 
+ PYPL UW Equity ;SPX; PayPal Holdings Inc ; Information Technology ; IT Services ; UNITED STATES 
+ DISH UW Equity ;SPX; DISH Network Corp ; Communication Services ; Media ; UNITED STATES 
+ ALXN UW Equity ;SPX; Alexion Pharmaceuticals Inc ; Health Care ; Biotechnology ; UNITED STATES 
+ DOW UN Equity ;SPX; Dow Inc ; Materials ; Chemicals ; UNITED STATES 
+ RE UN Equity ;SPX; Everest Re Group Ltd ; Financials ; Insurance ; BERMUDA 
+ TDY UN Equity ;SPX; Teledyne Technologies Inc ; Industrials ; Aerospace & Defense ; UNITED STATES 
+ NWSA UW Equity ;SPX; News Corp ; Communication Services ; Media ; UNITED STATES 
+ EXC UW Equity ;SPX; Exelon Corp ; Utilities ; Electric Utilities ; UNITED STATES 
+ GPN UN Equity ;SPX; Global Payments Inc ; Information Technology ; IT Services ; UNITED STATES 
+ CCI UN Equity ;SPX; Crown Castle International Cor ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ APTV UN Equity ;SPX; Aptiv PLC ; Consumer Discretionary ; Auto Components ; IRELAND 
+ AAP UN Equity ;SPX; Advance Auto Parts Inc ; Consumer Discretionary ; Specialty Retail ; UNITED STATES 
+ ALGN UW Equity ;SPX; Align Technology Inc ; Health Care ; Health Care Equipment & Suppli ; UNITED STATES 
+ ILMN UW Equity ;SPX; Illumina Inc ; Health Care ; Life Sciences Tools & Services ; UNITED STATES 
+ LKQ UW Equity ;SPX; LKQ Corp ; Consumer Discretionary ; Distributors ; UNITED STATES 
+ NLSN UN Equity ;SPX; Nielsen Holdings PLC ; Industrials ; Professional Services ; UNITED STATES 
+ GRMN UW Equity ;SPX; Garmin Ltd ; Consumer Discretionary ; Household Durables ; SWITZERLAND 
+ ZTS UN Equity ;SPX; Zoetis Inc ; Health Care ; Pharmaceuticals ; UNITED STATES 
+ DLR UN Equity ;SPX; Digital Realty Trust Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ EQIX UW Equity ;SPX; Equinix Inc ; Real Estate ; Equity Real Estate Investment ; UNITED STATES 
+ LVS UN Equity ;SPX; Las Vegas Sands Corp ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ DISCK UW Equity ;SPX; Discovery Inc ; Communication Services ; Media ; UNITED STATES 
+ENX FP Equity;SXXR; Euronext NV ; Financials ; Capital Markets ; NETHERLANDS 
+PSPN SE Equity;SXXR; PSP Swiss Property AG ; Real Estate ; Real Estate Management & Devel ; SWITZERLAND 
+BOL SS Equity;SXXR; Boliden AB ; Materials ; Metals & Mining ; SWEDEN 
+BHP LN Equity;SXXR; BHP Group PLC ; Materials ; Metals & Mining ; AUSTRALIA 
+SOI FP Equity;SXXR; SOITEC ; Information Technology ; Semiconductors & Semiconductor ; FRANCE 
+MOR GY Equity;SXXR; MorphoSys AG ; Health Care ; Biotechnology ; GERMANY 
+NDA SS Equity;SXXR; Nordea Bank Abp ; Financials ; Banks ; FINLAND 
+WIE AV Equity;SXXR; Wienerberger AG ; Materials ; Construction Materials ; AUSTRIA 
+KPN NA Equity;SXXR; Koninklijke KPN NV ; Communication Services ; Diversified Telecommunication ; NETHERLANDS 
+NEM GY Equity;SXXR; Nemetschek SE ; Information Technology ; Software ; GERMANY 
+CARLB DC Equity;SXXR; Carlsberg AS ; Consumer Staples ; Beverages ; DENMARK 
+GETIB SS Equity;SXXR; Getinge AB ; Health Care ; Health Care Equipment & Suppli ; SWEDEN 
+RIO LN Equity;SXXR; Rio Tinto PLC ; Materials ; Metals & Mining ; BRITAIN 
+MOWI NO Equity;SXXR; Mowi ASA ; Consumer Staples ; Food Products ; NORWAY 
+AGN NA Equity;SXXR; Aegon NV ; Financials ; Insurance ; NETHERLANDS 
+AAL LN Equity;SXXR; Anglo American PLC ; Materials ; Metals & Mining ; BRITAIN 
+AMUN FP Equity;SXXR; Amundi SA ; Financials ; Capital Markets ; FRANCE 
+PKN PW Equity;SXXR; Polski Koncern Naftowy ORLEN S ; Energy ; Oil, Gas & Consumable Fuels ; POLAND 
+BBVA SQ Equity;SXXR; Banco Bilbao Vizcaya Argentari ; Financials ; Banks ; SPAIN 
+SPSN SE Equity;SXXR; Swiss Prime Site AG ; Real Estate ; Real Estate Management & Devel ; SWITZERLAND 
+AFX GY Equity;SXXR; Carl Zeiss Meditec AG ; Health Care ; Health Care Equipment & Suppli ; GERMANY 
+SAN SQ Equity;SXXR; Banco Santander SA ; Financials ; Banks ; SPAIN 
+SPIE FP Equity;SXXR; SPIE SA ; Industrials ; Commercial Services & Supplies ; FRANCE 
+ACKB BB Equity;SXXR; Ackermans & van Haaren NV ; Financials ; Diversified Financial Services ; BELGIUM 
+GNS LN Equity;SXXR; Genus PLC ; Health Care ; Biotechnology ; BRITAIN 
+ELE SQ Equity;SXXR; Endesa SA ; Utilities ; Electric Utilities ; SPAIN 
+PHIA NA Equity;SXXR; Koninklijke Philips NV ; Health Care ; Health Care Equipment & Suppli ; NETHERLANDS 
+GJF NO Equity;SXXR; Gjensidige Forsikring ASA ; Financials ; Insurance ; NORWAY 
+UTG LN Equity;SXXR; UNITE Group PLC/The ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+HPOLB SS Equity;SXXR; Hexpol AB ; Materials ; Chemicals ; SWEDEN 
+PZU PW Equity;SXXR; Powszechny Zaklad Ubezpieczen ; Financials ; Insurance ; POLAND 
+REP SQ Equity;SXXR; Repsol SA ; Energy ; Oil, Gas & Consumable Fuels ; SPAIN 
+ATE FP Equity;SXXR; Alten SA ; Information Technology ; IT Services ; FRANCE 
+TEF SQ Equity;SXXR; Telefonica SA ; Communication Services ; Diversified Telecommunication ; SPAIN 
+ITRK LN Equity;SXXR; Intertek Group PLC ; Industrials ; Professional Services ; BRITAIN 
+FP FP Equity;SXXR; TOTAL SE ; Energy ; Oil, Gas & Consumable Fuels ; FRANCE 
+ALLN SE Equity;SXXR; Allreal Holding AG ; Real Estate ; Real Estate Management & Devel ; SWITZERLAND 
+EMG LN Equity;SXXR; Man Group PLC/Jersey ; Financials ; Capital Markets ; BRITAIN 
+AI FP Equity;SXXR; Air Liquide SA ; Materials ; Chemicals ; FRANCE 
+BC8 GY Equity;SXXR; Bechtle AG ; Information Technology ; IT Services ; GERMANY 
+CS FP Equity;SXXR; AXA SA ; Financials ; Insurance ; FRANCE 
+BNP FP Equity;SXXR; BNP Paribas SA ; Financials ; Banks ; FRANCE 
+BN FP Equity;SXXR; Danone SA ; Consumer Staples ; Food Products ; FRANCE 
+HL/ LN Equity;SXXR; Hargreaves Lansdown PLC ; Financials ; Capital Markets ; BRITAIN 
+CAP FP Equity;SXXR; Capgemini SE ; Information Technology ; IT Services ; FRANCE 
+CA FP Equity;SXXR; Carrefour SA ; Consumer Staples ; Food & Staples Retailing ; FRANCE 
+DWNI GY Equity;SXXR; Deutsche Wohnen SE ; Real Estate ; Real Estate Management & Devel ; GERMANY 
+SGO FP Equity;SXXR; Cie de Saint-Gobain ; Industrials ; Building Products ; FRANCE 
+TECN SE Equity;SXXR; Tecan Group AG ; Health Care ; Life Sciences Tools & Services ; SWITZERLAND 
+KN FP Equity;SXXR; Natixis SA ; Financials ; Capital Markets ; FRANCE 
+EL FP Equity;SXXR; EssilorLuxottica SA ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; FRANCE 
+LSE LN Equity;SXXR; London Stock Exchange Group PL ; Financials ; Capital Markets ; BRITAIN 
+WDP BB Equity;SXXR; Warehouses De Pauw CVA ; Real Estate ; Equity Real Estate Investment ; BELGIUM 
+SIM DC Equity;SXXR; SimCorp A/S ; Information Technology ; Software ; DENMARK 
+FGR FP Equity;SXXR; Eiffage SA ; Industrials ; Construction & Engineering ; FRANCE 
+EXPN LN Equity;SXXR; Experian PLC ; Industrials ; Professional Services ; IRELAND 
+BME LN Equity;SXXR; B&M European Value Retail SA ; Consumer Discretionary ; Multiline Retail ; BRITAIN 
+GFC FP Equity;SXXR; Gecina SA ; Real Estate ; Equity Real Estate Investment ; FRANCE 
+INW IM Equity;SXXR; Infrastrutture Wireless Italia ; Communication Services ; Diversified Telecommunication ; ITALY 
+LPP PW Equity;SXXR; LPP SA ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; POLAND 
+LI FP Equity;SXXR; Klepierre SA ; Real Estate ; Equity Real Estate Investment ; FRANCE 
+EVT GY Equity;SXXR; Evotec SE ; Health Care ; Life Sciences Tools & Services ; GERMANY 
+GYC GY Equity;SXXR; Grand City Properties SA ; Real Estate ; Real Estate Management & Devel ; LUXEMBOURG 
+MF FP Equity;SXXR; Wendel SE ; Financials ; Diversified Financial Services ; FRANCE 
+SCR FP Equity;SXXR; SCOR SE ; Financials ; Insurance ; FRANCE 
+CDR PW Equity;SXXR; CD Projekt SA ; Communication Services ; Entertainment ; POLAND 
+RF FP Equity;SXXR; Eurazeo SE ; Financials ; Diversified Financial Services ; FRANCE 
+SAF FP Equity;SXXR; Safran SA ; Industrials ; Aerospace & Defense ; FRANCE 
+DNB NO Equity;SXXR; DNB ASA ; Financials ; Banks ; NORWAY 
+HO FP Equity;SXXR; Thales SA ; Industrials ; Aerospace & Defense ; FRANCE 
+MONY LN Equity;SXXR; Moneysupermarket.com Group PLC ; Consumer Discretionary ; Internet & Direct Marketing Re ; BRITAIN 
+TCAP LN Equity;SXXR; TP ICAP PLC ; Financials ; Capital Markets ; BRITAIN 
+DLG GY Equity;SXXR; Dialog Semiconductor PLC ; Information Technology ; Semiconductors & Semiconductor ; BRITAIN 
+LUNE SS Equity;SXXR; Lundin Energy AB ; Energy ; Oil, Gas & Consumable Fuels ; SWEDEN 
+KYG ID Equity;SXXR; Kerry Group PLC ; Consumer Staples ; Food Products ; IRELAND 
+EVD GY Equity;SXXR; CTS Eventim AG & Co KGaA ; Communication Services ; Entertainment ; GERMANY 
+AD NA Equity;SXXR; Koninklijke Ahold Delhaize NV ; Consumer Staples ; Food & Staples Retailing ; NETHERLANDS 
+UCG IM Equity;SXXR; UniCredit SpA ; Financials ; Banks ; ITALY 
+MB IM Equity;SXXR; Mediobanca Banca di Credito Fi ; Financials ; Banks ; ITALY 
+SY1 GY Equity;SXXR; Symrise AG ; Materials ; Chemicals ; GERMANY 
+AUTO LN Equity;SXXR; Auto Trader Group PLC ; Communication Services ; Interactive Media & Services ; BRITAIN 
+G IM Equity;SXXR; Assicurazioni Generali SpA ; Financials ; Insurance ; ITALY 
+SOF BB Equity;SXXR; Sofina SA ; Financials ; Diversified Financial Services ; BELGIUM 
+DSM NA Equity;SXXR; Koninklijke DSM NV ; Materials ; Chemicals ; NETHERLANDS 
+IP IM Equity;SXXR; Interpump Group SpA ; Industrials ; Machinery ; ITALY 
+MTX GY Equity;SXXR; MTU Aero Engines AG ; Industrials ; Aerospace & Defense ; GERMANY 
+KBC BB Equity;SXXR; KBC Group NV ; Financials ; Banks ; BELGIUM 
+YAR NO Equity;SXXR; Yara International ASA ; Materials ; Chemicals ; NORWAY 
+IBE SQ Equity;SXXR; Iberdrola SA ; Utilities ; Electric Utilities ; SPAIN 
+SOLB BB Equity;SXXR; Solvay SA ; Materials ; Chemicals ; BELGIUM 
+INGA NA Equity;SXXR; ING Groep NV ; Financials ; Banks ; NETHERLANDS 
+UNA NA Equity;SXXR; Unilever NV ; Consumer Staples ; Personal Products ; BRITAIN 
+G1A GY Equity;SXXR; GEA Group AG ; Industrials ; Machinery ; GERMANY 
+ULVR LN Equity;SXXR; Unilever PLC ; Consumer Staples ; Personal Products ; BRITAIN 
+THULE SS Equity;SXXR; Thule Group AB ; Consumer Discretionary ; Leisure Products ; SWEDEN 
+EVR LN Equity;SXXR; Evraz PLC ; Materials ; Metals & Mining ; BRITAIN 
+HEIO NA Equity;SXXR; Heineken Holding NV ; Consumer Staples ; Beverages ; NETHERLANDS 
+SBMO NA Equity;SXXR; SBM Offshore NV ; Energy ; Energy Equipment & Services ; NETHERLANDS 
+RAND NA Equity;SXXR; Randstad NV ; Industrials ; Professional Services ; NETHERLANDS 
+ASHM LN Equity;SXXR; Ashmore Group PLC ; Financials ; Capital Markets ; BRITAIN 
+VER AV Equity;SXXR; Verbund AG ; Utilities ; Electric Utilities ; AUSTRIA 
+AGS BB Equity;SXXR; Ageas SA/NV ; Financials ; Insurance ; BELGIUM 
+ORSTED DC Equity;SXXR; Orsted AS ; Utilities ; Electric Utilities ; DENMARK 
+SOBI SS Equity;SXXR; Swedish Orphan Biovitrum AB ; Health Care ; Biotechnology ; SWEDEN 
+ANA SQ Equity;SXXR; Acciona SA ; Utilities ; Electric Utilities ; SPAIN 
+GBLB BB Equity;SXXR; Groupe Bruxelles Lambert SA ; Financials ; Diversified Financial Services ; BELGIUM 
+EPIA SS Equity;SXXR; Epiroc AB ; Industrials ; Machinery ; SWEDEN 
+KESKOB FH Equity;SXXR; Kesko Oyj ; Consumer Staples ; Food & Staples Retailing ; FINLAND 
+ACS SQ Equity;SXXR; ACS Actividades de Construccio ; Industrials ; Construction & Engineering ; SPAIN 
+AED BB Equity;SXXR; Aedifica SA ; Real Estate ; Equity Real Estate Investment ; BELGIUM 
+EBS AV Equity;SXXR; Erste Group Bank AG ; Financials ; Banks ; AUSTRIA 
+SAMPO FH Equity;SXXR; Sampo Oyj ; Financials ; Insurance ; FINLAND 
+SKG ID Equity;SXXR; Smurfit Kappa Group PLC ; Materials ; Containers & Packaging ; IRELAND 
+INDT SS Equity;SXXR; Indutrade AB ; Industrials ; Trading Companies & Distributo ; SWEDEN 
+OCDO LN Equity;SXXR; Ocado Group PLC ; Consumer Discretionary ; Internet & Direct Marketing Re ; BRITAIN 
+ATC NA Equity;SXXR; Altice Europe NV ; Communication Services ; Diversified Telecommunication ; NETHERLANDS 
+NTGY SQ Equity;SXXR; Naturgy Energy Group SA ; Utilities ; Gas Utilities ; SPAIN 
+ISP IM Equity;SXXR; Intesa Sanpaolo SpA ; Financials ; Banks ; ITALY 
+BEZ LN Equity;SXXR; Beazley PLC ; Financials ; Insurance ; BRITAIN 
+BOL FP Equity;SXXR; Bollore SA ; Communication Services ; Entertainment ; FRANCE 
+ENI IM Equity;SXXR; Eni SpA ; Energy ; Oil, Gas & Consumable Fuels ; ITALY 
+ABN NA Equity;SXXR; ABN AMRO Bank NV ; Financials ; Banks ; NETHERLANDS 
+TRYG DC Equity;SXXR; Tryg A/S ; Financials ; Insurance ; DENMARK 
+ ADP FP Equity ;SXXR; Aeroports de Paris ; Industrials ; Transportation Infrastructure ; FRANCE 
+ ENGI FP Equity ;SXXR; Engie SA ; Utilities ; Multi-Utilities ; FRANCE 
+ COV FP Equity ;SXXR; Covivio ; Real Estate ; Equity Real Estate Investment ; FRANCE 
+ EDF FP Equity ;SXXR; Electricite de France SA ; Utilities ; Electric Utilities ; FRANCE 
+ ORA FP Equity ;SXXR; Orange SA ; Communication Services ; Diversified Telecommunication ; FRANCE 
+ CNP FP Equity ;SXXR; CNP Assurances ; Financials ; Insurance ; FRANCE 
+ MRL SQ Equity ;SXXR; Merlin Properties Socimi SA ; Real Estate ; Equity Real Estate Investment ; SPAIN 
+ SIGN SE Equity ;SXXR; SIG Combibloc Group AG ; Materials ; Containers & Packaging ; SWITZERLAND 
+ INDUA SS Equity ;SXXR; Industrivarden AB ; Financials ; Diversified Financial Services ; SWEDEN 
+ IG IM Equity ;SXXR; Italgas SpA ; Utilities ; Gas Utilities ; ITALY 
+ AMS SE Equity ;SXXR; ams AG ; Information Technology ; Semiconductors & Semiconductor ; AUSTRIA 
+ VOE AV Equity ;SXXR; voestalpine AG ; Materials ; Metals & Mining ; AUSTRIA 
+ ABI BB Equity ;SXXR; Anheuser-Busch InBev SA/NV ; Consumer Staples ; Beverages ; BELGIUM 
+ AGR LN Equity ;SXXR; Assura PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ QIA GY Equity ;SXXR; QIAGEN NV ; Health Care ; Life Sciences Tools & Services ; NETHERLANDS 
+ PROX BB Equity ;SXXR; Proximus SADP ; Communication Services ; Diversified Telecommunication ; BELGIUM 
+ STM IM Equity ;SXXR; STMicroelectronics NV ; Information Technology ; Semiconductors & Semiconductor ; SWITZERLAND 
+ FBK IM Equity ;SXXR; FinecoBank Banca Fineco SpA ; Financials ; Banks ; ITALY 
+ EDP PL Equity ;SXXR; EDP - Energias de Portugal SA ; Utilities ; Electric Utilities ; PORTUGAL 
+ REE SQ Equity ;SXXR; Red Electrica Corp SA ; Utilities ; Electric Utilities ; SPAIN 
+ MT NA Equity ;SXXR; ArcelorMittal SA ; Materials ; Metals & Mining ; LUXEMBOURG 
+ VPK NA Equity ;SXXR; Koninklijke Vopak NV ; Energy ; Oil, Gas & Consumable Fuels ; NETHERLANDS 
+ A2A IM Equity ;SXXR; A2A SpA ; Utilities ; Multi-Utilities ; ITALY 
+ FORTUM FH Equity ;SXXR; Fortum Oyj ; Utilities ; Electric Utilities ; FINLAND 
+ PST IM Equity ;SXXR; Poste Italiane SpA ; Financials ; Insurance ; ITALY 
+ CPR IM Equity ;SXXR; Davide Campari-Milano NV ; Consumer Staples ; Beverages ; ITALY 
+ VIE FP Equity ;SXXR; Veolia Environnement SA ; Utilities ; Multi-Utilities ; FRANCE 
+ SAN FP Equity ;SXXR; Sanofi ; Health Care ; Pharmaceuticals ; FRANCE 
+ GALP PL Equity ;SXXR; Galp Energia SGPS SA ; Energy ; Oil, Gas & Consumable Fuels ; PORTUGAL 
+ ENEL IM Equity ;SXXR; Enel SpA ; Utilities ; Electric Utilities ; ITALY 
+ BNR GY Equity ;SXXR; Brenntag AG ; Industrials ; Trading Companies & Distributo ; GERMANY 
+ ENG SQ Equity ;SXXR; Enagas SA ; Utilities ; Gas Utilities ; SPAIN 
+ LIN GY Equity ;SXXR; Linde PLC ; Materials ; Chemicals ; BRITAIN 
+ TRN IM Equity ;SXXR; Terna Rete Elettrica Nazionale ; Utilities ; Electric Utilities ; ITALY 
+ TKWY NA Equity ;SXXR; Just Eat Takeaway.com NV ; Consumer Discretionary ; Internet & Direct Marketing Re ; NETHERLANDS 
+ IPN FP Equity ;SXXR; Ipsen SA ; Health Care ; Pharmaceuticals ; FRANCE 
+ IMCD NA Equity ;SXXR; IMCD NV ; Industrials ; Trading Companies & Distributo ; NETHERLANDS 
+ SRG IM Equity ;SXXR; Snam SpA ; Utilities ; Gas Utilities ; ITALY 
+ FER SQ Equity ;SXXR; Ferrovial SA ; Industrials ; Construction & Engineering ; SPAIN 
+ TEN IM Equity ;SXXR; Tenaris SA ; Energy ; Energy Equipment & Services ; LUXEMBOURG 
+ WLN FP Equity ;SXXR; Worldline SA/France ; Information Technology ; IT Services ; FRANCE 
+ ATL IM Equity ;SXXR; Atlantia SpA ; Industrials ; Transportation Infrastructure ; ITALY 
+ BIM FP Equity ;SXXR; BioMerieux ; Health Care ; Health Care Equipment & Suppli ; FRANCE 
+ RXL FP Equity ;SXXR; Rexel SA ; Industrials ; Trading Companies & Distributo ; FRANCE 
+ CABK SQ Equity ;SXXR; CaixaBank SA ; Financials ; Banks ; SPAIN 
+ ELI BB Equity ;SXXR; Elia Group SA/NV ; Utilities ; Electric Utilities ; BELGIUM 
+ SEV FP Equity ;SXXR; Suez SA ; Utilities ; Multi-Utilities ; FRANCE 
+ AT1 GY Equity ;SXXR; Aroundtown SA ; Real Estate ; Real Estate Management & Devel ; LUXEMBOURG 
+ EDPR PL Equity ;SXXR; EDP Renovaveis SA ; Utilities ; Independent Power and Renewabl ; SPAIN 
+ CRH ID Equity ;SXXR; CRH PLC ; Materials ; Construction Materials ; IRELAND 
+ BIRG ID Equity ;SXXR; Bank of Ireland Group PLC ; Financials ; Banks ; IRELAND 
+ COK GY Equity ;SXXR; CANCOM SE ; Information Technology ; IT Services ; GERMANY 
+ SGRE SQ Equity ;SXXR; Siemens Gamesa Renewable Energ ; Industrials ; Electrical Equipment ; SPAIN 
+ AKERBP NO Equity ;SXXR; Aker BP ASA ; Energy ; Oil, Gas & Consumable Fuels ; NORWAY 
+ DNP PW Equity ;SXXR; Dino Polska SA ; Consumer Staples ; Food & Staples Retailing ; POLAND 
+ ADYEN NA Equity ;SXXR; Adyen NV ; Information Technology ; IT Services ; NETHERLANDS 
+ AOX GY Equity ;SXXR; alstria office REIT-AG ; Real Estate ; Equity Real Estate Investment ; GERMANY 
+ FNTN GY Equity ;SXXR; Freenet AG ; Communication Services ; Wireless Telecommunication Ser ; GERMANY 
+ HER IM Equity ;SXXR; Hera SpA ; Utilities ; Multi-Utilities ; ITALY 
+ ADJ GY Equity ;SXXR; ADLER Group SA ; Real Estate ; Real Estate Management & Devel ; GERMANY 
+ GXI GY Equity ;SXXR; Gerresheimer AG ; Health Care ; Life Sciences Tools & Services ; GERMANY 
+ BEAN SE Equity ;SXXR; Belimo Holding AG ; Industrials ; Building Products ; SWITZERLAND 
+ ESSITYB SS Equity ;SXXR; Essity AB ; Consumer Staples ; Household Products ; SWEDEN 
+ DHER GY Equity ;SXXR; Delivery Hero SE ; Consumer Discretionary ; Internet & Direct Marketing Re ; GERMANY 
+ PHNX LN Equity ;SXXR; Phoenix Group Holdings PLC ; Financials ; Insurance ; BRITAIN 
+ ADE NO Equity ;SXXR; Adevinta ASA ; Communication Services ; Interactive Media & Services ; NORWAY 
+ ADDTB SS Equity ;SXXR; AddTech AB ; Industrials ; Trading Companies & Distributo ; SWEDEN 
+ BAKKA NO Equity ;SXXR; Bakkafrost P/F ; Consumer Staples ; Food Products ; FAROE ISLANDS 
+ VALMT FH Equity ;SXXR; Valmet Oyj ; Industrials ; Machinery ; FINLAND 
+ DCC LN Equity ;SXXR; DCC PLC ; Industrials ; Industrial Conglomerates ; IRELAND 
+ STJ LN Equity ;SXXR; St James's Place PLC ; Financials ; Capital Markets ; BRITAIN 
+ NIBEB SS Equity ;SXXR; Nibe Industrier AB ; Industrials ; Building Products ; SWEDEN 
+ NETC DC Equity ;SXXR; Netcompany Group A/S ; Information Technology ; Software ; DENMARK 
+ AXFO SS Equity ;SXXR; Axfood AB ; Consumer Staples ; Food & Staples Retailing ; SWEDEN 
+ KGX GY Equity ;SXXR; KION Group AG ; Industrials ; Machinery ; GERMANY 
+ EVK GY Equity ;SXXR; Evonik Industries AG ; Materials ; Chemicals ; GERMANY 
+ ERF FP Equity ;SXXR; Eurofins Scientific SE ; Health Care ; Life Sciences Tools & Services ; LUXEMBOURG 
+ G24 GY Equity ;SXXR; Scout24 AG ; Communication Services ; Interactive Media & Services ; GERMANY 
+ DPH LN Equity ;SXXR; Dechra Pharmaceuticals PLC ; Health Care ; Pharmaceuticals ; BRITAIN 
+ SINCH SS Equity ;SXXR; Sinch AB ; Information Technology ; Software ; SWEDEN 
+ NEXI IM Equity ;SXXR; Nexi SpA ; Information Technology ; IT Services ; ITALY 
+ POLY LN Equity ;SXXR; Polymetal International PLC ; Materials ; Metals & Mining ; CYPRUS 
+ GAW LN Equity ;SXXR; Games Workshop Group PLC ; Consumer Discretionary ; Leisure Products ; BRITAIN 
+ AAK SS Equity ;SXXR; AAK AB ; Consumer Staples ; Food Products ; SWEDEN 
+ CWK LN Equity ;SXXR; Cranswick PLC ; Consumer Staples ; Food Products ; BRITAIN 
+ SHL GY Equity ;SXXR; Siemens Healthineers AG ; Health Care ; Health Care Equipment & Suppli ; GERMANY 
+ GVC LN Equity ;SXXR; GVC Holdings PLC ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; ISLE OF MAN 
+ KOJAMO FH Equity ;SXXR; Kojamo Oyj ; Real Estate ; Real Estate Management & Devel ; FINLAND 
+ EQT SS Equity ;SXXR; EQT AB ; Financials ; Capital Markets ; SWEDEN 
+ COL SQ Equity ;SXXR; Inmobiliaria Colonial Socimi S ; Real Estate ; Equity Real Estate Investment ; SPAIN 
+ VIS SQ Equity ;SXXR; Viscofan SA ; Consumer Staples ; Food Products ; SPAIN 
+ SWMA SS Equity ;SXXR; Swedish Match AB ; Consumer Staples ; Tobacco ; SWEDEN 
+ IMB LN Equity ;SXXR; Imperial Brands PLC ; Consumer Staples ; Tobacco ; BRITAIN 
+ BBOX LN Equity ;SXXR; Tritax Big Box REIT PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ BARN SE Equity ;SXXR; Barry Callebaut AG ; Consumer Staples ; Food Products ; SWITZERLAND 
+ FCA IM Equity ;SXXR; Fiat Chrysler Automobiles NV ; Consumer Discretionary ; Automobiles ; BRITAIN 
+ BATS LN Equity ;SXXR; British American Tobacco PLC ; Consumer Staples ; Tobacco ; BRITAIN 
+ VACN SE Equity ;SXXR; VAT Group AG ; Industrials ; Machinery ; SWITZERLAND 
+ EVO SS Equity ;SXXR; Evolution Gaming Group AB ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; SWEDEN 
+ BVIC LN Equity ;SXXR; Britvic PLC ; Consumer Staples ; Beverages ; BRITAIN 
+ REC IM Equity ;SXXR; Recordati Industria Chimica e ; Health Care ; Pharmaceuticals ; ITALY 
+ AM FP Equity ;SXXR; Dassault Aviation SA ; Industrials ; Aerospace & Defense ; FRANCE 
+ DIA IM Equity ;SXXR; DiaSorin SpA ; Health Care ; Health Care Equipment & Suppli ; ITALY 
+ CRBN NA Equity ;SXXR; Corbion NV ; Materials ; Chemicals ; NETHERLANDS 
+ ALV GY Equity ;SXXR; Allianz SE ; Financials ; Insurance ; GERMANY 
+ RWE GY Equity ;SXXR; RWE AG ; Utilities ; Multi-Utilities ; GERMANY 
+ BAYN GY Equity ;SXXR; Bayer AG ; Health Care ; Pharmaceuticals ; GERMANY 
+ BMW GY Equity ;SXXR; Bayerische Motoren Werke AG ; Consumer Discretionary ; Automobiles ; GERMANY 
+ VAR1 GY Equity ;SXXR; Varta AG ; Industrials ; Electrical Equipment ; GERMANY 
+ AMBUB DC Equity ;SXXR; Ambu A/S ; Health Care ; Health Care Equipment & Suppli ; DENMARK 
+ CBK GY Equity ;SXXR; Commerzbank AG ; Financials ; Banks ; GERMANY 
+ DBK GY Equity ;SXXR; Deutsche Bank AG ; Financials ; Capital Markets ; GERMANY 
+ BAS GY Equity ;SXXR; BASF SE ; Materials ; Chemicals ; GERMANY 
+ HEN3 GY Equity ;SXXR; Henkel AG & Co KGaA ; Consumer Staples ; Household Products ; GERMANY 
+ LHA GY Equity ;SXXR; Deutsche Lufthansa AG ; Industrials ; Airlines ; GERMANY 
+ SIE GY Equity ;SXXR; Siemens AG ; Industrials ; Industrial Conglomerates ; GERMANY 
+ VOW3 GY Equity ;SXXR; Volkswagen AG ; Consumer Discretionary ; Automobiles ; GERMANY 
+ EOAN GY Equity ;SXXR; E.ON SE ; Utilities ; Multi-Utilities ; GERMANY 
+ O2D GY Equity ;SXXR; Telefonica Deutschland Holding ; Communication Services ; Diversified Telecommunication ; GERMANY 
+ BEI GY Equity ;SXXR; Beiersdorf AG ; Consumer Staples ; Personal Products ; GERMANY 
+ HEI GY Equity ;SXXR; HeidelbergCement AG ; Materials ; Construction Materials ; GERMANY 
+ MUV2 GY Equity ;SXXR; Muenchener Rueckversicherungs- ; Financials ; Insurance ; GERMANY 
+ FRE GY Equity ;SXXR; Fresenius SE & Co KGaA ; Health Care ; Health Care Providers & Servic ; GERMANY 
+ SAP GY Equity ;SXXR; SAP SE ; Information Technology ; Software ; GERMANY 
+ MRK GY Equity ;SXXR; Merck KGaA ; Health Care ; Pharmaceuticals ; GERMANY 
+ FERG LN Equity ;SXXR; Ferguson PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ ADS GY Equity ;SXXR; adidas AG ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; GERMANY 
+ DTE GY Equity ;SXXR; Deutsche Telekom AG ; Communication Services ; Diversified Telecommunication ; GERMANY 
+ DPW GY Equity ;SXXR; Deutsche Post AG ; Industrials ; Air Freight & Logistics ; GERMANY 
+ FME GY Equity ;SXXR; Fresenius Medical Care AG & Co ; Health Care ; Health Care Providers & Servic ; GERMANY 
+ ZAL GY Equity ;SXXR; Zalando SE ; Consumer Discretionary ; Internet & Direct Marketing Re ; GERMANY 
+ DAI GY Equity ;SXXR; Daimler AG ; Consumer Discretionary ; Automobiles ; GERMANY 
+ TKA GY Equity ;SXXR; thyssenkrupp AG ; Materials ; Metals & Mining ; GERMANY 
+ IFX GY Equity ;SXXR; Infineon Technologies AG ; Information Technology ; Semiconductors & Semiconductor ; GERMANY 
+ DB1 GY Equity ;SXXR; Deutsche Boerse AG ; Financials ; Capital Markets ; GERMANY 
+ HNR1 GY Equity ;SXXR; Hannover Rueck SE ; Financials ; Insurance ; GERMANY 
+ CON GY Equity ;SXXR; Continental AG ; Consumer Discretionary ; Auto Components ; GERMANY 
+ LXS GY Equity ;SXXR; LANXESS AG ; Materials ; Chemicals ; GERMANY 
+ BDEV LN Equity ;SXXR; Barratt Developments PLC ; Consumer Discretionary ; Household Durables ; BRITAIN 
+ BKG LN Equity ;SXXR; Berkeley Group Holdings PLC ; Consumer Discretionary ; Household Durables ; BRITAIN 
+ BG AV Equity ;SXXR; BAWAG Group AG ; Financials ; Banks ; AUSTRIA 
+ INCH LN Equity ;SXXR; Inchcape PLC ; Consumer Discretionary ; Distributors ; BRITAIN 
+ KGF LN Equity ;SXXR; Kingfisher PLC ; Consumer Discretionary ; Specialty Retail ; BRITAIN 
+ SALM NO Equity ;SXXR; Salmar ASA ; Consumer Staples ; Food Products ; NORWAY 
+ MKS LN Equity ;SXXR; Marks & Spencer Group PLC ; Consumer Discretionary ; Multiline Retail ; BRITAIN 
+ NXT LN Equity ;SXXR; Next PLC ; Consumer Discretionary ; Multiline Retail ; BRITAIN 
+ PSON LN Equity ;SXXR; Pearson PLC ; Communication Services ; Media ; BRITAIN 
+ PSN LN Equity ;SXXR; Persimmon PLC ; Consumer Discretionary ; Household Durables ; BRITAIN 
+ REL LN Equity ;SXXR; RELX PLC ; Industrials ; Professional Services ; BRITAIN 
+ TW/ LN Equity ;SXXR; Taylor Wimpey PLC ; Consumer Discretionary ; Household Durables ; BRITAIN 
+ ALC SE Equity ;SXXR; Alcon Inc ; Health Care ; Health Care Equipment & Suppli ; SWITZERLAND 
+ WTB LN Equity ;SXXR; Whitbread PLC ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; BRITAIN 
+ WPP LN Equity ;SXXR; WPP PLC ; Communication Services ; Media ; BRITAIN 
+ AC FP Equity ;SXXR; Accor SA ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; FRANCE 
+ VIV FP Equity ;SXXR; Vivendi SA ; Communication Services ; Entertainment ; FRANCE 
+ EO FP Equity ;SXXR; Faurecia SE ; Consumer Discretionary ; Auto Components ; FRANCE 
+ SN/ LN Equity ;SXXR; Smith & Nephew PLC ; Health Care ; Health Care Equipment & Suppli ; BRITAIN 
+ MC FP Equity ;SXXR; LVMH Moet Hennessy Louis Vuitt ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; FRANCE 
+ ML FP Equity ;SXXR; Cie Generale des Etablissement ; Consumer Discretionary ; Auto Components ; FRANCE 
+ COLOB DC Equity ;SXXR; Coloplast A/S ; Health Care ; Health Care Equipment & Suppli ; DENMARK 
+ RACE IM Equity ;SXXR; Ferrari NV ; Consumer Discretionary ; Automobiles ; ITALY 
+ KER FP Equity ;SXXR; Kering SA ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; FRANCE 
+ UG FP Equity ;SXXR; Peugeot SA ; Consumer Discretionary ; Automobiles ; FRANCE 
+ PUB FP Equity ;SXXR; Publicis Groupe SA ; Communication Services ; Media ; FRANCE 
+ TOP DC Equity ;SXXR; Topdanmark AS ; Financials ; Insurance ; DENMARK 
+ RNO FP Equity ;SXXR; Renault SA ; Consumer Discretionary ; Automobiles ; FRANCE 
+ SK FP Equity ;SXXR; SEB SA ; Consumer Discretionary ; Household Durables ; FRANCE 
+ GN DC Equity ;SXXR; GN Store Nord AS ; Health Care ; Health Care Equipment & Suppli ; DENMARK 
+ SW FP Equity ;SXXR; Sodexo SA ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; FRANCE 
+ FR FP Equity ;SXXR; Valeo SA ; Consumer Discretionary ; Auto Components ; FRANCE 
+ ELUXB SS Equity ;SXXR; Electrolux AB ; Consumer Discretionary ; Household Durables ; SWEDEN 
+ SWECB SS Equity ;SXXR; Sweco AB ; Industrials ; Construction & Engineering ; SWEDEN 
+ URW NA Equity ;SXXR; Unibail-Rodamco-Westfield ; Real Estate ; Equity Real Estate Investment ; FRANCE 
+ CTEC LN Equity ;SXXR; ConvaTec Group PLC ; Health Care ; Health Care Equipment & Suppli ; BRITAIN 
+ WKL NA Equity ;SXXR; Wolters Kluwer NV ; Industrials ; Professional Services ; NETHERLANDS 
+ PAH3 GY Equity ;SXXR; Porsche Automobil Holding SE ; Consumer Discretionary ; Automobiles ; GERMANY 
+ EKTAB SS Equity ;SXXR; Elekta AB ; Health Care ; Health Care Equipment & Suppli ; SWEDEN 
+ NETW LN Equity ;SXXR; Network International Holdings ; Information Technology ; IT Services ; UAE 
+ HMB SS Equity ;SXXR; Hennes & Mauritz AB ; Consumer Discretionary ; Specialty Retail ; SWEDEN 
+ RHM GY Equity ;SXXR; Rheinmetall AG ; Industrials ; Industrial Conglomerates ; GERMANY 
+ DEMANT DC Equity ;SXXR; Demant A/S ; Health Care ; Health Care Equipment & Suppli ; DENMARK 
+ TEP FP Equity ;SXXR; Teleperformance ; Industrials ; Professional Services ; FRANCE 
+ SCHA NO Equity ;SXXR; Schibsted ASA ; Communication Services ; Media ; NORWAY 
+ NG/ LN Equity ;SXXR; National Grid PLC ; Utilities ; Multi-Utilities ; BRITAIN 
+ PUM GY Equity ;SXXR; Puma SE ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; GERMANY 
+ TELIA SS Equity ;SXXR; Telia Co AB ; Communication Services ; Diversified Telecommunication ; SWEDEN 
+ RMS FP Equity ;SXXR; Hermes International ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; FRANCE 
+ TEL NO Equity ;SXXR; Telenor ASA ; Communication Services ; Diversified Telecommunication ; NORWAY 
+ TYRES FH Equity ;SXXR; Nokian Renkaat Oyj ; Consumer Discretionary ; Auto Components ; FINLAND 
+ ELISA FH Equity ;SXXR; Elisa Oyj ; Communication Services ; Diversified Telecommunication ; FINLAND 
+ PSM GY Equity ;SXXR; ProSiebenSat.1 Media SE ; Communication Services ; Media ; GERMANY 
+ ITX SQ Equity ;SXXR; Industria de Diseno Textil SA ; Consumer Discretionary ; Specialty Retail ; SPAIN 
+ HUSQB SS Equity ;SXXR; Husqvarna AB ; Consumer Discretionary ; Household Durables ; SWEDEN 
+ INF LN Equity ;SXXR; Informa PLC ; Communication Services ; Media ; BRITAIN 
+ SESG FP Equity ;SXXR; SES SA ; Communication Services ; Media ; LUXEMBOURG 
+ GSK LN Equity ;SXXR; GlaxoSmithKline PLC ; Health Care ; Pharmaceuticals ; BRITAIN 
+ IHG LN Equity ;SXXR; InterContinental Hotels Group ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; BRITAIN 
+ CCL LN Equity ;SXXR; Carnival PLC ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; UNITED STATES 
+ ADM LN Equity ;SXXR; Admiral Group PLC ; Financials ; Insurance ; BRITAIN 
+ BRBY LN Equity ;SXXR; Burberry Group PLC ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; BRITAIN 
+ FLTR ID Equity ;SXXR; Flutter Entertainment PLC ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; IRELAND 
+ ORNBV FH Equity ;SXXR; Orion Oyj ; Health Care ; Pharmaceuticals ; FINLAND 
+ CPG LN Equity ;SXXR; Compass Group PLC ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; BRITAIN 
+ WMH LN Equity ;SXXR; William Hill PLC ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; BRITAIN 
+ GLPG NA Equity ;SXXR; Galapagos NV ; Health Care ; Biotechnology ; BELGIUM 
+ DOM SS Equity ;SXXR; Dometic Group AB ; Consumer Discretionary ; Auto Components ; SWEDEN 
+ ITV LN Equity ;SXXR; ITV PLC ; Communication Services ; Media ; BRITAIN 
+ ICA SS Equity ;SXXR; ICA Gruppen AB ; Consumer Staples ; Food & Staples Retailing ; SWEDEN 
+ HIK LN Equity ;SXXR; Hikma Pharmaceuticals PLC ; Health Care ; Pharmaceuticals ; JORDAN 
+ AZN LN Equity ;SXXR; AstraZeneca PLC ; Health Care ; Pharmaceuticals ; BRITAIN 
+ AHT LN Equity ;SXXR; Ashtead Group PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ ABF LN Equity ;SXXR; Associated British Foods PLC ; Consumer Staples ; Food Products ; BRITAIN 
+ GLB ID Equity ;SXXR; Glanbia PLC ; Consumer Staples ; Food Products ; IRELAND 
+ RMV LN Equity ;SXXR; Rightmove PLC ; Communication Services ; Interactive Media & Services ; BRITAIN 
+ PNDORA DC Equity ;SXXR; Pandora A/S ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; DENMARK 
+ BNZL LN Equity ;SXXR; Bunzl PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ LUN DC Equity ;SXXR; H Lundbeck A/S ; Health Care ; Pharmaceuticals ; DENMARK 
+ SFZN SE Equity ;SXXR; Siegfried Holding AG ; Health Care ; Life Sciences Tools & Services ; SWITZERLAND 
+ CBG LN Equity ;SXXR; Close Brothers Group PLC ; Financials ; Banks ; BRITAIN 
+ SRAIL SE Equity ;SXXR; Stadler Rail AG ; Industrials ; Machinery ; SWITZERLAND 
+ CRDA LN Equity ;SXXR; Croda International PLC ; Materials ; Chemicals ; BRITAIN 
+ GALE SE Equity ;SXXR; Galenica AG ; Health Care ; Health Care Providers & Servic ; SWITZERLAND 
+ UN01 GY Equity ;SXXR; Uniper SE ; Utilities ; Independent Power and Renewabl ; GERMANY 
+ BWY LN Equity ;SXXR; Bellway PLC ; Consumer Discretionary ; Household Durables ; BRITAIN 
+ ECM LN Equity ;SXXR; Electrocomponents PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ DGE LN Equity ;SXXR; Diageo PLC ; Consumer Staples ; Beverages ; BRITAIN 
+ HLMA LN Equity ;SXXR; Halma PLC ; Information Technology ; Electronic Equipment, Instrume ; BRITAIN 
+ HSBA LN Equity ;SXXR; HSBC Holdings PLC ; Financials ; Banks ; BRITAIN 
+ IMI LN Equity ;SXXR; IMI PLC ; Industrials ; Machinery ; BRITAIN 
+ HSX LN Equity ;SXXR; Hiscox Ltd ; Financials ; Insurance ; BERMUDA 
+ UBI FP Equity ;SXXR; Ubisoft Entertainment SA ; Communication Services ; Entertainment ; FRANCE 
+ MGGT LN Equity ;SXXR; Meggitt PLC ; Industrials ; Aerospace & Defense ; BRITAIN 
+ LIGHT NA Equity ;SXXR; Signify NV ; Industrials ; Electrical Equipment ; NETHERLANDS 
+ HWDN LN Equity ;SXXR; Howden Joinery Group PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ MRW LN Equity ;SXXR; Wm Morrison Supermarkets PLC ; Consumer Staples ; Food & Staples Retailing ; BRITAIN 
+ VOD LN Equity ;SXXR; Vodafone Group PLC ; Communication Services ; Wireless Telecommunication Ser ; BRITAIN 
+ UU/ LN Equity ;SXXR; United Utilities Group PLC ; Utilities ; Water Utilities ; BRITAIN 
+ BARC LN Equity ;SXXR; Barclays PLC ; Financials ; Banks ; BRITAIN 
+ RTO LN Equity ;SXXR; Rentokil Initial PLC ; Industrials ; Commercial Services & Supplies ; BRITAIN 
+ NWG LN Equity ;SXXR; Natwest Group PLC ; Financials ; Banks ; BRITAIN 
+ FTI FP Equity ;SXXR; TechnipFMC PLC ; Energy ; Energy Equipment & Services ; BRITAIN 
+ GMAB DC Equity ;SXXR; Genmab A/S ; Health Care ; Biotechnology ; DENMARK 
+ GRI LN Equity ;SXXR; Grainger PLC ; Real Estate ; Real Estate Management & Devel ; BRITAIN 
+ UDG LN Equity ;SXXR; UDG Healthcare PLC ; Health Care ; Health Care Providers & Servic ; IRELAND 
+ SGRO LN Equity ;SXXR; Segro PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ TATE LN Equity ;SXXR; Tate & Lyle PLC ; Consumer Staples ; Food Products ; BRITAIN 
+ SBRY LN Equity ;SXXR; J Sainsbury PLC ; Consumer Staples ; Food & Staples Retailing ; BRITAIN 
+ JD/ LN Equity ;SXXR; JD Sports Fashion PLC ; Consumer Discretionary ; Specialty Retail ; BRITAIN 
+ CEY LN Equity ;SXXR; Centamin PLC ; Materials ; Metals & Mining ; JERSEY 
+ GLE FP Equity ;SXXR; Societe Generale SA ; Financials ; Banks ; FRANCE 
+ EXO IM Equity ;SXXR; EXOR NV ; Financials ; Diversified Financial Services ; NETHERLANDS 
+ SDR LN Equity ;SXXR; Schroders PLC ; Financials ; Capital Markets ; BRITAIN 
+ ENR GY Equity ;SXXR; Siemens Energy AG ; Industrials ; Electrical Equipment ; GERMANY 
+ BKT SQ Equity ;SXXR; Bankinter SA ; Financials ; Banks ; SPAIN 
+ HFG GY Equity ;SXXR; HelloFresh SE ; Consumer Discretionary ; Internet & Direct Marketing Re ; GERMANY 
+ LDO IM Equity ;SXXR; Leonardo SpA ; Industrials ; Aerospace & Defense ; ITALY 
+ SMIN LN Equity ;SXXR; Smiths Group PLC ; Industrials ; Industrial Conglomerates ; BRITAIN 
+ HSV LN Equity ;SXXR; HomeServe PLC ; Industrials ; Commercial Services & Supplies ; BRITAIN 
+ PNN LN Equity ;SXXR; Pennon Group PLC ; Utilities ; Water Utilities ; BRITAIN 
+ STAN LN Equity ;SXXR; Standard Chartered PLC ; Financials ; Banks ; BRITAIN 
+ RSA LN Equity ;SXXR; RSA Insurance Group PLC ; Financials ; Insurance ; BRITAIN 
+ TSCO LN Equity ;SXXR; Tesco PLC ; Consumer Staples ; Food & Staples Retailing ; BRITAIN 
+ STERV FH Equity ;SXXR; Stora Enso Oyj ; Materials ; Paper & Forest Products ; FINLAND 
+ SGE LN Equity ;SXXR; Sage Group PLC/The ; Information Technology ; Software ; BRITAIN 
+ SLA LN Equity ;SXXR; Standard Life Aberdeen PLC ; Financials ; Capital Markets ; BRITAIN 
+ TPK LN Equity ;SXXR; Travis Perkins PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ SAB SQ Equity ;SXXR; Banco de Sabadell SA ; Financials ; Banks ; SPAIN 
+ LLOY LN Equity ;SXXR; Lloyds Banking Group PLC ; Financials ; Banks ; BRITAIN 
+ NEL NO Equity ;SXXR; NEL ASA ; Industrials ; Electrical Equipment ; NORWAY 
+ VWS DC Equity ;SXXR; Vestas Wind Systems A/S ; Industrials ; Electrical Equipment ; DENMARK 
+ DLG LN Equity ;SXXR; Direct Line Insurance Group PL ; Financials ; Insurance ; BRITAIN 
+ TMV GY Equity ;SXXR; TeamViewer AG ; Information Technology ; Software ; GERMANY 
+ TRN LN Equity ;SXXR; Trainline PLC ; Consumer Discretionary ; Internet & Direct Marketing Re ; BRITAIN 
+ ACA FP Equity ;SXXR; Credit Agricole SA ; Financials ; Banks ; FRANCE 
+ MRO LN Equity ;SXXR; Melrose Industries PLC ; Industrials ; Electrical Equipment ; BRITAIN 
+ BAMI IM Equity ;SXXR; Banco BPM SpA ; Financials ; Banks ; ITALY 
+ DPLM LN Equity ;SXXR; Diploma PLC ; Industrials ; Trading Companies & Distributo ; BRITAIN 
+ RBI AV Equity ;SXXR; Raiffeisen Bank International ; Financials ; Banks ; AUSTRIA 
+ LATOB SS Equity ;SXXR; Investment AB Latour ; Industrials ; Industrial Conglomerates ; SWEDEN 
+ IAG LN Equity ;SXXR; International Consolidated Air ; Industrials ; Airlines ; BRITAIN 
+ BP/ LN Equity ;SXXR; BP PLC ; Energy ; Oil, Gas & Consumable Fuels ; BRITAIN 
+ GRF SQ Equity ;SXXR; Grifols SA ; Health Care ; Biotechnology ; SPAIN 
+ BT/A LN Equity ;SXXR; BT Group PLC ; Communication Services ; Diversified Telecommunication ; BRITAIN 
+ FRES LN Equity ;SXXR; Fresnillo PLC ; Materials ; Metals & Mining ; MEXICO 
+ VNA GY Equity ;SXXR; Vonovia SE ; Real Estate ; Real Estate Management & Devel ; GERMANY 
+ NN NA Equity ;SXXR; NN Group NV ; Financials ; Insurance ; NETHERLANDS 
+ FDJ FP Equity ;SXXR; La Francaise des Jeux SAEM ; Consumer Discretionary ; Hotels, Restaurants & Leisure ; FRANCE 
+ KBX GY Equity ;SXXR; Knorr-Bremse AG ; Industrials ; Machinery ; GERMANY 
+ AV/ LN Equity ;SXXR; Aviva PLC ; Financials ; Insurance ; BRITAIN 
+ LGEN LN Equity ;SXXR; Legal & General Group PLC ; Financials ; Insurance ; BRITAIN 
+ PRU LN Equity ;SXXR; Prudential PLC ; Financials ; Insurance ; BRITAIN 
+ ANTO LN Equity ;SXXR; Antofagasta PLC ; Materials ; Metals & Mining ; CHILE 
+ SXS LN Equity ;SXXR; Spectris PLC ; Information Technology ; Electronic Equipment, Instrume ; BRITAIN 
+ SSE LN Equity ;SXXR; SSE PLC ; Utilities ; Electric Utilities ; BRITAIN 
+ MONC IM Equity ;SXXR; Moncler SpA ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; ITALY 
+ WEIR LN Equity ;SXXR; Weir Group PLC/The ; Industrials ; Machinery ; BRITAIN 
+ OR FP Equity ;SXXR; L'Oreal SA ; Consumer Staples ; Personal Products ; FRANCE 
+ DG FP Equity ;SXXR; Vinci SA ; Industrials ; Construction & Engineering ; FRANCE 
+ EMSN SE Equity ;SXXR; EMS-Chemie Holding AG ; Materials ; Chemicals ; SWITZERLAND 
+ ATCOA SS Equity ;SXXR; Atlas Copco AB ; Industrials ; Machinery ; SWEDEN 
+ VOLVB SS Equity ;SXXR; Volvo AB ; Industrials ; Machinery ; SWEDEN 
+ 1COV GY Equity ;SXXR; Covestro AG ; Materials ; Chemicals ; GERMANY 
+ LMP LN Equity ;SXXR; LondonMetric Property PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ RMG LN Equity ;SXXR; Royal Mail PLC ; Industrials ; Air Freight & Logistics ; BRITAIN 
+ IWG LN Equity ;SXXR; IWG PLC ; Real Estate ; Real Estate Management & Devel ; SWITZERLAND 
+ ASML NA Equity ;SXXR; ASML Holding NV ; Information Technology ; Semiconductors & Semiconductor ; NETHERLANDS 
+ VCT LN Equity ;SXXR; Victrex PLC ; Materials ; Chemicals ; BRITAIN 
+ BALDB SS Equity ;SXXR; Fastighets AB Balder ; Real Estate ; Real Estate Management & Devel ; SWEDEN 
+ WIHL SS Equity ;SXXR; Wihlborgs Fastigheter AB ; Real Estate ; Real Estate Management & Devel ; SWEDEN 
+ TEL2B SS Equity ;SXXR; Tele2 AB ; Communication Services ; Wireless Telecommunication Ser ; SWEDEN 
+ DSY FP Equity ;SXXR; Dassault Systemes SE ; Information Technology ; Software ; FRANCE 
+ AVV LN Equity ;SXXR; AVEVA Group PLC ; Information Technology ; Software ; BRITAIN 
+ SOP FP Equity ;SXXR; Sopra Steria Group ; Information Technology ; IT Services ; FRANCE 
+ SAABB SS Equity ;SXXR; Saab AB ; Industrials ; Aerospace & Defense ; SWEDEN 
+ ANDR AV Equity ;SXXR; ANDRITZ AG ; Industrials ; Machinery ; AUSTRIA 
+ CNHI IM Equity ;SXXR; CNH Industrial NV ; Industrials ; Machinery ; BRITAIN 
+ LUNDB SS Equity ;SXXR; L E Lundbergforetagen AB ; Financials ; Diversified Financial Services ; SWEDEN 
+ CCH LN Equity ;SXXR; Coca-Cola HBC AG ; Consumer Staples ; Beverages ; SWITZERLAND 
+ SRT3 GY Equity ;SXXR; Sartorius AG ; Health Care ; Health Care Equipment & Suppli ; GERMANY 
+ MOCORP FH Equity ;SXXR; Metso Outotec Oyj ; Industrials ; Machinery ; FINLAND 
+ EDEN FP Equity ;SXXR; Edenred ; Information Technology ; IT Services ; FRANCE 
+ PRY IM Equity ;SXXR; Prysmian SpA ; Industrials ; Electrical Equipment ; ITALY 
+ AMS SQ Equity ;SXXR; Amadeus IT Group SA ; Information Technology ; IT Services ; SPAIN 
+ CHR DC Equity ;SXXR; Chr Hansen Holding A/S ; Materials ; Chemicals ; DENMARK 
+ HAS LN Equity ;SXXR; Hays PLC ; Industrials ; Professional Services ; BRITAIN 
+ SPX LN Equity ;SXXR; Spirax-Sarco Engineering PLC ; Industrials ; Machinery ; BRITAIN 
+ FPE3 GY Equity ;SXXR; FUCHS PETROLUB SE ; Materials ; Chemicals ; GERMANY 
+ EQNR NO Equity ;SXXR; Equinor ASA ; Energy ; Oil, Gas & Consumable Fuels ; NORWAY 
+ ELIS FP Equity ;SXXR; Elis SA ; Industrials ; Commercial Services & Supplies ; FRANCE 
+ RYA ID Equity ;SXXR; Ryanair Holdings PLC ; Industrials ; Airlines ; IRELAND 
+ AENA SQ Equity ;SXXR; Aena SME SA ; Industrials ; Transportation Infrastructure ; SPAIN 
+ RDSA NA Equity ;SXXR; Royal Dutch Shell PLC ; Energy ; Oil, Gas & Consumable Fuels ; NETHERLANDS 
+ WRT1V FH Equity ;SXXR; Wartsila OYJ Abp ; Industrials ; Machinery ; FINLAND 
+ OMV AV Equity ;SXXR; OMV AG ; Energy ; Oil, Gas & Consumable Fuels ; AUSTRIA 
+ SKAB SS Equity ;SXXR; Skanska AB ; Industrials ; Construction & Engineering ; SWEDEN 
+ AFB SS Equity ;SXXR; AF Poyry AB ; Industrials ; Professional Services ; SWEDEN 
+ UMI BB Equity ;SXXR; Umicore SA ; Materials ; Chemicals ; BELGIUM 
+ DSV DC Equity ;SXXR; DSV PANALPINA A/S ; Industrials ; Air Freight & Logistics ; DENMARK 
+ JMT PL Equity ;SXXR; Jeronimo Martins SGPS SA ; Consumer Staples ; Food & Staples Retailing ; PORTUGAL 
+ CLNX SQ Equity ;SXXR; Cellnex Telecom SA ; Communication Services ; Diversified Telecommunication ; SPAIN 
+ SIG LN Equity ;SXXR; Signature Aviation PLC ; Industrials ; Transportation Infrastructure ; BRITAIN 
+ STMN SE Equity ;SXXR; Straumann Holding AG ; Health Care ; Health Care Equipment & Suppli ; SWITZERLAND 
+ PRX NA Equity ;SXXR; Prosus NV ; Consumer Discretionary ; Internet & Direct Marketing Re ; NETHERLANDS 
+ NZYMB DC Equity ;SXXR; Novozymes A/S ; Materials ; Chemicals ; DENMARK 
+ TEMN SE Equity ;SXXR; Temenos AG ; Information Technology ; Software ; SWITZERLAND 
+ IGG LN Equity ;SXXR; IG Group Holdings PLC ; Financials ; Capital Markets ; BRITAIN 
+ KNEBV FH Equity ;SXXR; Kone Oyj ; Industrials ; Machinery ; FINLAND 
+ BLND LN Equity ;SXXR; British Land Co PLC/The ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ DLN LN Equity ;SXXR; Derwent London PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ TOM NO Equity ;SXXR; TOMRA Systems ASA ; Industrials ; Commercial Services & Supplies ; NORWAY 
+ NOVOB DC Equity ;SXXR; Novo Nordisk A/S ; Health Care ; Pharmaceuticals ; DENMARK 
+ JMAT LN Equity ;SXXR; Johnson Matthey PLC ; Materials ; Chemicals ; BRITAIN 
+ RB/ LN Equity ;SXXR; Reckitt Benckiser Group PLC ; Consumer Staples ; Household Products ; BRITAIN 
+ RR/ LN Equity ;SXXR; Rolls-Royce Holdings PLC ; Industrials ; Aerospace & Defense ; BRITAIN 
+ LAND LN Equity ;SXXR; Land Securities Group PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ AVST LN Equity ;SXXR; Avast PLC ; Information Technology ; Software ; CZECH 
+ TEG GY Equity ;SXXR; TAG Immobilien AG ; Real Estate ; Real Estate Management & Devel ; GERMANY 
+ ALFA SS Equity ;SXXR; Alfa Laval AB ; Industrials ; Machinery ; SWEDEN 
+ BVI FP Equity ;SXXR; Bureau Veritas SA ; Industrials ; Professional Services ; FRANCE 
+ ENTRA NO Equity ;SXXR; Entra ASA ; Real Estate ; Real Estate Management & Devel ; NORWAY 
+ ASM NA Equity ;SXXR; ASM International NV ; Information Technology ; Semiconductors & Semiconductor ; NETHERLANDS 
+ ROR LN Equity ;SXXR; Rotork PLC ; Industrials ; Machinery ; BRITAIN 
+ DIM FP Equity ;SXXR; Sartorius Stedim Biotech ; Health Care ; Life Sciences Tools & Services ; FRANCE 
+ RUI FP Equity ;SXXR; Rubis SCA ; Utilities ; Gas Utilities ; FRANCE 
+ COLR BB Equity ;SXXR; Etablissements Franz Colruyt N ; Consumer Staples ; Food & Staples Retailing ; BELGIUM 
+ QLT LN Equity ;SXXR; Quilter PLC ; Financials ; Capital Markets ; BRITAIN 
+ ICAD FP Equity ;SXXR; ICADE ; Real Estate ; Equity Real Estate Investment ; FRANCE 
+ FI-N SE Equity ;SXXR; Georg Fischer AG ; Industrials ; Machinery ; SWITZERLAND 
+ CMBN SE Equity ;SXXR; Cembra Money Bank AG ; Financials ; Consumer Finance ; SWITZERLAND 
+ ARGX BB Equity ;SXXR; Argenx SE ; Health Care ; Biotechnology ; NETHERLANDS 
+ LISN SE Equity ;SXXR; Chocoladefabriken Lindt & Spru ; Consumer Staples ; Food Products ; SWITZERLAND 
+ CNA LN Equity ;SXXR; Centrica PLC ; Utilities ; Multi-Utilities ; BRITAIN 
+ CAST SS Equity ;SXXR; Castellum AB ; Real Estate ; Real Estate Management & Devel ; SWEDEN 
+ ERICB SS Equity ;SXXR; Telefonaktiebolaget LM Ericsso ; Information Technology ; Communications Equipment ; SWEDEN 
+ JDEP NA Equity ;SXXR; JDE Peet's BV ; Consumer Staples ; Food Products ; NETHERLANDS 
+ SKFB SS Equity ;SXXR; SKF AB ; Industrials ; Machinery ; SWEDEN 
+ SAND SS Equity ;SXXR; Sandvik AB ; Industrials ; Machinery ; SWEDEN 
+ BESI NA Equity ;SXXR; BE Semiconductor Industries NV ; Information Technology ; Semiconductors & Semiconductor ; NETHERLANDS 
+ STB NO Equity ;SXXR; Storebrand ASA ; Financials ; Insurance ; NORWAY 
+ SWON SE Equity ;SXXR; Softwareone Holding AG ; Information Technology ; Electronic Equipment, Instrume ; SWITZERLAND 
+ TRELB SS Equity ;SXXR; Trelleborg AB ; Industrials ; Machinery ; SWEDEN 
+ ILD FP Equity ;SXXR; Iliad SA ; Communication Services ; Diversified Telecommunication ; FRANCE 
+ SECUB SS Equity ;SXXR; Securitas AB ; Industrials ; Commercial Services & Supplies ; SWEDEN 
+ INVEB SS Equity ;SXXR; Investor AB ; Financials ; Diversified Financial Services ; SWEDEN 
+ AALB NA Equity ;SXXR; Aalberts NV ; Industrials ; Machinery ; NETHERLANDS 
+ ASRNL NA Equity ;SXXR; ASR Nederland NV ; Financials ; Insurance ; NETHERLANDS 
+ IDIA SE Equity ;SXXR; Idorsia Ltd ; Health Care ; Biotechnology ; SWITZERLAND 
+ RAA GY Equity ;SXXR; Rational AG ; Industrials ; Machinery ; GERMANY 
+ PKO PW Equity ;SXXR; Powszechna Kasa Oszczednosci B ; Financials ; Banks ; POLAND 
+ PHP LN Equity ;SXXR; Primary Health Properties PLC ; Real Estate ; Equity Real Estate Investment ; BRITAIN 
+ EN FP Equity ;SXXR; Bouygues SA ; Industrials ; Construction & Engineering ; FRANCE 
+ MNG LN Equity ;SXXR; M&G PLC ; Financials ; Diversified Financial Services ; BRITAIN 
+ AKZA NA Equity ;SXXR; Akzo Nobel NV ; Materials ; Chemicals ; NETHERLANDS 
+ ALO FP Equity ;SXXR; Alstom SA ; Industrials ; Machinery ; FRANCE 
+ UTDI GY Equity ;SXXR; United Internet AG ; Communication Services ; Diversified Telecommunication ; GERMANY 
+ SEBA SS Equity ;SXXR; Skandinaviska Enskilda Banken ; Financials ; Banks ; SWEDEN 
+ ISS DC Equity ;SXXR; ISS A/S ; Industrials ; Commercial Services & Supplies ; DENMARK 
+ SHBA SS Equity ;SXXR; Svenska Handelsbanken AB ; Financials ; Banks ; SWEDEN 
+ NHY NO Equity ;SXXR; Norsk Hydro ASA ; Materials ; Metals & Mining ; NORWAY 
+ SBBB SS Equity ;SXXR; Samhallsbyggnadsbolaget i Nord ; Real Estate ; Real Estate Management & Devel ; SWEDEN 
+ BA/ LN Equity ;SXXR; BAE Systems PLC ; Industrials ; Aerospace & Defense ; BRITAIN 
+ HEIA NA Equity ;SXXR; Heineken NV ; Consumer Staples ; Beverages ; NETHERLANDS 
+ DANSKE DC Equity ;SXXR; Danske Bank A/S ; Financials ; Banks ; DENMARK 
+ SCAB SS Equity ;SXXR; Svenska Cellulosa AB SCA ; Materials ; Paper & Forest Products ; SWEDEN 
+ NOKIA FH Equity ;SXXR; Nokia Oyj ; Information Technology ; Communications Equipment ; FINLAND 
+ LOGN SE Equity ;SXXR; Logitech International SA ; Information Technology ; Technology Hardware, Storage & ; SWITZERLAND 
+ LIFCOB SS Equity ;SXXR; Lifco AB ; Industrials ; Industrial Conglomerates ; SWEDEN 
+ ASSAB SS Equity ;SXXR; Assa Abloy AB ; Industrials ; Building Products ; SWEDEN 
+ SIKA SE Equity ;SXXR; Sika AG ; Materials ; Chemicals ; SWITZERLAND 
+ ORP FP Equity ;SXXR; Orpea SA ; Health Care ; Health Care Providers & Servic ; FRANCE 
+ BCVN SE Equity ;SXXR; Banque Cantonale Vaudoise ; Financials ; Banks ; SWITZERLAND 
+ GFS LN Equity ;SXXR; G4S PLC ; Industrials ; Commercial Services & Supplies ; BRITAIN 
+ ABBN SE Equity ;SXXR; ABB Ltd ; Industrials ; Electrical Equipment ; SWITZERLAND 
+ MNDI LN Equity ;SXXR; Mondi PLC ; Materials ; Paper & Forest Products ; BRITAIN 
+ ADEN SE Equity ;SXXR; Adecco Group AG ; Industrials ; Professional Services ; SWITZERLAND 
+ SU FP Equity ;SXXR; Schneider Electric SE ; Industrials ; Electrical Equipment ; FRANCE 
+ BAER SE Equity ;SXXR; Julius Baer Group Ltd ; Financials ; Capital Markets ; SWITZERLAND 
+ HUH1V FH Equity ;SXXR; Huhtamaki Oyj ; Materials ; Containers & Packaging ; FINLAND 
+ ORK NO Equity ;SXXR; Orkla ASA ; Consumer Staples ; Food Products ; NORWAY 
+ BALN SE Equity ;SXXR; Baloise Holding AG ; Financials ; Insurance ; SWITZERLAND 
+ ROCKB DC Equity ;SXXR; ROCKWOOL International A/S ; Industrials ; Building Products ; DENMARK 
+ CFR SE Equity ;SXXR; Cie Financiere Richemont SA ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; SWITZERLAND 
+ NESTE FH Equity ;SXXR; Neste Oyj ; Energy ; Oil, Gas & Consumable Fuels ; FINLAND 
+ CLN SE Equity ;SXXR; Clariant AG ; Materials ; Chemicals ; SWITZERLAND 
+ KGH PW Equity ;SXXR; KGHM Polska Miedz SA ; Materials ; Metals & Mining ; POLAND 
+ BILL SS Equity ;SXXR; BillerudKorsnas AB ; Materials ; Containers & Packaging ; SWEDEN 
+ CSGN SE Equity ;SXXR; Credit Suisse Group AG ; Financials ; Capital Markets ; SWITZERLAND 
+ KSP ID Equity ;SXXR; Kingspan Group PLC ; Industrials ; Building Products ; IRELAND 
+ HEXAB SS Equity ;SXXR; Hexagon AB ; Information Technology ; Electronic Equipment, Instrume ; SWEDEN 
+ GEBN SE Equity ;SXXR; Geberit AG ; Industrials ; Building Products ; SWITZERLAND 
+ GIVN SE Equity ;SXXR; Givaudan SA ; Materials ; Chemicals ; SWITZERLAND 
+ PGHN SE Equity ;SXXR; Partners Group Holding AG ; Financials ; Capital Markets ; SWITZERLAND 
+ AIR FP Equity ;SXXR; Airbus SE ; Industrials ; Aerospace & Defense ; FRANCE 
+ BEIJB SS Equity ;SXXR; Beijer Ref AB ; Industrials ; Trading Companies & Distributo ; SWEDEN 
+ KNIN SE Equity ;SXXR; Kuehne + Nagel International A ; Industrials ; Marine ; SWITZERLAND 
+ GET FP Equity ;SXXR; Getlink SE ; Industrials ; Transportation Infrastructure ; FRANCE 
+ LHN SE Equity ;SXXR; LafargeHolcim Ltd ; Materials ; Construction Materials ; SWITZERLAND 
+ SMDS LN Equity ;SXXR; DS Smith PLC ; Materials ; Containers & Packaging ; BRITAIN 
+ SWEDA SS Equity ;SXXR; Swedbank AB ; Financials ; Banks ; SWEDEN 
+ WALLB SS Equity ;SXXR; Wallenstam AB ; Real Estate ; Real Estate Management & Devel ; SWEDEN 
+ LONN SE Equity ;SXXR; Lonza Group AG ; Health Care ; Life Sciences Tools & Services ; SWITZERLAND 
+ FABG SS Equity ;SXXR; Fabege AB ; Real Estate ; Real Estate Management & Devel ; SWEDEN 
+ NESN SE Equity ;SXXR; Nestle SA ; Consumer Staples ; Food Products ; SWITZERLAND 
+ UPM FH Equity ;SXXR; UPM-Kymmene Oyj ; Materials ; Paper & Forest Products ; FINLAND 
+ NOVN SE Equity ;SXXR; Novartis AG ; Health Care ; Pharmaceuticals ; SWITZERLAND 
+ ROG SE Equity ;SXXR; Roche Holding AG ; Health Care ; Pharmaceuticals ; SWITZERLAND 
+ LR FP Equity ;SXXR; Legrand SA ; Industrials ; Electrical Equipment ; FRANCE 
+ SCMN SE Equity ;SXXR; Swisscom AG ; Communication Services ; Diversified Telecommunication ; SWITZERLAND 
+ SGSN SE Equity ;SXXR; SGS SA ; Industrials ; Professional Services ; SWITZERLAND 
+ ATO FP Equity ;SXXR; Atos SE ; Information Technology ; IT Services ; FRANCE 
+ KINVB SS Equity ;SXXR; Kinnevik AB ; Financials ; Diversified Financial Services ; SWEDEN 
+ SLHN SE Equity ;SXXR; Swiss Life Holding AG ; Financials ; Insurance ; SWITZERLAND 
+ LEG GY Equity ;SXXR; LEG Immobilien AG ; Real Estate ; Real Estate Management & Devel ; GERMANY 
+ SOON SE Equity ;SXXR; Sonova Holding AG ; Health Care ; Health Care Equipment & Suppli ; SWITZERLAND 
+ UCB BB Equity ;SXXR; UCB SA ; Health Care ; Pharmaceuticals ; BELGIUM 
+ MAERSKB DC Equity ;SXXR; AP Moller - Maersk A/S ; Industrials ; Marine ; DENMARK 
+ SREN SE Equity ;SXXR; Swiss Re AG ; Financials ; Insurance ; SWITZERLAND 
+ VIFN SE Equity ;SXXR; Vifor Pharma AG ; Health Care ; Pharmaceuticals ; SWITZERLAND 
+ UBSG SE Equity ;SXXR; UBS Group AG ; Financials ; Capital Markets ; SWITZERLAND 
+ ICP LN Equity ;SXXR; Intermediate Capital Group PLC ; Financials ; Capital Markets ; BRITAIN 
+ UHR SE Equity ;SXXR; Swatch Group AG/The ; Consumer Discretionary ; Textiles, Apparel & Luxury Goo ; SWITZERLAND 
+ ZURN SE Equity ;SXXR; Zurich Insurance Group AG ; Financials ; Insurance ; SWITZERLAND 
+ SCHP SE Equity ;SXXR; Schindler Holding AG ; Industrials ; Machinery ; SWITZERLAND 
+ AKE FP Equity ;SXXR; Arkema SA ; Materials ; Chemicals ; FRANCE 
+ SVT LN Equity ;SXXR; Severn Trent PLC ; Utilities ; Water Utilities ; BRITAIN 
+ III LN Equity ;SXXR; 3i Group PLC ; Financials ; Capital Markets ; BRITAIN 
+ RBREW DC Equity ;SXXR; Royal Unibrew A/S ; Consumer Staples ; Beverages ; DENMARK 
+ RI FP Equity ;SXXR; Pernod Ricard SA ; Consumer Staples ; Beverages ; FRANCE 
+ RCO FP Equity ;SXXR; Remy Cointreau SA ; Consumer Staples ; Beverages ; FRANCE 
+ COFB BB Equity ;SXXR; Cofinimmo SA ; Real Estate ; Equity Real Estate Investment ; BELGIUM 
+ TIT IM Equity ;SXXR; Telecom Italia SpA/Milano ; Communication Services ; Diversified Telecommunication ; ITALY 
+ AMP IM Equity ;SXXR; Amplifon SpA ; Health Care ; Health Care Providers & Servic ; ITALY 
+ HOLMB SS Equity ;SXXR; Holmen AB ; Materials ; Paper & Forest Products ; SWEDEN 
+ FHZN SE Equity ;SXXR; Flughafen Zurich AG ; Industrials ; Transportation Infrastructure ; SWITZERLAND 
+ HELN SE Equity ;SXXR; Helvetia Holding AG ; Financials ; Insurance ; SWITZERLAND 
+ PEO PW Equity ;SXXR; Bank Polska Kasa Opieki SA ; Financials ; Banks ; POLAND 
+ GLEN LN Equity ;SXXR; Glencore PLC ; Materials ; Metals & Mining ; SWITZERLAND 
