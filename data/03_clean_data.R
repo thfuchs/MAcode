@@ -83,7 +83,11 @@ if (nrow(data_ni[!complete.cases(value), .N, by = "ticker"]) > 0) rlang::abort(
 if (nrow(data_eps[!complete.cases(value), .N, by = "ticker"]) > 0) rlang::abort(
   message = "Quick check (1c) failed.\nCheck missing values in data_eps")
 
+# Clean dummies
+dummies <- readRDS("data/dummies.rds")[ticker %in% unique(data_ebit$ticker)]
+
 ### Save cleaned data ----------------------------------------------------------
+saveRDS(dummies, file = "data/dummies.rds", compress = "xz")
 saveRDS(data_ebit, file = "data/data_ebit.rds", compress = "xz")
 saveRDS(data_ni, file = "data/data_ni.rds", compress = "xz")
 saveRDS(data_eps, file = "data/data_eps.rds", compress = "xz")
