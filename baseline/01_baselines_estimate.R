@@ -24,7 +24,6 @@ cv_setting <- list(
 
 multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 
-
 ### EBIT -----------------------------------------------------------------------
 data_ebit <- readRDS("data/data_ebit.rds")[, .(ticker, index, value)]
 
@@ -36,7 +35,7 @@ forecast <- furrr::future_map(
   }, otherwise = NULL),
   .options = furrr::furrr_options(seed = 123) # seed for bootstrapped based PI
 )
-toSlack("Baseline EBIT estimation finished!")
+toSlack("Baseline EBIT estimation finished")
 
 fc_baselines_ebit <- purrr::compact(forecast)
 str(fc_baselines_ebit, max.level = 1)
@@ -54,7 +53,7 @@ forecast <- furrr::future_map(
   }, otherwise = NULL),
   .options = furrr::furrr_options(seed = 123) # seed for bootstrapped based PI
 )
-toSlack("Baseline Net Income estimation finished!")
+toSlack("Baseline Net Income estimation finished")
 
 fc_baselines_ni <- purrr::compact(forecast)
 str(fc_baselines_ni, max.level = 1)
@@ -72,7 +71,7 @@ forecast <- furrr::future_map(
   }, otherwise = NULL),
   .options = furrr::furrr_options(seed = 123) # seed for bootstrapped based PI
 )
-toSlack("Baseline EPS estimation finished!")
+toSlack("Baseline EPS estimation finished")
 
 fc_baselines_eps <- purrr::compact(forecast)
 str(fc_baselines_eps, max.level = 1)
