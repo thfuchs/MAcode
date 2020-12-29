@@ -1,7 +1,7 @@
-######################### 01_baselines_estimate ################################
+############################ estimate_arima.R ##################################
 
 ################################################################################
-#### Computation of cross-validated ARIMA forecasts and evaluation scores ######
+### Computation of cross-validated ARIMA forecasts and evaluation scores     ###
 ################################################################################
 
 ### Settings -------------------------------------------------------------------
@@ -35,12 +35,12 @@ forecast <- furrr::future_map(
   }, otherwise = NULL),
   .options = furrr::furrr_options(seed = 123) # seed for bootstrapped based PI
 )
-toSlack("ARIMA EBIT estimation finished")
 
 fc_arima_ebit <- purrr::compact(forecast)
-str(fc_arima_ebit, max.level = 1)
+# str(fc_arima_ebit, max.level = 1)
 
-saveRDS(fc_arima_ebit, file = "arima/fc_arima_ebit.rds")
+saveRDS(fc_arima_ebit, file = "02_arima/fc_arima_ebit.rds", compress = "xz")
+toSlack("ARIMA EBIT estimation succesfully saved")
 
 ### Net Income -----------------------------------------------------------------
 data_ni <- readRDS("data/data_ni.rds")[, .(ticker, index, value)]
@@ -53,12 +53,12 @@ forecast <- furrr::future_map(
   }, otherwise = NULL),
   .options = furrr::furrr_options(seed = 123) # seed for bootstrapped based PI
 )
-toSlack("ARIMA Net Income estimation finished")
 
 fc_arima_ni <- purrr::compact(forecast)
-str(fc_arima_ni, max.level = 1)
+# str(fc_arima_ni, max.level = 1)
 
-saveRDS(fc_arima_ni, file = "arima/fc_arima_ni.rds")
+saveRDS(fc_arima_ni, file = "02_arima/fc_arima_ni.rds", compress = "xz")
+toSlack("ARIMA Net Income estimation succesfully saved")
 
 ### EPS -----------------------------------------------------------------
 data_eps <- readRDS("data/data_eps.rds")[, .(ticker, index, value)]
@@ -71,9 +71,9 @@ forecast <- furrr::future_map(
   }, otherwise = NULL),
   .options = furrr::furrr_options(seed = 123) # seed for bootstrapped based PI
 )
-toSlack("ARIMA EPS estimation finished")
 
 fc_arima_eps <- purrr::compact(forecast)
-str(fc_arima_eps, max.level = 1)
+# str(fc_arima_eps, max.level = 1)
 
-saveRDS(fc_arima_eps, file = "arima/fc_arima_eps.rds")
+saveRDS(fc_arima_eps, file = "02_arima/fc_arima_eps.rds", compress = "xz")
+toSlack("ARIMA EPS estimation succesfully saved")
