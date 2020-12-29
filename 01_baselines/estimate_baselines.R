@@ -1,7 +1,7 @@
 ######################### 01_baselines_estimate ################################
 
 ################################################################################
-### Computation of cross-validated baseline forecasts and evaluation scores ####
+### Computation of cross-validated baseline forecasts and evaluation scores  ###
 ################################################################################
 
 ### Settings -------------------------------------------------------------------
