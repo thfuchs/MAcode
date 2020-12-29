@@ -751,7 +751,7 @@
     },
     "tsRNN": {
       "Package": "tsRNN",
-      "Version": "0.1.3",
+      "Version": "0.1.4",
       "Source": "GitHub",
       "Remotes": "thfuchs/testr",
       "RemoteType": "github",
@@ -759,8 +759,8 @@
       "RemoteRepo": "tsRNN",
       "RemoteUsername": "thfuchs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "b984e0fffdcf454feccd3e68129fd85000578043",
-      "Hash": "9e90e216f30139f2c5c26df3c157d736"
+      "RemoteSha": "20579d191ac7169081a44f49fd43e52972e5c89d",
+      "Hash": "0fd9ec141dc5c02df365bd36253f08ec"
     },
     "tseries": {
       "Package": "tseries",
