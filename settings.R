@@ -1,10 +1,8 @@
-rm(list = ls())
-
 library(data.table)
 library(tsRNN)
-# library(future)
-# library(furrr)
-# plan(multisession)
+library(future)
+library(furrr)
+plan(multisession)
 
 dummies <- readRDS("data/dummies.rds")
 
