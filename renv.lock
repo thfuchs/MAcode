@@ -8,6 +8,11 @@
       }
     ]
   },
+  "Python": {
+    "Version": "3.6.12",
+    "Type": "conda",
+    "Name": null
+  },
   "Packages": {
     "GPfit": {
       "Package": "GPfit",
@@ -151,10 +156,10 @@
     },
     "data.table": {
       "Package": "data.table",
-      "Version": "1.13.4",
+      "Version": "1.13.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "626afb25b020646f53105e6485e695c6"
+      "Hash": "813fa8857aaa949b243e2e0b4abb8592"
     },
     "desc": {
       "Package": "desc",
@@ -256,10 +261,10 @@
     },
     "ggplot2": {
       "Package": "ggplot2",
-      "Version": "3.3.2",
+      "Version": "3.3.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "4ded8b439797f7b1693bd3d238d0106b"
+      "Hash": "3eb6477d01eb5bbdc03f7d5f70f2733e"
     },
     "globals": {
       "Package": "globals",
@@ -592,10 +597,10 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "0.4.9",
+      "Version": "0.4.10",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9d7aba7bed9a79e2403b4777428a2b12"
+      "Hash": "599df23c40a4fce9c7b4764f28c37857"
     },
     "rmarkdown": {
       "Package": "rmarkdown",
@@ -759,8 +764,8 @@
       "RemoteRepo": "tsRNN",
       "RemoteUsername": "thfuchs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "20579d191ac7169081a44f49fd43e52972e5c89d",
-      "Hash": "0fd9ec141dc5c02df365bd36253f08ec"
+      "RemoteSha": "c14275350253a6ce8aa5e4314d2f7785a4ab7ef4",
+      "Hash": "c2d218edcffe89955116bb74d4568f34"
     },
     "tseries": {
       "Package": "tseries",
@@ -879,9 +884,5 @@
       "Repository": "CRAN",
       "Hash": "c2ea03282caa1f6972dc84fc5bf671cc"
     }
-  },
-  "Python": {
-    "Version": "3.6.9",
-    "Type": "conda"
   }
 }
