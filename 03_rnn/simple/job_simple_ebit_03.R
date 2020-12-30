@@ -10,13 +10,13 @@ rm(list = ls())
 source("utils.R")
 source("settings.R")
 
-load("03_rnn/simple/fc_ebit_test_rnn_bayes.rda")
-load("03_rnn/simple/fc_ebit_test_rnn_prediction.rda")
+readRDS("03_rnn/simple/fc_ebit_rnn_bayes.rds")
+readRDS("03_rnn/simple/fc_ebit_rnn_prediction.rds")
 
 multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 
 ### Job ------------------------------------------------------------------------
-fc_ebit_test_rnn_eval <- tune_keras_rnn_eval(
+fc_ebit_rnn_eval <- tune_keras_rnn_eval(
   fc_sample = fc_ebit_test_rnn_prediction,
   cv_setting = cv_setting_test,
   bayes_best_par = purrr::map(fc_ebit_test_rnn_bayes, "Best_Par"),
@@ -26,7 +26,7 @@ fc_ebit_test_rnn_eval <- tune_keras_rnn_eval(
   level = 95
 )
 
-save(fc_ebit_test_rnn_eval, file = "03_rnn/simple/fc_ebit_test_rnn_eval.rda")
+saveRDS(fc_ebit_rnn_eval, file = "03_rnn/simple/fc_ebit_test_rnn_eval.rds", compress = "xz")
 
 # Success / Failure message
 if (length(purrr::compact(fc_ebit_test_rnn_eval)) > 0)
