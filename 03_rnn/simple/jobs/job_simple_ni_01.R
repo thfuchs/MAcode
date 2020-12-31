@@ -1,4 +1,4 @@
-############################ job_simple_ebit_01.R ##############################
+############################# job_simple_ni_01.R ###############################
 
 ################################################################################
 ### Cross-validated tuning process for simple RNN on time series data        ###
@@ -21,15 +21,15 @@ tuning_bounds <- list(
   learning_rate = c(0.001, 0.01)
 )
 
-data_ebit <- readRDS("data/data_ebit.rds")[ticker %in% c("CAT_UN", "HOLMB_SS"), .(ticker, index, value)]
-companies <- unique(data_ebit$ticker)
+data_ni <- readRDS("data/data_ni.rds")[, .(ticker, index, value)]
+companies <- unique(data_ni$ticker)
 
 tuning_results <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
-    d <- data_ebit[ticker == x]
+    d <- data_ni[ticker == x]
     toSlack(paste0(
-      "Start Simple RNN EBIT Bayes Optimization for ",
+      "Start Simple RNN Net Income Bayes Optimization for ",
       x, " (", which(companies == x), "/", length(companies), ")"))
     tune_keras_rnn_bayesoptim(
       data = d,
@@ -44,10 +44,10 @@ tuning_results <- furrr::future_map(
   .options = furrr::furrr_options(seed = 123)
 )
 
-fc_ebit_rnn_bayes <- purrr::compact(purrr::set_names(tuning_results, companies))
+fc_ni_rnn_bayes <- purrr::compact(purrr::set_names(tuning_results, companies))
 
 # Save and send Success / Failure message
-if (length(fc_ebit_rnn_bayes) > 0) {
-  saveRDS(fc_ebit_rnn_bayes, file = "03_rnn/simple/fc_ebit_rnn_bayes.rds", compress = "xz")
-  toSlack("Simple RNN EBIT Bayes Optimization finished")
-} else toSlack("Simple RNN EBIT Bayes Optimization failed")
+if (length(fc_ni_rnn_bayes) > 0) {
+  saveRDS(fc_ni_rnn_bayes, file = "03_rnn/simple/results/fc_ni_rnn_bayes.rds", compress = "xz")
+  toSlack("Simple RNN Net Income Bayes Optimization finished")
+} else toSlack("Simple RNN Net Income Bayes Optimization failed")
