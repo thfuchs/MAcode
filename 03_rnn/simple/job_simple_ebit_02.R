@@ -14,6 +14,8 @@ data_ebit <- readRDS("data/data_ebit.rds")[ticker %in% c("CAT_UN", "HOLMB_SS"), 
 companies <- unique(data_ebit$ticker)
 fc_ebit_rnn_bayes <- readRDS("03_rnn/simple/fc_ebit_rnn_bayes.rds")
 
+stopifnot(all(companies == names(fc_ebit_rnn_bayes)))
+
 ### Job ------------------------------------------------------------------------
 forecast <- furrr::future_map(
   companies,
