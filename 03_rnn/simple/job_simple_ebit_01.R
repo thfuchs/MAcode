@@ -25,7 +25,7 @@ data_ebit <- readRDS("data/data_ebit.rds")[ticker %in% c("CAT_UN", "HOLMB_SS"), 
 companies <- unique(data_ebit$ticker)
 
 tuning_results <- furrr::future_map(
-  unique(data_ebit$ticker),
+  companies,
   purrr::possibly(function(x) {
     d <- data_ebit[ticker == x]
     toSlack(paste0(
@@ -44,11 +44,10 @@ tuning_results <- furrr::future_map(
   .options = furrr::furrr_options(seed = 123)
 )
 
-fc_ebit_rnn_bayes <- purrr::compact(tuning_results)
+fc_ebit_rnn_bayes <- purrr::compact(purrr::set_names(tuning_results, companies))
 
-saveRDS(fc_ebit_rnn_bayes, file = "03_rnn/simple/fc_ebit_rnn_bayes.rds", compress = "xz")
-
-# Success / Failure message
-if (length(fc_ebit_rnn_bayes) > 0)
-  toSlack("Simple RNN EBIT Bayes Optimization finished") else
-    toSlack("Simple RNN EBIT Bayes Optimization failed")
+# Save and send Success / Failure message
+if (length(fc_ebit_rnn_bayes) > 0) {
+  saveRDS(fc_ebit_rnn_bayes, file = "03_rnn/simple/fc_ebit_rnn_bayes.rds", compress = "xz")
+  toSlack("Simple RNN EBIT Bayes Optimization finished")
+} else toSlack("Simple RNN EBIT Bayes Optimization failed")
