@@ -1,4 +1,4 @@
-############################ job_simple_ebit_03.R ##############################
+############################# job_simple_eps_03.R ##############################
 
 ################################################################################
 ### Evaluation on cross-validated forecasts                                  ###
@@ -10,20 +10,20 @@ rm(list = ls())
 source("utils.R")
 source("settings.R")
 
-fc_ebit_rnn_bayes <- readRDS("03_rnn/simple/fc_ebit_rnn_bayes.rds")
-fc_ebit_rnn_prediction <- readRDS("03_rnn/simple/fc_ebit_rnn_prediction.rds")
+fc_eps_rnn_bayes <- readRDS("03_rnn/simple/results/fc_eps_rnn_bayes.rds")
+fc_eps_rnn_prediction <- readRDS("03_rnn/simple/results/fc_eps_rnn_prediction.rds")
 
-stopifnot(all(names(fc_ebit_rnn_bayes) == names(fc_ebit_rnn_prediction)))
+stopifnot(all(names(fc_eps_rnn_bayes) == names(fc_eps_rnn_prediction)))
 
-companies <- names(fc_ebit_rnn_prediction)
+companies <- names(fc_eps_rnn_prediction)
 multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 
 ### Job ------------------------------------------------------------------------
 results <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
-    fc <- fc_ebit_rnn_prediction[[x]]
-    bayes <- fc_ebit_rnn_bayes[[x]]
+    fc <- fc_eps_rnn_prediction[[x]]
+    bayes <- fc_eps_rnn_bayes[[x]]
     tune_keras_rnn_eval(
       fc_sample = fc,
       cv_setting = cv_setting_test,
@@ -36,10 +36,10 @@ results <- furrr::future_map(
   }, otherwise = NULL, quiet = FALSE)
 )
 
-fc_ebit_rnn_eval <- purrr::compact(purrr::set_names(results, companies))
+fc_eps_rnn_eval <- purrr::compact(purrr::set_names(results, companies))
 
 # Success / Failure message
-if (length(purrr::compact(fc_ebit_rnn_eval)) > 0) {
-  saveRDS(fc_ebit_rnn_eval, file = "03_rnn/simple/fc_ebit_rnn_eval.rds", compress = "xz")
-  toSlack("Simple RNN EBIT evaluation finished")
-} else toSlack("Error: Simple RNN EBIT evaluation failed")
+if (length(purrr::compact(fc_eps_rnn_eval)) > 0) {
+  saveRDS(fc_eps_rnn_eval, file = "03_rnn/simple/results/fc_eps_rnn_eval.rds", compress = "xz")
+  toSlack("Simple RNN EPS evaluation finished")
+} else toSlack("Error: Simple RNN EPS evaluation failed")
