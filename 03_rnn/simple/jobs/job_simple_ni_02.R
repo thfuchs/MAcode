@@ -12,6 +12,7 @@ source("settings.R")
 
 data_ni <- readRDS("data/data_ni.rds")[, .(ticker, index, value)]
 companies <- unique(data_ni$ticker)
+overall <- trunc(length(companies) / cores)
 fc_ni_rnn_bayes <- readRDS("03_rnn/simple/results/fc_ni_rnn_bayes.rds")
 
 stopifnot(all(companies == names(fc_ni_rnn_bayes)))
@@ -21,6 +22,13 @@ forecast <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
     d <- data_ni[ticker == x]
+    current <- which(companies == x)
+    if (current <= overall) {
+      resp <- toSlack(paste0(
+        "Simple RNN EPS Bayes Optimization: Starting ", x, "\n",
+        round(current/overall * 100, 2), "% (", current, "/", overall, ")"
+      ))
+    }
     bayes <- fc_ni_rnn_bayes[[x]]
     toSlack(paste0(
       "Start Simple RNN Net Income Prediction for ",

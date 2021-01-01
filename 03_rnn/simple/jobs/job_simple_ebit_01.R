@@ -23,14 +23,19 @@ tuning_bounds <- list(
 
 data_ebit <- readRDS("data/data_ebit.rds")[, .(ticker, index, value)]
 companies <- unique(data_ebit$ticker)
+overall <- trunc(length(companies) / cores)
 
 tuning_results <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
     d <- data_ebit[ticker == x]
-    toSlack(paste0(
-      "Start Simple RNN EBIT Bayes Optimization for ",
-      x, " (", which(companies == x), "/", length(companies), ")"))
+    current <- which(companies == x)
+    if (current <= overall) {
+      resp <- toSlack(paste0(
+        "Simple RNN EPS Bayes Optimization: Starting ", x, "\n",
+        round(current/overall * 100, 2), "% (", current, "/", overall, ")"
+      ))
+    }
     tune_keras_rnn_bayesoptim(
       data = d,
       col_id = "ticker",

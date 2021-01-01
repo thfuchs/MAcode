@@ -16,12 +16,20 @@ fc_eps_rnn_prediction <- readRDS("03_rnn/simple/results/fc_eps_rnn_prediction.rd
 stopifnot(all(names(fc_eps_rnn_bayes) == names(fc_eps_rnn_prediction)))
 
 companies <- names(fc_eps_rnn_prediction)
+overall <- trunc(length(companies) / cores)
 multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 
 ### Job ------------------------------------------------------------------------
 results <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
+    current <- which(companies == x)
+    if (current <= overall) {
+      resp <- toSlack(paste0(
+        "Simple RNN EPS Bayes Optimization: Starting ", x, "\n",
+        round(current/overall * 100, 2), "% (", current, "/", overall, ")"
+      ))
+    }
     fc <- fc_eps_rnn_prediction[[x]]
     bayes <- fc_eps_rnn_bayes[[x]]
     tune_keras_rnn_eval(

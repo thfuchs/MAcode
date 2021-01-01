@@ -3,6 +3,7 @@ library(tsRNN)
 library(future)
 library(furrr)
 plan(multisession)
+cores <- future::availableCores()
 
 dummies <- readRDS("data/dummies.rds")
 
