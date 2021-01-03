@@ -1,5 +1,6 @@
 library(data.table)
 library(tsRNN)
+library(keras)
 library(future)
 library(furrr)
 plan(multisession)
