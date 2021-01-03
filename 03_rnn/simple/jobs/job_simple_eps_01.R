@@ -30,13 +30,7 @@ tuning_results <- furrr::future_map(
   purrr::possibly(function(x) {
     d <- data_eps[ticker == x]
     current <- which(companies == x)
-    if (current <= overall) {
-      resp <- toSlack(paste0(
-        "Simple RNN EPS Bayes Optimization: Starting ", x, "\n",
-        round(current/overall * 100, 2), "% (", current, "/", overall, ")"
-      ))
-    }
-    tune_keras_rnn_bayesoptim(
+    result <- tune_keras_rnn_bayesoptim(
       data = d,
       col_id = "ticker",
       col_date = "index",
@@ -45,6 +39,17 @@ tuning_results <- furrr::future_map(
       cv_setting = cv_setting_tune,
       tuning_bounds = tuning_bounds
     )
+    if (!is.null(result)) RDStoS3(
+      data = result,
+      filename = paste0("fc_eps_rnn_bayes_", x, ".rds"),
+      s3_prefix = "simple/bayes/eps/"
+    )
+    if (current <= overall) toSlack(paste0(
+      "Simple RNN EPS Bayes Optimization: Finished ", x, "\n",
+      round(current/overall * 100, 2), "% (", current, "/", overall, ")"
+    ))
+    keras::k_clear_session()
+    return(result)
   }, otherwise = NULL, quiet = FALSE),
   .options = furrr::furrr_options(seed = 123)
 )
@@ -54,5 +59,6 @@ fc_eps_rnn_bayes <- purrr::compact(purrr::set_names(tuning_results, companies))
 # Save and send Success / Failure message
 if (length(fc_eps_rnn_bayes) > 0) {
   saveRDS(fc_eps_rnn_bayes, file = "03_rnn/simple/results/fc_eps_rnn_bayes.rds", compress = "xz")
+  RDStoS3(data = result, filename = "fc_eps_rnn_bayes.rds", s3_prefix = "simple/")
   toSlack("Simple RNN EPS Bayes Optimization finished")
 } else toSlack("Simple RNN EPS Bayes Optimization failed")
