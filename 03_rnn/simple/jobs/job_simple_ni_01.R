@@ -59,6 +59,6 @@ fc_ni_rnn_bayes <- purrr::compact(purrr::set_names(tuning_results, companies))
 # Save and send Success / Failure message
 if (length(fc_ni_rnn_bayes) > 0) {
   saveRDS(fc_ni_rnn_bayes, file = "03_rnn/simple/results/fc_ni_rnn_bayes.rds", compress = "xz")
-  RDStoS3(data = result, filename = "fc_ni_rnn_bayes.rds", s3_prefix = "simple/")
+  RDStoS3(data = fc_ni_rnn_bayes, filename = "fc_ni_rnn_bayes.rds", s3_prefix = "simple/")
   toSlack("Simple RNN Net Income Bayes Optimization finished")
 } else toSlack("Simple RNN Net Income Bayes Optimization failed")
