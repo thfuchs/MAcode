@@ -42,3 +42,25 @@ RDStoS3 <- function(data, filename, s3_prefix) {
     return(FALSE)
   })
 }
+hdf5toS3 <- function(files, id, s3_prefix) {
+  tryCatch({
+    bin <- sapply(files, function(file) {
+      file_name <- gsub("\\d+_\\d+_", "", basename(file))
+      aws.s3::put_object(
+        file = file,
+        object = paste0(s3_prefix, file_name),
+        bucket = Sys.getenv("AWS_BUCKET")
+      )
+    })
+    if (!all(bin)) message("Error in AWS S3 API: Could not save model")
+    return(TRUE)
+  },
+  error = function(err) {
+    message("Error in hdf5toS3: ", err)
+    return(FALSE)
+  },
+  warning = function(war) {
+    message("Warning in hdf5toS3: ", war)
+    return(FALSE)
+  })
+}
