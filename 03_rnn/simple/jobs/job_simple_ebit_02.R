@@ -56,12 +56,11 @@ forecast_results <- furrr::future_map(
       round(current/overall * 100, 2), "% (", current, "/", overall, ")"
     ))
     # clear temporary files and keras session
-    keras::k_clear_session()
     file.remove(tmp_files)
+    keras::k_clear_session()
     # output
     return(result)
-  }, otherwise = NULL, quiet = FALSE),
-  .options = furrr::furrr_options(seed = 123)
+  }, otherwise = NULL, quiet = FALSE)
 )
 
 fc_ebit_rnn_predict <- purrr::compact(purrr::set_names(forecast_results, companies))
