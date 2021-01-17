@@ -51,17 +51,17 @@
     },
     "Rcpp": {
       "Package": "Rcpp",
-      "Version": "1.0.5",
+      "Version": "1.0.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "125dc7a0ed375eb68c0ce533b48d291f"
+      "Hash": "dbb5e436998a7eba5a9d682060533338"
     },
     "RcppArmadillo": {
       "Package": "RcppArmadillo",
-      "Version": "0.10.1.2.0",
+      "Version": "0.10.1.2.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "1a885965adade4b8629c478a3b3c2cf7"
+      "Hash": "c66578fcae4cd6f42bddffee8a67f19b"
     },
     "TTR": {
       "Package": "TTR",
@@ -149,10 +149,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.2.4",
+      "Version": "0.2.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ba66e5a750d39067d888aa7af797fed2"
+      "Hash": "8b9a10255e862eb99e38fa8b0caa6c0d"
     },
     "crayon": {
       "Package": "crayon",
@@ -184,10 +184,10 @@
     },
     "diffobj": {
       "Package": "diffobj",
-      "Version": "0.3.2",
+      "Version": "0.3.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "16533929cf545f3c9b796780cccf5eff"
+      "Hash": "55fae7ec1418d2a47bd552571673d1af"
     },
     "digest": {
       "Package": "digest",
@@ -198,10 +198,10 @@
     },
     "dplyr": {
       "Package": "dplyr",
-      "Version": "1.0.2",
+      "Version": "1.0.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d0509913b27ea898189ee664b6030dc2"
+      "Hash": "365f8c3650ab95582e600f160fd5fb88"
     },
     "ellipsis": {
       "Package": "ellipsis",
@@ -219,10 +219,10 @@
     },
     "fansi": {
       "Package": "fansi",
-      "Version": "0.4.1",
+      "Version": "0.4.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "7fce217eaaf8016e72065e85c73027b5"
+      "Hash": "fea074fb67fe4c25d47ad09087da847d"
     },
     "farver": {
       "Package": "farver",
@@ -485,10 +485,10 @@
     },
     "parallelly": {
       "Package": "parallelly",
-      "Version": "1.22.0",
+      "Version": "1.23.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "c8cd9aa518ef4b08bc10aa17b548c27c"
+      "Hash": "2f841d7915986a8fd995ab4ec105dd1b"
     },
     "patchwork": {
       "Package": "patchwork",
@@ -709,15 +709,15 @@
     },
     "testr": {
       "Package": "testr",
-      "Version": "0.0.2",
+      "Version": "0.0.5",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "thfuchs",
       "RemoteRepo": "testr",
-      "RemoteRef": "master",
-      "RemoteSha": "925650f7068de19f877e6d70601bbae57c724fcb",
-      "Hash": "8069da7876aa0b5e027ad17b1743ab42"
+      "RemoteUsername": "thfuchs",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "12845ff02f593922a71d4aed8324293bf5077c12",
+      "Hash": "c80a524a621cdac0af73a349add8a1a9"
     },
     "testthat": {
       "Package": "testthat",
@@ -735,10 +735,10 @@
     },
     "tibble": {
       "Package": "tibble",
-      "Version": "3.0.4",
+      "Version": "3.0.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "71dffd8544691c520dd8e41ed2d7e070"
+      "Hash": "a1958587eb651a02273d685fff3819b1"
     },
     "tidyr": {
       "Package": "tidyr",
@@ -770,7 +770,7 @@
     },
     "tsRNN": {
       "Package": "tsRNN",
-      "Version": "0.1.4",
+      "Version": "0.2.0",
       "Source": "GitHub",
       "Remotes": "thfuchs/testr",
       "RemoteType": "github",
@@ -778,8 +778,8 @@
       "RemoteRepo": "tsRNN",
       "RemoteUsername": "thfuchs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "c14275350253a6ce8aa5e4314d2f7785a4ab7ef4",
-      "Hash": "c2d218edcffe89955116bb74d4568f34"
+      "RemoteSha": "f3dc3a402a6caa60c2213c21f33ebd21bac35e2b",
+      "Hash": "4f60beebac11e6ab7efc5c667b343a64"
     },
     "tseries": {
       "Package": "tseries",

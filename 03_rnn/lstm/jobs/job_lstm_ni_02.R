@@ -18,22 +18,14 @@ fc_ni_rnn_bayes <- readRDS("03_rnn/lstm/results/fc_ni_rnn_bayes.rds")
 stopifnot(all(companies == names(fc_ni_rnn_bayes)))
 
 ### Job ------------------------------------------------------------------------
-forecast <- furrr::future_map(
+forecast_results <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
     d <- data_ni[ticker == x]
-    current <- which(companies == x)
-    if (current <= overall) {
-      resp <- toSlack(paste0(
-        "LSTM EPS Bayes Optimization: Starting ", x, "\n",
-        round(current/overall * 100, 2), "% (", current, "/", overall, ")"
-      ))
-    }
     bayes <- fc_ni_rnn_bayes[[x]]
-    toSlack(paste0(
-      "Start LSTM Net Income Prediction for ",
-      x, " (", which(companies == x), "/", length(companies), ")"))
-    tune_keras_rnn_predict(
+    current <- which(companies == x)
+    tmp <- tempdir()
+    result <- tune_keras_rnn_predict(
       data = d,
       col_id = "ticker",
       col_date = "index",
@@ -41,18 +33,41 @@ forecast <- furrr::future_map(
       model_type = "lstm",
       cv_setting = cv_setting_test,
       bayes_best_par = purrr::map(bayes, "Best_Par"),
+      iter = 10,
       iter_dropout = 500,
-      save_model = NULL
-      # save_model_id = "ni"
+      save_model = tmp,
+      save_model_id = "ni"
     )
-  }, otherwise = NULL, quiet = FALSE),
-  .options = furrr::furrr_options(seed = 123)
+    if (!is.null(result)) {
+      RDStoS3(
+        data = result,
+        filename = paste0("fc_ni_rnn_predict_", x, ".rds"),
+        s3_prefix = "lstm/predict/ni/"
+      )
+      tmp_files <- list.files(
+        tmp,
+        pattern = sprintf("\\w+_ni_lstm_%s_\\w+\\.hdf5$", x),
+        full.names = TRUE
+      )
+      hdf5toS3(files = tmp_files, s3_prefix = "lstm/models/ni/")
+    }
+    if (current <= overall) toSlack(paste0(
+      "LSTM Net Income: Predicted ", x, "\n",
+      round(current/overall * 100, 2), "% (", current, "/", overall, ")"
+    ))
+    # clear temporary files and keras session
+    file.remove(tmp_files)
+    keras::k_clear_session()
+    # output
+    return(result)
+  }, otherwise = NULL, quiet = FALSE)
 )
 
-fc_ni_rnn_prediction <- purrr::compact(purrr::set_names(forecast, companies))
+fc_ni_rnn_predict <- purrr::compact(purrr::set_names(forecast_results, companies))
 
 # Save and send Success / Failure message
-if (length(fc_ni_rnn_prediction) > 0) {
-  saveRDS(fc_ni_rnn_prediction, file = "03_rnn/lstm/results/fc_ni_rnn_prediction.rds", compress = "xz")
+if (length(fc_ni_rnn_predict) > 0) {
+  saveRDS(fc_ni_rnn_predict, file = "03_rnn/lstm/results/fc_ni_rnn_predict.rds", compress = "xz")
+  RDStoS3(data = fc_ni_rnn_predict, filename = "fc_ni_rnn_predict.rds", s3_prefix = "lstm/")
   toSlack("LSTM Net Income prediction finished")
 } else toSlack("Error: LSTM Net Income prediction failed")
