@@ -7,16 +7,16 @@
 ################################################################################
 
 # EBIT
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ebit_01.R", workingDir = ".")
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ebit_02.R", workingDir = ".")
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ebit_03.R", workingDir = ".")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ebit_01.R", workingDir = ".", exportEnv = "R_GlobalEnv")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ebit_02.R", workingDir = ".", exportEnv = "R_GlobalEnv")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ebit_03.R", workingDir = ".", exportEnv = "R_GlobalEnv")
 
 # Net Income
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ni_01.R", workingDir = ".")
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ni_02.R", workingDir = ".")
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ni_03.R", workingDir = ".")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ni_01.R", workingDir = ".", exportEnv = "R_GlobalEnv")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ni_02.R", workingDir = ".", exportEnv = "R_GlobalEnv")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_ni_03.R", workingDir = ".", exportEnv = "R_GlobalEnv")
 
 # EPS
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_eps_01.R", workingDir = ".")
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_eps_02.R", workingDir = ".")
-rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_eps_03.R", workingDir = ".")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_eps_01.R", workingDir = ".", exportEnv = "R_GlobalEnv")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_eps_02.R", workingDir = ".", exportEnv = "R_GlobalEnv")
+rstudioapi::jobRunScript("03_rnn/lstm/jobs/job_lstm_eps_03.R", workingDir = ".", exportEnv = "R_GlobalEnv")
