@@ -50,7 +50,8 @@ tuning_results <- furrr::future_map(
     ))
     keras::k_clear_session()
     return(result)
-  }, otherwise = NULL, quiet = FALSE)
+  }, otherwise = NULL, quiet = FALSE),
+  .options = furrr::furrr_options(seed = 123)
 )
 
 fc_ni_rnn_bayes <- purrr::compact(purrr::set_names(tuning_results, companies))

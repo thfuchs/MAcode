@@ -50,17 +50,17 @@ forecast_results <- furrr::future_map(
         full.names = TRUE
       )
       hdf5toS3(files = tmp_files, s3_prefix = "simple/models/eps/")
+      file.remove(tmp_files)
     }
     if (current <= overall) toSlack(paste0(
       "Simple RNN EPS: Predicted ", x, "\n",
       round(current/overall * 100, 2), "% (", current, "/", overall, ")"
     ))
-    # clear temporary files and keras session
-    file.remove(tmp_files)
     keras::k_clear_session()
     # output
     return(result)
-  }, otherwise = NULL, quiet = FALSE)
+  }, otherwise = NULL, quiet = FALSE),
+  .options = furrr::furrr_options(seed = NULL)
 )
 
 fc_eps_rnn_predict <- purrr::compact(purrr::set_names(forecast_results, companies))
