@@ -115,8 +115,7 @@ data <- data.table::dcast(data_long, company + date ~ type)
 # Transformations
 data <- janitor::clean_names(data)
 setnames(data, "is_eps", "eps")
-regex <- "(^[A-Z]+)\\s([A-Z]+)\\s(Equity)"
-data[, ticker := gsub(regex, "\\1_\\2", company, perl = TRUE)]
+data <- data[dummies[, c("ticker", "ticker_full")], on = .(company = ticker_full)]
 
 # Quick checks (5)
 if (uniqueN(data$ticker) != uniqueN(data$company)) rlang::abort(message = paste0(
