@@ -21,12 +21,17 @@ dummies <- data.table::fread(
 # Transformations
 dummies <- janitor::clean_names(dummies)
 dummies[, ticker_full := ticker]
-regex <- "(^[A-Z]+)\\s([A-Z]+)\\s(Equity)"
-dummies[, ticker := gsub(regex, "\\1_\\2", ticker_full, perl = TRUE)]
+regex1 <- "[-!$%\\^&\\*\\(\\)_+\\|/~=`\\{\\}?,\\.]+"
+dummies[, ticker := gsub(regex1, "_", ticker_full ,perl = TRUE)]
+regex2 <- "(^[A-Z_0-9]+)\\s([A-Z]+)\\s(Equity)"
+dummies[, ticker := gsub(regex2, "\\1_\\2", ticker, perl = TRUE)]
+regex3 <- "(_)\\1*"
+dummies[, ticker := gsub(regex3, "_", ticker, perl = TRUE)]
 dummies[, country_full_name := tools::toTitleCase(tolower(country_full_name))]
 
 # Checks
 dummies[, .N] == data.table::uniqueN(dummies, by = "ticker")
+nrow(dummies[grep("Equity|/__", ticker)]) == 0
 
 # Save data
 saveRDS(dummies, file = "data/dummies.rds", compress = "xz")
