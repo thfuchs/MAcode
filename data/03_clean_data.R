@@ -23,7 +23,7 @@ n <- round(as.numeric(difftime(max_date, min_date, units = "weeks")/52.25) * 4) 
 # Keep only ticker with >= 60% data points
 data <- data[
   , .SD[sum(complete.cases(.SD)) >= n * 0.6],
-  by = ticker, .SDcols = c("ebit", "net_income", "eps")
+  by = ticker, .SDcols = c("date", "ebit", "net_income", "eps")
 ]
 
 # Keep only ticker with gap size below 5 (a maximum of 4 gaps in a row)
@@ -63,15 +63,15 @@ clean_data <- function(value_col, date_col) {
   forecast::na.interp(ts_obj)
 }
 
-data_ebit[, original := value][, value := clean_data(value, index), by = id_col]
+data_ebit[, original := value][, value := clean_data(value, index), by = ticker]
 data_ebit[, clean := data.table::fcase(
   is.na(original), "imputed", value != original, "yes", default = "no")]
 
-data_ni[, original := value][, value := clean_data(value, index), by = id_col]
+data_ni[, original := value][, value := clean_data(value, index), by = ticker]
 data_ni[, Outlier := data.table::fcase(
   is.na(original), "imputed", value != original, "yes", default = "no")]
 
-data_eps[, original := value][, value := clean_data(value, index), by = id_col]
+data_eps[, original := value][, value := clean_data(value, index), by = ticker]
 data_eps[, Outlier := data.table::fcase(
   is.na(original), "imputed", value != original, "yes", default = "no")]
 

@@ -3,8 +3,8 @@ library(tsRNN)
 library(keras)
 library(future)
 library(furrr)
-plan(multisession)
 cores <- future::availableCores()
+plan(multisession, workers = cores)
 
 dummies <- readRDS("data/dummies.rds")
 
