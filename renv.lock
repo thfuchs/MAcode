@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.0.2",
+    "Version": "4.0.3",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -713,11 +713,11 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "testr",
       "RemoteUsername": "thfuchs",
-      "RemoteRef": "HEAD",
+      "RemoteRepo": "testr",
+      "RemoteRef": "master",
       "RemoteSha": "12845ff02f593922a71d4aed8324293bf5077c12",
-      "Hash": "c80a524a621cdac0af73a349add8a1a9"
+      "Hash": "cd227cfd038177ca2db44ffaaaf659bc"
     },
     "testthat": {
       "Package": "testthat",
@@ -772,8 +772,8 @@
       "Package": "tsRNN",
       "Version": "0.2.1",
       "Source": "GitHub",
-      "Remotes": "thfuchs/testr",
       "RemoteType": "github",
+      "Remotes": "thfuchs/testr",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "tsRNN",
       "RemoteUsername": "thfuchs",
