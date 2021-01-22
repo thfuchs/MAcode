@@ -11,33 +11,26 @@ source("utils.R")
 source("settings.R")
 
 fc_ebit_rnn_bayes <- readRDS("03_rnn/lstm/results/fc_ebit_rnn_bayes.rds")
-fc_ebit_rnn_prediction <- readRDS("03_rnn/lstm/results/fc_ebit_rnn_prediction.rds")
+fc_ebit_rnn_predict <- readRDS("03_rnn/lstm/results/fc_ebit_rnn_predict.rds")
 
-stopifnot(all(names(fc_ebit_rnn_bayes) == names(fc_ebit_rnn_prediction)))
+stopifnot(all(names(fc_ebit_rnn_bayes) == names(fc_ebit_rnn_predict)))
 
-companies <- names(fc_ebit_rnn_prediction)
+companies <- names(fc_ebit_rnn_predict)
 overall <- trunc(length(companies) / cores)
-multiple_h <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
+fc_horizon <- list(short = 1, medium = 1:4, long = 5:6, total = 1:6)
 
 ### Job ------------------------------------------------------------------------
 results <- furrr::future_map(
   companies,
   purrr::possibly(function(x) {
-    current <- which(companies == x)
-    if (current <= overall) {
-      resp <- toSlack(paste0(
-        "LSTM EPS Bayes Optimization: Starting ", x, "\n",
-        round(current/overall * 100, 2), "% (", current, "/", overall, ")"
-      ))
-    }
-    fc <- fc_ebit_rnn_prediction[[x]]
+    fc <- fc_ebit_rnn_predict[[x]]
     bayes <- fc_ebit_rnn_bayes[[x]]
     tune_keras_rnn_eval(
       fc_sample = fc,
       cv_setting = cv_setting_test,
       bayes_best_par = purrr::map(bayes, "Best_Par"),
       col_id = NULL, col_date = "index", col_value = "value",
-      multiple_h = multiple_h,
+      h = fc_horizon,
       frequency = 4,
       level = 95
     )
