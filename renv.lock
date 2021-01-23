@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.0.2",
+    "Version": "4.0.3",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -107,10 +107,10 @@
     },
     "brio": {
       "Package": "brio",
-      "Version": "1.1.0",
+      "Version": "1.1.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "570a24963009b9cce0869a0463c83580"
+      "Hash": "36758510e65a457efeefa50e1e7f0576"
     },
     "callr": {
       "Package": "callr",
@@ -713,11 +713,11 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "testr",
       "RemoteUsername": "thfuchs",
-      "RemoteRef": "HEAD",
+      "RemoteRepo": "testr",
+      "RemoteRef": "master",
       "RemoteSha": "12845ff02f593922a71d4aed8324293bf5077c12",
-      "Hash": "c80a524a621cdac0af73a349add8a1a9"
+      "Hash": "cd227cfd038177ca2db44ffaaaf659bc"
     },
     "testthat": {
       "Package": "testthat",
@@ -770,16 +770,16 @@
     },
     "tsRNN": {
       "Package": "tsRNN",
-      "Version": "0.2.0",
+      "Version": "0.2.1",
       "Source": "GitHub",
-      "Remotes": "thfuchs/testr",
       "RemoteType": "github",
+      "Remotes": "thfuchs/testr",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "tsRNN",
       "RemoteUsername": "thfuchs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "f3dc3a402a6caa60c2213c21f33ebd21bac35e2b",
-      "Hash": "4f60beebac11e6ab7efc5c667b343a64"
+      "RemoteSha": "cc2e233d45ac948bdde93aad8fc58208f8575531",
+      "Hash": "ff48e780b0688f321035dbfe7578b52b"
     },
     "tseries": {
       "Package": "tseries",
@@ -851,10 +851,10 @@
     },
     "withr": {
       "Package": "withr",
-      "Version": "2.3.0",
+      "Version": "2.4.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "7307d79f58d1885b38c4f4f1a8cb19dd"
+      "Hash": "8e07f30a26bc288326edcfe14883fbac"
     },
     "xfun": {
       "Package": "xfun",
