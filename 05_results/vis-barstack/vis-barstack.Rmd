@@ -1,0 +1,138 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(ggplot2)
+```
+
+```{r variables, include=FALSE}
+gg_theme <- theme(
+  plot.background = element_rect(fill = NA),
+  panel.background = element_rect(fill = NA),
+  panel.grid.major = element_blank(),
+  panel.border = element_blank(),
+  axis.ticks.y = element_blank(),
+  legend.position = "bottom",
+  legend.key = element_blank(),
+  panel.spacing = unit(0.5, "lines")
+)
+```
+
+### (i) Rank of all splits separated
+
+```{r data_i, include=FALSE}
+acc_rank_str <- c("smape", "mase", "smis")
+
+# read data
+acc_ebit_01 <- readRDS("../acc_ebit_01.rds")
+
+# re-calculate ranks without averaging: minrank_XX
+acc_ebit_01[
+  , paste0("minrank_", acc_rank_str) := lapply(.SD, frank, ties.method = "min"),
+  by = c("company", "split", "h"),
+  .SDcols = acc_rank_str
+]
+
+acc_ebit_01_rank_melt <- data.table::melt(
+  acc_ebit_01,
+  id.vars = c("company", "split", "type", "h"),
+  measure.vars = c("minrank_smape", "minrank_mase", "minrank_smis"),
+  variable.name = "metric",
+  value.name = "rank"
+)
+acc_ebit_01_rank_melt[, metric := factor(
+  metric,
+  levels = c("minrank_smape", "minrank_mase", "minrank_smis"),
+  labels = c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")
+)]
+
+# Re-Factor rank and type for "correct" ordering
+acc_ebit_01_rank_melt[, rank := factor(rank, levels = sort(unique(rank), decreasing = TRUE))]
+acc_ebit_01_rank_melt[, type := factor(type, levels = rev(levels(type)))]
+```
+
+#### All (ranked) types
+```{r stack_01_all}
+ggplot(acc_ebit_01_rank_melt, aes(y = type, fill = rank)) +
+  geom_bar(position = "fill") +
+  facet_grid(h ~ metric) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_fill_brewer(palette = "RdYlBu") +
+  xlab(NULL) + ylab(NULL) + 
+  guides(fill = guide_legend(title = "Rank", nrow = 1, reverse = TRUE)) +
+  gg_theme
+```
+
+#### Selected types
+```{r stack_01_select}
+ggplot(
+  data = acc_ebit_01_rank_melt[type %in% c("ARIMA", "Simple", "GRU", "LSTM", "ARNN")], 
+  mapping = aes(y = type, fill = rank)
+) +
+  geom_bar(position = "fill") +
+  facet_grid(h ~ metric) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_fill_brewer(palette = "RdYlBu") +
+  xlab(NULL) + ylab(NULL) + 
+  guides(fill = guide_legend(title = "Rank", nrow = 1, reverse = TRUE)) +
+  gg_theme
+```
+
+### (ii) Rank of each company (mean metric across splits)
+
+```{r data_ii, include=FALSE}
+acc_ebit_01_split <- acc_ebit_01[
+  , lapply(.SD, mean), by = c("company", "h", "type"), .SDcols = acc_rank_str]
+acc_ebit_01_split[
+  , paste0("avgrank_", acc_rank_str) := lapply(.SD, frank, ties.method = "min"),
+  by = c("company", "h"),
+  .SDcols = acc_rank_str
+]
+acc_ebit_01_split_rank_melt <- data.table::melt(
+  acc_ebit_01_split,
+  id.vars = c("company", "type", "h"),
+  measure.vars = c("avgrank_smape", "avgrank_mase", "avgrank_smis"),
+  variable.name = "metric",
+  value.name = "rank"
+)
+acc_ebit_01_split_rank_melt[, metric := factor(
+  metric,
+  levels = c("avgrank_smape", "avgrank_mase", "avgrank_smis"),
+  labels = c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")
+)]
+# Re-Factor rank and type for "correct" ordering
+acc_ebit_01_split_rank_melt[, rank := factor(rank, levels = sort(unique(rank), decreasing = TRUE))]
+acc_ebit_01_split_rank_melt[, type := factor(type, levels = rev(levels(type)))]
+```
+
+#### All (ranked) types
+```{r stack_02_all}
+ggplot(acc_ebit_01_split_rank_melt, aes(y = type, fill = rank)) +
+  geom_bar(position = "fill") +
+  facet_grid(h ~ metric) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_fill_brewer(palette = "RdYlBu") +
+  xlab(NULL) + ylab(NULL) + 
+  guides(fill = guide_legend(title = "Rank", nrow = 1, reverse = TRUE)) +
+  gg_theme
+```
+
+#### Selected types
+```{r stack_02_select}
+ggplot(
+  data = acc_ebit_01_split_rank_melt[type %in% c("ARIMA", "Simple", "GRU", "LSTM", "ARNN")], 
+  mapping = aes(y = type, fill = rank)
+) +
+  geom_bar(position = "fill") +
+  facet_grid(h ~ metric) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_fill_brewer(palette = "RdYlBu") +
+  xlab(NULL) + ylab(NULL) + 
+  guides(fill = guide_legend(title = "Rank", nrow = 1, reverse = TRUE)) +
+  gg_theme
+```

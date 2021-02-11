@@ -1,0 +1,210 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(ggplot2)
+dodge <- position_dodge(width = 0.8)
+```
+
+```{r variables, include=FALSE}
+scale_smape <- 70
+scale_mase <- 4
+scale_smis <- 15
+
+gg_theme <- theme(
+  plot.background = element_rect(fill = NA), 
+  panel.background = element_rect(fill = NA, colour = "black"), 
+  panel.grid.major = element_line(colour = "lightgrey"), 
+  panel.grid.major.x = element_blank(),
+  legend.title = element_blank(), 
+  legend.position = "bottom",
+  legend.key = element_blank()
+)
+```
+
+```{r data, include=FALSE}
+acc_rank_str <- c("smape", "mase", "smis")
+
+# EBIT Baselines
+acc_ebit_baselines <- purrr::map_df(
+  readRDS("../../01_baselines/fc_baselines_ebit.rds"),
+  ~ purrr::map_df(.x, "accuracy", .id = "split"),
+  .id = "company"
+)
+acc_ebit_baselines[
+  , paste0("rank_", acc_rank_str) := lapply(.SD, frank, ties.method = "average"),
+  by = c("company", "split", "h"),
+  .SDcols = acc_rank_str
+]
+acc_ebit_baselines[, type := factor(type)]
+acc_ebit_baselines[, h := factor(h,
+  levels = c("short", "medium", "long", "total"),
+  labels = c("Q1", "Q1 - Q4", "Q5 - Q6", "Total")
+)]
+
+acc_ebit_baselines_melt <- data.table::melt(
+  acc_ebit_baselines,
+  id.vars = c("company", "split", "type", "h"),
+  measure.vars = c("smape", "mase", "smis"),
+  variable.name = "metric",
+  value.name = "accuracy"
+)
+acc_ebit_baselines_melt[, metric := factor(
+  metric,
+  levels = c("smape", "mase", "smis"),
+  labels = c("sMAPE", "MASE", "sMIS")
+)]
+# acc_ebit_baselines_PF <- acc_ebit_baselines_melt[metric %in% c("sMAPE", "MASE")]
+
+# EBIT Baselines Average
+acc_ebit_baselines_avg <- acc_ebit_baselines_melt[
+  , .(mean = mean(accuracy), median = median(accuracy)), 
+  by = c("company", "type", "h", "metric")
+]
+# acc_ebit_baselines_avg_PF <- acc_ebit_baselines_avg[metric %in% c("sMAPE", "MASE")]
+
+# EBIT Baselines (rank)
+acc_ebit_baselines_rank_melt <- data.table::melt(
+  acc_ebit_baselines,
+  id.vars = c("company", "split", "type", "h"),
+  measure.vars = c("rank_smape", "rank_mase", "rank_smis"),
+  variable.name = "metric",
+  value.name = "rank"
+)
+acc_ebit_baselines_rank_melt[, metric := factor(
+  metric,
+  levels = c("rank_smape", "rank_mase", "rank_smis"),
+  labels = c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")
+)]
+# acc_ebit_baselines_rank_PF <- acc_ebit_baselines_rank_melt[metric %in% c("sMAPE (rk)", "MASE (rk)")]
+
+# EBIT Baselines (rank) Average
+acc_ebit_baselines_rank_avg <- acc_ebit_baselines_rank_melt[
+  , .(rank_mean = mean(rank), rank_median = median(rank)), 
+  by = c("company", "type", "h", "metric")
+]
+# acc_ebit_baselines_rank_avg_PF <- acc_ebit_baselines_rank_avg[metric %in% c("sMAPE (rk)", "MASE (rk)")]
+```
+
+### (i) Baselines Accuracy
+
+#### Original
+```{r smape_mase}
+ggplot(acc_ebit_baselines_melt, aes(x = h, y = accuracy)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+#### Scaled
+```{r smape_mase_scaled}
+ggplot(acc_ebit_baselines_melt[
+  (metric == "sMAPE" & accuracy < scale_smape) | 
+    (metric == "MASE" & accuracy < scale_mase) |
+    (metric == "sMIS" & accuracy < scale_smis)
+], aes(x = h, y = accuracy)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+### (ii) Baselines Mean Accuracy
+
+#### Original
+```{r smape_mase_mean}
+ggplot(acc_ebit_baselines_avg, aes(x = h, y = mean)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+#### Scaled
+```{r smape_mase_mean_scaled}
+ggplot(acc_ebit_baselines_avg[
+  (metric == "sMAPE" & mean < scale_smape) | 
+    (metric == "MASE" & mean < scale_mase) |
+    (metric == "sMIS" & mean < scale_smis)
+], aes(x = h, y = mean)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+### (iii) Baselines Median Accuracy
+
+#### Original
+```{r smape_mase_med}
+ggplot(acc_ebit_baselines_avg, aes(x = h, y = median)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+#### Scaled
+```{r smape_mase_med_scaled}
+ggplot(acc_ebit_baselines_avg[
+  (metric == "sMAPE" & median < scale_smape) | 
+    (metric == "MASE" & median < scale_mase) |
+    (metric == "sMIS" & median < scale_smis)
+], aes(x = h, y = median)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+### (iv) Baselines Rank
+
+<!--
+#### Original
+```{r smape_mase_rank}
+ggplot(acc_ebit_baselines_rank_melt, aes(x = h, y = rank)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+-->
+
+#### Mean
+```{r smape_mase_rank_mean}
+ggplot(acc_ebit_baselines_rank_avg, aes(x = h, y = rank_mean)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+
+<!--
+#### Median
+```{r smape_mase_rank_median}
+ggplot(acc_ebit_baselines_rank_avg, aes(x = h, y = rank_median)) +
+  geom_violin(aes(group=interaction(type, h)), position = dodge) +
+  geom_boxplot(aes(fill = type), width = 0.08, outlier.shape = NA, position = dodge) +
+  facet_wrap(~ metric, scales = "free", ncol = 1) +
+  xlab(NULL) + ylab(NULL) +
+  gg_theme
+```
+-->
+
+#### Comment
+
+Original Rank and Median Rank without interpretable use

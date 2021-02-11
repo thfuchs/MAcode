@@ -1,0 +1,376 @@
+---
+  output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(magrittr)
+```
+
+```{r fun, include = FALSE}
+table_fun <- function(data, metric, var1, var2, label) {
+  N_id <- data[, .N, by = "id"]
+  knitr::kable(
+    data[, -"id"],
+    format = "latex",
+    booktabs = TRUE,
+    caption = sprintf(
+      "Wilcoxon rank sum test with continuity correction for accuracy measured by %s comparing %s with %s", 
+      metric, var1, var2),
+    label = label,
+    linesep = "",
+    format.args = list(big.mark = ","),
+    col.names = kableExtra::linebreak(
+      c("", "Quarter\n(1)", "", "Year\n(1-4)", "", "Long\n(5-6)", "", "Total\n(1-6)", ""), align = "r"),
+    escape = FALSE
+  ) %>%
+    kableExtra::kable_styling(font_size = 10, latex_options = c("hold_position")) %>%
+    kableExtra::group_rows(index = c(
+      "EBIT" = N_id[id == "ebit", N], 
+      "Net Income" = N_id[id == "ni", N], 
+      "EPS" = N_id[id == "eps", N]
+    )) %>% 
+    kableExtra::footnote(
+      general = ". p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001",
+      footnote_as_chunk = TRUE, escape = FALSE
+    )
+}
+table_landscape_fun <- function(data, metric, var1, var2, label) {
+  N_id <- data[, .N, by = "id"]
+  knitr::kable(
+    data[, -"id"],
+    format = "latex",
+    booktabs = TRUE,
+    caption = sprintf(
+      "Wilcoxon rank sum test with continuity correction for %s accuracy comparing %s with %s", 
+      metric, var1, var2),
+    label = label,
+    linesep = "",
+    format.args = list(big.mark = ","),
+    col.names = kableExtra::linebreak(
+      c("", rep(c("Quarter\n(1)", "", "Year\n(1-4)", "", "Long\n(5-6)", "", "Total\n(1-6)", ""), 2)), align = "r"),
+    escape = FALSE
+  ) %>%
+    kableExtra::kable_styling(font_size = 10, latex_options = c("hold_position")) %>%
+    kableExtra::add_header_above(c("", "sMAPE" = 8, "MASE" = 8)) %>% 
+    kableExtra::group_rows(index = c(
+      "EBIT" = N_id[id == "ebit", N], 
+      "Net Income" = N_id[id == "ni", N], 
+      "EPS" = N_id[id == "eps", N]
+    )) %>% 
+    kableExtra::footnote(
+      general = ". p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001",
+      footnote_as_chunk = TRUE, escape = FALSE
+    ) %>% 
+    kableExtra::landscape()
+}
+```
+
+```{r data, include = FALSE}
+acc_ebit <- readRDS("../acc_ebit_01.rds")
+acc_ni <- readRDS("../acc_ni_01.rds")
+acc_eps <- readRDS("../acc_eps_01.rds")
+
+wilcox_order <- c(
+  "id", "type",
+  "w_Q1", "w_sign_Q1",
+  "w_Q1 - Q4", "w_sign_Q1 - Q4",
+  "w_Q5 - Q6", "w_sign_Q5 - Q6",
+  "w_Total", "w_sign_Total"
+)
+wilcox_order_pf <- c(
+  "id", "type",
+  "w_Q1_smape", "w_sign_Q1_smape",
+  "w_Q1 - Q4_smape", "w_sign_Q1 - Q4_smape",
+  "w_Q5 - Q6_smape", "w_sign_Q5 - Q6_smape",
+  "w_Total_smape", "w_sign_Total_smape",
+  "w_Q1_mase", "w_sign_Q1_mase",
+  "w_Q1 - Q4_mase", "w_sign_Q1 - Q4_mase",
+  "w_Q5 - Q6_mase", "w_sign_Q5 - Q6_mase",
+  "w_Total_mase", "w_sign_Total_mase"
+)
+```
+
+```{r h1_data}
+wilcox_ebit_h1_list <- sapply(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), function(acc) {
+  sapply(levels(acc$h), function(horizon) {
+    DT <- acc[h == horizon]
+    list(
+      # sMAPE
+      Naive = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("ARIMA", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("ARIMA", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("ARIMA", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("ARIMA", "Holt"), alternative = "g"),
+      # MASE
+      Naive = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("ARIMA", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("ARIMA", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("ARIMA", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("ARIMA", "Holt"), alternative = "g"),
+      # sMIS
+      Naive = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("ARIMA", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("ARIMA", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("ARIMA", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("ARIMA", "Holt"), alternative = "g")
+    )
+  }, simplify = FALSE)
+}, simplify = FALSE)
+
+wilcox_ebit_h1_dt <- sapply(c("ebit", "ni", "eps"), function(data_type) {
+  sapply(wilcox_ebit_h1_list[[data_type]], function(horizon) purrr::map_df(horizon, function(type) {
+    data.table(w = type[["statistic"]], p = type[["p.value"]], metric = sub("(\\w+) by type", "\\1", type[["data.name"]]))
+  }, .id = "type"), simplify = FALSE)
+}, simplify = FALSE)
+wilcox_ebit_h1 <- purrr::map_df(wilcox_ebit_h1_dt, ~ data.table::rbindlist(.x, idcol = "h"), .id = "id")
+
+data.table::setDT(wilcox_ebit_h1)
+wilcox_ebit_h1[, w_sign := data.table::fcase(
+  p < 0.001, "{\\footnotesize ***}",
+  p < 0.01, "{\\footnotesize **}",
+  p < 0.05, "{\\footnotesize *}",
+  p < 0.1, "{\\footnotesize .}",
+  p >= 0.1, ""
+)]
+
+wilcox_ebit_h1_pf <- dcast(
+  wilcox_ebit_h1, 
+  id + factor(type, levels = unique(type)) ~ h + metric, 
+  value.var = c("w", "w_sign"), subset = c(metric %in% c("smape", "mase"))
+)
+data.table::setcolorder(wilcox_ebit_h1_pf, neworder = wilcox_order_pf)
+
+wilcox_ebit_h1_smis <- dcast(wilcox_ebit_h1, id + type ~ h, value.var = c("w", "w_sign"), subset = c(metric %in% "smis"))
+data.table::setcolorder(wilcox_ebit_h1_smis, neworder = wilcox_order)
+
+```
+
+```{r h2_lstm_data}
+wilcox_ebit_h2_lstm_list <- sapply(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), function(acc) {
+  sapply(levels(acc$h), function(horizon) {
+    DT <- acc[h == horizon]
+    list(
+      # sMAPE
+      Naive = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("LSTM", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("LSTM", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("LSTM", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("LSTM", "Holt"), alternative = "g"),
+      ARIMA = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("LSTM", "ARIMA"), alternative = "g"),
+      Simple = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("LSTM", "Simple"), alternative = "g"),
+      # MASE
+      Naive = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("LSTM", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("LSTM", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("LSTM", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("LSTM", "Holt"), alternative = "g"),
+      ARIMA = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("LSTM", "ARIMA"), alternative = "g"),
+      Simple = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("LSTM", "Simple"), alternative = "g"),
+      # sMIS
+      Naive = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("LSTM", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("LSTM", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("LSTM", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("LSTM", "Holt"), alternative = "g"),
+      ARIMA = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("LSTM", "ARIMA"), alternative = "g"),
+      Simple = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("LSTM", "Simple"), alternative = "g")
+    )
+  }, simplify = FALSE)
+}, simplify = FALSE)
+
+wilcox_ebit_h2_lstm_dt <- sapply(c("ebit", "ni", "eps"), function(data_type) {
+  sapply(wilcox_ebit_h2_lstm_list[[data_type]], function(horizon) purrr::map_df(horizon, function(type) {
+    data.table(w = type[["statistic"]], p = type[["p.value"]], metric = sub("(\\w+) by type", "\\1", type[["data.name"]]))
+  }, .id = "type"), simplify = FALSE)
+}, simplify = FALSE)
+wilcox_ebit_h2_lstm <- purrr::map_df(wilcox_ebit_h2_lstm_dt, ~ data.table::rbindlist(.x, idcol = "h"), .id = "id")
+
+data.table::setDT(wilcox_ebit_h2_lstm)
+wilcox_ebit_h2_lstm[, w_sign := data.table::fcase(
+  p < 0.001, "{\\footnotesize ***}",
+  p < 0.01, "{\\footnotesize **}",
+  p < 0.05, "{\\footnotesize *}",
+  p < 0.1, "{\\footnotesize .}",
+  p >= 0.1, ""
+)]
+
+wilcox_ebit_h2_lstm_pf <- dcast(
+  wilcox_ebit_h2_lstm, 
+  id + factor(type, levels = unique(type)) ~ h + metric, 
+  value.var = c("w", "w_sign"), subset = c(metric %in% c("smape", "mase"))
+)
+data.table::setcolorder(wilcox_ebit_h2_lstm_pf, neworder = wilcox_order_pf)
+
+wilcox_ebit_h2_lstm_smis <- dcast(wilcox_ebit_h2_lstm, id + type ~ h, value.var = c("w", "w_sign"), subset = c(metric %in% "smis"))
+data.table::setcolorder(wilcox_ebit_h2_lstm_smis, neworder = wilcox_order)
+```
+
+```{r h2_gru}
+wilcox_ebit_h2_gru_list <- sapply(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), function(acc) {
+  sapply(levels(acc$h), function(horizon) {
+    DT <- acc[h == horizon]
+    list(
+      # sMAPE
+      Naive = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("GRU", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("GRU", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("GRU", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("GRU", "Holt"), alternative = "g"),
+      ARIMA = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("GRU", "ARIMA"), alternative = "g"),
+      Simple = stats::wilcox.test(smape ~ type, data = DT, subset = type %in% c("GRU", "Simple"), alternative = "g"),
+      # MASE
+      Naive = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("GRU", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("GRU", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("GRU", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("GRU", "Holt"), alternative = "g"),
+      ARIMA = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("GRU", "ARIMA"), alternative = "g"),
+      Simple = stats::wilcox.test(mase ~ type, data = DT, subset = type %in% c("GRU", "Simple"), alternative = "g"),
+      # sMIS
+      Naive = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("GRU", "Naive"), alternative = "g"),
+      Snaive = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("GRU", "Snaive"), alternative = "g"),
+      Drift = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("GRU", "Drift"), alternative = "g"),
+      Holt = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("GRU", "Holt"), alternative = "g"),
+      ARIMA = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("GRU", "ARIMA"), alternative = "g"),
+      Simple = stats::wilcox.test(smis ~ type, data = DT, subset = type %in% c("GRU", "Simple"), alternative = "g")
+    )
+  }, simplify = FALSE)
+}, simplify = FALSE)
+
+wilcox_ebit_h2_gru_dt <- sapply(c("ebit", "ni", "eps"), function(data_type) {
+  sapply(wilcox_ebit_h2_gru_list[[data_type]], function(horizon) purrr::map_df(horizon, function(type) {
+    data.table(w = type[["statistic"]], p = type[["p.value"]], metric = sub("(\\w+) by type", "\\1", type[["data.name"]]))
+  }, .id = "type"), simplify = FALSE)
+}, simplify = FALSE)
+wilcox_ebit_h2_gru <- purrr::map_df(wilcox_ebit_h2_gru_dt, ~ data.table::rbindlist(.x, idcol = "h"), .id = "id")
+
+data.table::setDT(wilcox_ebit_h2_gru)
+wilcox_ebit_h2_gru[, w_sign := data.table::fcase(
+  p < 0.001, "{\\footnotesize ***}",
+  p < 0.01, "{\\footnotesize **}",
+  p < 0.05, "{\\footnotesize *}",
+  p < 0.1, "{\\footnotesize .}",
+  p >= 0.1, ""
+)]
+
+wilcox_ebit_h2_gru_pf <- dcast(
+  wilcox_ebit_h2_gru, 
+  id + factor(type, levels = unique(type)) ~ h + metric, 
+  value.var = c("w", "w_sign"), subset = c(metric %in% c("smape", "mase"))
+)
+data.table::setcolorder(wilcox_ebit_h2_gru_pf, neworder = wilcox_order_pf)
+
+wilcox_ebit_h2_gru_smis <- dcast(wilcox_ebit_h2_gru, id + type ~ h, value.var = c("w", "w_sign"), subset = c(metric %in% "smis"))
+data.table::setcolorder(wilcox_ebit_h2_gru_smis, neworder = wilcox_order)
+```
+
+### Point Forecast Accuracy
+```{r h1_pf}
+table_landscape_fun(
+  wilcox_ebit_h1_pf, 
+  metric = "Point Forecast", 
+  var1 = "ARIMA", 
+  var2 = "Baseline models",
+  label = "wilcox_h1_pf"
+)
+table_landscape_fun(
+  wilcox_ebit_h2_lstm_pf, 
+  metric = "Point Forecast",
+  var1 = "LSTM",
+  var2 = "Baseline models, ARIMA and Simple RNN",
+  label = "wilcox_h2_lstm_smape"
+)
+table_landscape_fun(
+  wilcox_ebit_h2_gru_pf, 
+  metric = "Point Forecast",
+  var1 = "GRU", 
+  var2 = "Baseline models, ARIMA and Simple RNN",
+  label = "wilcox_h2_gru_smape"
+)
+```
+
+
+### Prediction Interval Accuracy
+```{r h1_pi}
+table_fun(
+  wilcox_ebit_h1_smis, 
+  metric = "sMIS", 
+  var1 = "ARIMA", 
+  var2 = "Baseline models",
+  label = "wilcox_h1_smis"
+)
+table_fun(
+  wilcox_ebit_h2_lstm_smis, 
+  metric = "sMIS", 
+  var1 = "LSTM",
+  var2 = "Baseline models, ARIMA and Simple RNN",
+  label = "wilcox_h2_lstm_smis"
+)
+table_fun(
+  wilcox_ebit_h2_gru_smis, 
+  metric = "sMIS",
+  var1 = "GRU",
+  var2 = "Baseline models, ARIMA and Simple RNN",
+  label = "wilcox_h2_gru_smis"
+) 
+```
+
+### H3: LSTM vs. GRU
+```{r h3}
+wilcox_ebit_h3_list <- sapply(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), function(acc) {
+  sapply(levels(acc$h), function(horizon) {
+    DT_lstm <- acc[h == horizon & type == "LSTM"]
+    DT_gru <- acc[h == horizon & type == "GRU"]
+
+    list(
+      stats::wilcox.test(DT_lstm$smape, DT_gru$smape, alternative = "less"),
+      stats::wilcox.test(DT_lstm$mase, DT_gru$mase, alternative = "less"),
+      stats::wilcox.test(DT_lstm$smis, DT_gru$smis, alternative = "less")
+    )
+  }, simplify = FALSE)
+}, simplify = FALSE)
+
+wilcox_ebit_h3_dt <- sapply(c("ebit", "ni", "eps"), function(data_type) {
+  sapply(wilcox_ebit_h3_list[[data_type]], function(horizon) purrr::map_df(horizon, function(model) {
+    data.table(w = model[["statistic"]], p = model[["p.value"]], metric = sub("\\w+\\$(\\w+) and.*", "\\1", model[["data.name"]]))
+  }), simplify = FALSE)
+}, simplify = FALSE)
+wilcox_ebit_h3 <- purrr::map_df(wilcox_ebit_h3_dt, ~ data.table::rbindlist(.x, idcol = "h"), .id = "id")
+
+data.table::setDT(wilcox_ebit_h3)
+wilcox_ebit_h3[, w_sign := data.table::fcase(
+  p < 0.001, "{\\footnotesize ***}",
+  p < 0.01, "{\\footnotesize **}",
+  p < 0.05, "{\\footnotesize *}",
+  p < 0.1, "{\\footnotesize .}",
+  p >= 0.1, ""
+)]
+#Kann H0, dass LSTM GRU nicht outperformt, nicht ablehnen
+
+wilcox_ebit_h3_cast <- data.table::dcast(wilcox_ebit_h3, id + h ~ metric, value.var = c("w", "w_sign"))
+data.table::setcolorder(wilcox_ebit_h3_cast, neworder = c(
+  "id", "h",
+  "w_smape", "w_sign_smape",
+  "w_mase", "w_sign_mase",
+  "w_smis", "w_sign_smis"
+))
+
+N_id <- wilcox_ebit_h3_cast[, .N, by = "id"]
+knitr::kable(
+  wilcox_ebit_h3_cast[, .SD, .SDcols = -"id"],
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Wilcoxon rank sum test with continuity correction for accuracy comparing LSTM and GRU",
+  label = "wilcox_h3",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = kableExtra::linebreak(c("", "sMAPE", "", "MASE", "", "sMIS", ""), align = "r"),
+  escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 10, latex_options = c("hold_position")) %>%
+  kableExtra::group_rows(index = c(
+    "EBIT" = N_id[id == "ebit", N],
+    "Net Income" = N_id[id == "ni", N],
+    "EPS" = N_id[id == "eps", N]
+  )) %>%
+  kableExtra::footnote(
+    general = ". p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001",
+    footnote_as_chunk = TRUE, escape = FALSE
+  )
+```

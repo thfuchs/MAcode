@@ -1,0 +1,234 @@
+---
+  output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(magrittr)
+```
+
+```{r data, include = FALSE}
+dummies <- readRDS("../../data/dummies.rds")
+
+acc_ebit <- readRDS("../acc_ebit_01.rds")
+acc_ni <- readRDS("../acc_ni_01.rds")
+acc_eps <- readRDS("../acc_eps_01.rds")
+
+acc <- rbindlist(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), use.names = TRUE, idcol = "id")
+acc <- acc[dummies, on = .(company = ticker)]
+
+cols <- c("smape", "mase", "smis")
+```
+
+```{r functions}
+fun_sector_table <- function(data, names, var1, var2, label) {
+  N_id <- data[, .N, by = "id"]
+  
+  data[, h := data.table::fcase(
+    h == "Q1", kableExtra::linebreak("Quarter\n(1)", align = "l"),
+    h == "Q1 - Q4", kableExtra::linebreak("Year\n(1-4)", align = "l"),
+    h == "Q5 - Q6", kableExtra::linebreak("Long\n(5-6)", align = "l"),
+    h == "Total", kableExtra::linebreak("Total\n(1-6)", align = "l")
+  )]
+
+  knitr::kable(
+    data[, -"id"],
+    format = "latex",
+    booktabs = TRUE,
+    caption = sprintf(
+      "Methods providing the three best performing models by %s per forecast horizon by %s", var1, var2),
+    label = label,
+    linesep = "",
+    format.args = list(big.mark = ","),
+    col.names = names,
+    escape = FALSE
+  ) %>%
+    kableExtra::kable_styling(font_size = 8, latex_options = c("hold_position")) %>%
+    kableExtra::group_rows(index = c(
+      "EBIT" = N_id[id == "ebit", N], 
+      "Net Income" = N_id[id == "ni", N], 
+      "EPS" = N_id[id == "eps", N]
+    )) %>%
+    kableExtra::collapse_rows(columns = 1, latex_hline = "linespace", valign = "middle") 
+}
+```
+
+### Best models overall, per region, country, sector and industry
+```{r overall}
+acc_all <- acc[, lapply(.SD, mean), .SDcols = cols, by = c("id", "type", "h")]
+
+acc_all_kable <-
+  acc_all[, lapply(.SD, function(x) type[head(order(x), 3)]), .SDcols = cols, by = c("id", "h")]
+acc_all_kable[, h := data.table::fcase(
+  h == "Q1", kableExtra::linebreak("Quarter\n(1)", align = "l"),
+  h == "Q1 - Q4", kableExtra::linebreak("Year\n(1-4)", align = "l"),
+  h == "Q5 - Q6", kableExtra::linebreak("Long\n(5-6)", align = "l"),
+  h == "Total", kableExtra::linebreak("Total\n(1-6)", align = "l")
+)]
+
+N_id <- acc_all_kable[, .N, by = "id"]
+
+knitr::kable(
+  acc_all_kable[, -"id"],
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Methods providing the three best performing models per forecast horizon for EBIT, Net Income and EPS",
+  label = "overall",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = c(" ", "sMAPE", "MASE", "sMIS"),
+  escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 8, latex_options = c("hold_position")) %>%
+  kableExtra::group_rows(index = c(
+    "EBIT" = N_id[id == "ebit", N], 
+    "Net Income" = N_id[id == "ni", N], 
+    "EPS" = N_id[id == "eps", N]
+  )) %>% 
+  kableExtra::collapse_rows(columns = 1, latex_hline = "linespace", valign = "middle") 
+```
+
+```{r region}
+grouping_var <- "index"
+acc_region <- acc[, lapply(.SD, mean), .SDcols = cols, by = c("id", "type", "h", grouping_var)]
+
+acc_region_kable <-
+  acc_region[, lapply(.SD, function(x) type[head(order(x), 3)]), .SDcols = cols, by = c("id", "h", grouping_var)]
+
+acc_region_kable[, rank := 1:.N, by = c("id", "h", grouping_var)]
+acc_region_kable_cast <- dcast(
+  acc_region_kable, id + h + rank ~ get(grouping_var), value.var = c("smape", "mase", "smis"))
+
+fun_sector_table(
+  data = acc_region_kable_cast[, -"rank"],
+  names = c("", rep(c("SPX", "SXXR"), 3)),
+  var1 = "sMAPE, MASE and sMIS",
+  var2 = "index",
+  label = "index"
+) %>% kableExtra::add_header_above(c("", "sMAPE" = 2, "MASE" = 2, "sMIS" = 2))
+```
+
+```{r country}
+grouping_var <- "country_full_name"
+filter_var <- unique(acc[, .N, by = c("id", "h", "type", grouping_var)][N > 10, get(grouping_var)])
+
+acc_country <- acc[
+  get(grouping_var) %in% filter_var,
+  lapply(.SD, mean), .SDcols = cols, by = c("id", "type", "h", grouping_var)
+]
+
+acc_country_kable <-
+  acc_country[, lapply(.SD, function(x) type[head(order(x), 3)]), .SDcols = cols, by = c("id", "h", grouping_var)]
+
+acc_country_kable[, rank := 1:.N, by = c("id", "h", grouping_var)]
+acc_country_kable_cast <- dcast(
+  acc_country_kable, id + h + rank ~ get(grouping_var), value.var = c("smape", "mase", "smis"))
+
+n_filter <- length(filter_var)
+
+fun_sector_table(
+  data = acc_country_kable_cast[, -"rank"],
+  names = c("", rep(c("GER", "SWE", "USA"), n_filter)),
+  var1 = "sMAPE, MASE and sMIS",
+  var2 = "country",
+  label = "country_smape"
+) %>% kableExtra::add_header_above(c("", "sMAPE" = n_filter, "MASE" = n_filter, "sMIS" = n_filter))
+```
+
+```{r sector}
+grouping_var <- "gics_sector_name"
+filter_var <- unique(acc[, .N, by = c("id", "h", "type", grouping_var)][N > 30, get(grouping_var)])
+merge_DT <- data.table(
+  gics_sector_name = c(
+    "Industrials", "Consumer Staples", "Information Technology", "Consumer Discretionary", "Health Care", "Materials", "Utilities"),
+  sector = c("Industry", "CS", "IT", "CD", "HC", "Material", "Utils")
+)
+
+acc_sector <- acc[
+  get(grouping_var) %in% filter_var, 
+  lapply(.SD, mean), .SDcols = cols, by = c("id", "type", "h", grouping_var)
+]
+
+acc_sector_kable <-
+  acc_sector[, lapply(.SD, function(x) type[head(order(x), 3)]), .SDcols = cols, by = c("id", "h", grouping_var)]
+
+acc_sector_kable[, rank := 1:.N, by = c("id", "h", grouping_var)]
+acc_sector_kable_cast <- dcast(
+  acc_sector_kable[merge_DT, on = grouping_var],
+  id + h + rank ~ sector,
+  value.var = c("smape", "mase", "smis")
+)
+
+fun_sector_table(
+  data = acc_sector_kable_cast[, .SD, .SDcols = patterns("^id$|^h$|^smape")],
+  names = c("", merge_DT[order(sector), sector]),
+  var1 = "sMAPE",
+  var2 = "sector",
+  label = "sector_smape"
+)
+fun_sector_table(
+  data = acc_sector_kable_cast[, .SD, .SDcols = patterns("^id$|^h$|^mase")],
+  names = c("", merge_DT[order(sector), sector]),
+  var1 = "MASE",
+  var2 = "sector",
+  label = "sector_mase"
+)
+fun_sector_table(
+  data = acc_sector_kable_cast[, .SD, .SDcols = patterns("^id$|^h$|^smis")],
+  names = c("", merge_DT[order(sector), sector]),
+  var1 = "sMIS",
+  var2 = "sector",
+  label = "sector_smis"
+)
+```
+
+```{r industry}
+grouping_var <- "gics_industry_name"
+filter_var <- unique(acc[, .N, by = c("id", "h", "type", grouping_var)][N > 15, get(grouping_var)])
+merge_DT <- data.table(
+  gics_industry_name = c(
+    "Machinery", "Oil, Gas & Consumable Fuels", "Semiconductors & Semiconductor", 
+    "Health Care Equipment & Suppli", "Equity Real Estate Investment", "Electric Utilities"),
+  industry = c("Machine", "Oil, Gas", "Semiconduct", "HCE", "Equity RE", "Electric")
+)
+
+acc_industry <- acc[
+  get(grouping_var) %in% filter_var, 
+  lapply(.SD, mean), .SDcols = cols, by = c("id", "type", "h", grouping_var)
+]
+
+acc_industry_kable <-
+  acc_industry[, lapply(.SD, function(x) type[head(order(x), 3)]), .SDcols = cols, by = c("id", "h", grouping_var)]
+
+acc_industry_kable[, rank := 1:.N, by = c("id", "h", grouping_var)]
+acc_industry_kable_cast <- dcast(
+  acc_industry_kable[merge_DT, on = grouping_var], 
+  id + h + rank ~ get(grouping_var), 
+  value.var = c("smape", "mase", "smis")
+)
+
+fun_sector_table(
+  data = acc_industry_kable_cast[, .SD, .SDcols = patterns("^id$|^h$|^smape")],
+  names = c("", merge_DT[order(industry), industry]),
+  var1 = "sMAPE",
+  var2 = "industry",
+  label = "industry_smape"
+)
+fun_sector_table(
+  data = acc_industry_kable_cast[, .SD, .SDcols = patterns("^id$|^h$|^mase")],
+  names = c("", merge_DT[order(industry), industry]),
+  var1 = "MASE",
+  var2 = "industry",
+  label = "industry_mase"
+)
+fun_sector_table(
+  data = acc_industry_kable_cast[, .SD, .SDcols = patterns("^id$|^h$|^smis")],
+  names = c("", merge_DT[order(industry), industry]),
+  var1 = "sMIS",
+  var2 = "industry",
+  label = "industry_smis"
+)
+```

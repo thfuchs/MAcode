@@ -1,0 +1,159 @@
+---
+  output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(magrittr)
+```
+
+```{r data}
+acc_ebit_01 <- readRDS("../acc_ebit_01.rds")
+acc_ni_01 <- readRDS("../acc_ni_01.rds")
+acc_eps_01 <- readRDS("../acc_eps_01.rds")
+
+str_point_acc <- c("smape", "rank_smape", "mase", "rank_mase")
+str_dist_acc <- c("smis", "rank_smis", "acd", "rank_acd")
+
+# Mean (Overall)
+acc_point <- data.table::dcast(
+  data.table::rbindlist(list(acc_ebit_01, acc_ni_01, acc_eps_01), idcol = "id"),
+  id + type ~ h,
+  fun = mean,
+  value.var = str_point_acc
+)
+acc_point[
+  , paste0(c("smape", "rank_smape", "mase", "rank_mase"), "_rk") := lapply(
+    .SD, data.table::frank, ties.method = "min"), 
+  .SDcols = patterns("Total"), 
+  by = c("id")
+]
+
+acc_dist <- data.table::dcast(
+  data.table::rbindlist(list(acc_ebit_01, acc_ni_01, acc_eps_01), idcol = "id"),
+  id + type ~ h,
+  fun = mean,
+  value.var = str_dist_acc
+)
+acc_dist[
+  , paste0(c("smis", "rank_smis", "acd", "rank_acd"), "_rk") := lapply(
+    .SD, data.table::frank, ties.method = "min"), 
+  .SDcols = patterns("Total"), 
+  by = c("id")
+]
+```
+
+### Mean Metrics
+```{r stat_pf}
+n_id <- nrow(acc_point) / length(unique(acc_point$id))
+DT_kable <- acc_point[, .SD, .SDcols = -patterns("id|rank")]
+data.table::setcolorder(DT_kable, c(
+  "type", "smape_Q1", "smape_Q1 - Q4", "smape_Q5 - Q6", "smape_Total", "smape_rk",
+  "mase_Q1", "mase_Q1 - Q4", "mase_Q5 - Q6", "mase_Total", "mase_rk"
+))
+
+knitr::kable(
+  DT_kable,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 1,
+  caption = "Forecasting performance achieved per forecasting horizon - Point Forecasts",
+  label = "stat_pf",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = kableExtra::linebreak(
+    c("", rep(c("Quarter\n(1)", "Year\n(1-4)", "Long\n(5-6)", "Total\n(1-6)", "Rank"), 2)), 
+    align = "c"
+  ),
+  escape = FALSE
+) %>%
+  # kableExtra::kable_styling(font_size = 10, latex_options = c("scale_down")) %>%
+  kableExtra::add_header_above(c("", "Mean sMAPE" = 5, "Mean MASE" = 5)) %>%
+  kableExtra::group_rows(index = c("EBIT" = n_id, "Net Income" = n_id, "EPS" = n_id))
+```
+
+```{r stat_pi}
+n_id <- nrow(acc_dist) / length(unique(acc_dist$id))
+DT_kable <- acc_dist[, .SD, .SDcols = -patterns("id|rank")]
+data.table::setcolorder(DT_kable, c(
+  "type", "smis_Q1", "smis_Q1 - Q4", "smis_Q5 - Q6", "smis_Total", "smis_rk",
+  "acd_Q1", "acd_Q1 - Q4", "acd_Q5 - Q6", "acd_Total", "acd_rk"
+))
+
+knitr::kable(
+  DT_kable,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 1,
+  caption = "Forecasting performance achieved per forecasting horizon - Prediction Intervals",
+  label = "stat_pi",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = kableExtra::linebreak(
+    c("", rep(c("Quarter\n(1)", "Year\n(1-4)", "Long\n(5-6)", "Total\n(1-6)", "Rank"), 2)), 
+    align = "c"
+  ),
+  escape = FALSE
+) %>%
+  # kableExtra::kable_styling(font_size = 10, latex_options = c("scale_down")) %>%
+  kableExtra::add_header_above(c("", "Mean sMIS" = 5, "Mean ACD" = 5)) %>% 
+  kableExtra::group_rows(index = c("EBIT" = n_id, "Net Income" = n_id, "EPS" = n_id))
+```
+
+
+### Ranks
+```{r stat_pf_ranks}
+DT_kable <- acc_point[, .SD, .SDcols = patterns("type|rank")]
+data.table::setcolorder(DT_kable, c(
+  "type", "rank_smape_Q1", "rank_smape_Q1 - Q4", "rank_smape_Q5 - Q6", "rank_smape_Total", "rank_smape_rk",
+  "rank_mase_Q1", "rank_mase_Q1 - Q4", "rank_mase_Q5 - Q6", "rank_mase_Total", "rank_mase_rk"
+))
+
+knitr::kable(
+  DT_kable,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 1,
+  caption = "Forecasting performance ranking per forecasting horizon - Point Forecasts",
+  label = "stat_pf_ranks",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = kableExtra::linebreak(
+    c("", rep(c("Quarter\n(1)", "Year\n(1-4)", "Long\n(5-6)", "Total\n(1-6)", "Rank"), 2)), 
+    align = "c"
+  ),
+  escape = FALSE
+) %>%
+  # kableExtra::kable_styling(font_size = 10, latex_options = c("scale_down")) %>%
+  kableExtra::add_header_above(c("", "sMAPE (rank)" = 5, "MASE (rank)" = 5)) %>% 
+  kableExtra::group_rows(index = c("EBIT" = n_id, "Net Income" = n_id, "EPS" = n_id))
+```
+
+```{r stat_pi_ranks}
+DT_kable <- acc_dist[, .SD, .SDcols = patterns("type|rank_smis")]
+data.table::setcolorder(DT_kable, c(
+  "type", "rank_smis_Q1", "rank_smis_Q1 - Q4", "rank_smis_Q5 - Q6", "rank_smis_Total", "rank_smis_rk"
+))
+
+knitr::kable(
+  DT_kable,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 1,
+  caption = "Forecasting performance ranking per forecasting horizon - Prediction Intervals",
+  label = "stat_pi_ranks",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = kableExtra::linebreak(
+    c("", c("Quarter\n(1)", "Year\n(1-4)", "Long\n(5-6)", "Total\n(1-6)", "Rank")), 
+    align = "c"
+  ),
+  escape = FALSE
+) %>%
+  # kableExtra::kable_styling(font_size = 10, latex_options = c("scale_down")) %>%
+  kableExtra::add_header_above(c("", "sMIS (rank)" = 5)) %>% 
+  kableExtra::group_rows(index = c("EBIT" = n_id, "Net Income" = n_id, "EPS" = n_id))
+```

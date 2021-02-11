@@ -1,0 +1,165 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(ggplot2)
+library(data.table)
+library(vioplot)
+```
+
+```{r variables, include=FALSE}
+gg_stackbar_theme <- theme(
+  plot.background = element_rect(fill = NA),
+  panel.background = element_rect(fill = NA),
+  panel.border = element_blank(),
+  panel.grid.major = element_blank(),
+  axis.ticks.y = element_blank(),
+  legend.position = "bottom",
+  legend.key = element_blank(),
+  panel.spacing = unit(0.5, "lines")
+)
+```
+
+### (i) $H^3$ Rank LSTM vs. GRU
+
+```{r data_01}
+# Vioplot Data
+acc_ebit_vioplot_rank_avg <- readRDS("../acc_ebit_h3_rankavg.rds")
+
+# Stacked Barchart data
+acc_ebit_h3 <- readRDS("../acc_ebit_h3.rds")
+acc_ebit_h3_melt <- data.table::melt(
+  acc_ebit_h3,
+  id.vars = c("company", "type", "h"),
+  measure.vars = c("rank_smape", "rank_mase", "rank_smis"),
+  variable.name = "metric",
+  value.name = "rank"
+)
+acc_ebit_h3_melt[, metric := factor(
+  metric,
+  levels = c("rank_smape", "rank_mase", "rank_smis"),
+  labels = c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")
+)]
+acc_ebit_h3_melt[, type := factor(type, levels = rev(unique(type)))]
+```
+
+#### Mean Rank LSTM vs. GRU (only)
+```{r accuracy_vioplot}
+{
+  par(mfrow = c(3, 1), mar = c(0.5, 4, 2, 1), oma = c(4, 1, 0.2, 0.2))
+  for (metr in c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")) {
+    vioplot(
+      rank_mean ~ h, 
+      data = acc_ebit_vioplot_rank_avg[type == "LSTM" & metric == metr],
+      col = "palevioletred", 
+      plotCentre = "line",
+      side = "left",
+      xlab = NULL,
+      ylab = metr
+    )
+    vioplot(
+      rank_mean ~ h,
+      data = acc_ebit_vioplot_rank_avg[type == "GRU" & metric == metr],
+      col = "lightblue", 
+      plotCentre = "line",
+      side = "right",
+      add = TRUE
+    )
+    points(
+      1:length(levels(acc_ebit_vioplot_rank_avg$h)),
+      sapply(levels(acc_ebit_vioplot_rank_avg$h), function(horizon) 
+        median(acc_ebit_vioplot_rank_avg[type == "LSTM" & metric == metr & h == horizon, rank_mean])
+      ), pch = 21, col = "palevioletred4", bg = "palevioletred2"
+    )
+    points(
+      1:length(levels(acc_ebit_vioplot_rank_avg$h)),
+      sapply(levels(acc_ebit_vioplot_rank_avg$h), function(horizon) 
+        median(acc_ebit_vioplot_rank_avg[type == "GRU" & metric == metr & h == horizon, rank_mean])
+      ), pch = 21, col = "lightblue4", bg = "lightblue2"
+    )
+  }
+  legend("bottom", fill = c("palevioletred", "lightblue"), legend = c("LSTM", "GRU"), title = NULL)
+  par(mfrow = c(1, 1))
+}
+```
+
+#### Stacked Ranks LSTM vs. GRU (only)
+```{r rank_stack_01_gru}
+# Re-Factor rank and type for "correct" ordering
+acc_ebit_h3_melt[, rank := factor(rank, levels = sort(unique(rank), decreasing = TRUE))]
+
+ggplot(acc_ebit_h3_melt, aes(y = type, fill = factor(rank))) +
+  geom_bar(position = "fill") +
+  facet_grid(h ~ metric) +
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_fill_brewer(palette = "RdYlBu") +
+  xlab(NULL) + ylab(NULL) + 
+  guides(fill = guide_legend(title = "Rank", nrow = 1, reverse = TRUE)) +
+  gg_stackbar_theme
+```
+
+#### Mean Rank LSTM vs. GRU (incl. Baselines, ARIMA, Simple, ARNN, RNN)
+```{r data_vioplot_02}
+# EBIT 02 (rank)
+acc_ebit_01 <- readRDS("../acc_ebit_01.rds")
+acc_ebit_01_rank_melt <- data.table::melt(
+  acc_ebit_01,
+  id.vars = c("company", "type", "h"),
+  measure.vars = c("rank_smape", "rank_mase", "rank_smis"),
+  variable.name = "metric",
+  value.name = "rank"
+)
+acc_ebit_01_rank_melt[, metric := factor(
+  metric,
+  levels = c("rank_smape", "rank_mase", "rank_smis"),
+  labels = c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")
+)]
+# EBIT 02 (rank) Average
+acc_ebit_01_rank_avg <- acc_ebit_01_rank_melt[
+  , .(rank_mean = mean(rank), rank_median = median(rank)), 
+  by = c("company", "type", "h", "metric")
+]
+```
+
+```{r accuracy_vioplot_02_lstm}
+{
+  par(mfrow = c(3, 1), mar = c(0.5, 4, 2, 1), oma = c(4, 1, 0.2, 0.2))
+  for (metr in c("sMAPE (rk)", "MASE (rk)", "sMIS (rk)")) {
+    vioplot(
+      rank_mean ~ h, 
+      data = acc_ebit_01_rank_avg[type == "LSTM" & metric == metr],
+      col = "palevioletred", 
+      plotCentre = "line",
+      side = "left",
+      xlab = NULL, 
+      ylab = metr
+    )
+    vioplot(
+      rank_mean ~ h, 
+      data = acc_ebit_01_rank_avg[type == "GRU" & metric == metr],
+      col = "lightblue", 
+      plotCentre = "line",
+      side = "right",
+      add = TRUE
+    )
+    points(
+      1:length(levels(acc_ebit_01_rank_avg$h)),
+      sapply(levels(acc_ebit_01_rank_avg$h), function(horizon) 
+        median(acc_ebit_01_rank_avg[type == "LSTM" & metric == metr & h == horizon, rank_mean])
+      ), pch = 21, col = "palevioletred4", bg = "palevioletred2"
+    )
+    points(
+      1:length(levels(acc_ebit_01_rank_avg$h)),
+      sapply(levels(acc_ebit_01_rank_avg$h), function(horizon) 
+        median(acc_ebit_01_rank_avg[type == "GRU" & metric == metr & h == horizon, rank_mean])
+      ), pch = 21, col = "lightblue4", bg = "lightblue2"
+    )
+  }
+  legend("bottom", fill = c("palevioletred", "lightblue"), legend = c("LSTM", "GRU"), title = NULL)
+  par(mfrow = c(1, 1))
+}
+```
