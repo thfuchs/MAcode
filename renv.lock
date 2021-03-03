@@ -672,6 +672,13 @@
       "Repository": "CRAN",
       "Hash": "ac1eb08941cacd8ff16f0041ca60a3de"
     },
+    "sm": {
+      "Package": "sm",
+      "Version": "2.2-5.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4f27b2025944b16393da73c178086b53"
+    },
     "snakecase": {
       "Package": "snakecase",
       "Version": "0.11.0",
@@ -770,16 +777,16 @@
     },
     "tsRNN": {
       "Package": "tsRNN",
-      "Version": "0.2.1",
+      "Version": "0.2.2",
       "Source": "GitHub",
-      "RemoteType": "github",
       "Remotes": "thfuchs/testr",
+      "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "tsRNN",
       "RemoteUsername": "thfuchs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "cc2e233d45ac948bdde93aad8fc58208f8575531",
-      "Hash": "ff48e780b0688f321035dbfe7578b52b"
+      "RemoteSha": "e060d71143145b81d485fd0adf152c4d17ea20f1",
+      "Hash": "3a697e49dd220e399181605379d71d0d"
     },
     "tseries": {
       "Package": "tseries",
@@ -813,6 +820,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "5cf1957f93076c19fdc81d01409d240b"
+    },
+    "vioplot": {
+      "Package": "vioplot",
+      "Version": "0.3.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c6d6e4739b50bbc2581f20926f7bbc43"
     },
     "viridisLite": {
       "Package": "viridisLite",
