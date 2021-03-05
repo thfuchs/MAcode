@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  11 FEB 2021 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  3 MAR 2021 19:36
 entering extended mode
 **./stat-wilcox.tex
 (stat-wilcox.tex
@@ -628,43 +628,64 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
                                                   
 l.202 \end{landscape}
                      ]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (25.15306pt too wide) in paragraph at lines 209--248
+ [][] 
+ []
 
 [5
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.351 \end{document}
-                    ] [6pdfTeX warning (ext4): destination with the same identi
-fier (name{table.5}) has been already used, duplicate ignored
+l.249 \end{landscape}
+                     ]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
+ been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.351 \end{document}
+l.442 \end{document}
                     ] [7pdfTeX warning (ext4): destination with the same identi
 fier (name{table.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.351 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{table.7}) has been already used, duplicate ignored
+l.442 \end{document}
+                    ] [8pdfTeX warning (ext4): destination with the same identi
+fier (name{table.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.351 \end{document}
+l.442 \end{document}
+                    ] [9pdfTeX warning (ext4): destination with the same identi
+fier (name{table.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.442 \end{document}
+                    ] [10pdfTeX warning (ext4): destination with the same ident
+ifier (name{table.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.442 \end{document}
                     ] (stat-wilcox.aux) ) 
 Here is how much of TeX's memory you used:
- 14384 strings out of 479590
- 209575 string characters out of 2871819
- 577071 words of memory out of 3000000
- 31253 multiletter control sequences out of 15000+200000
+ 14391 strings out of 479590
+ 209643 string characters out of 2871819
+ 589410 words of memory out of 3000000
+ 31255 multiletter control sequences out of 15000+200000
  430512 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,17n,82p,518b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -673,9 +694,9 @@ Here is how much of TeX's memory you used:
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmri10.pfb>
-Output written on stat-wilcox.pdf (7 pages, 110585 bytes).
+Output written on stat-wilcox.pdf (10 pages, 115661 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
  14361 words of extra memory for PDF output out of 14400 (max. 10000000)
 

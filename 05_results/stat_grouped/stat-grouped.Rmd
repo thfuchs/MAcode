@@ -13,12 +13,12 @@ library(magrittr)
 ```{r data, include = FALSE}
 dummies <- readRDS("../../data/dummies.rds")
 
-acc_ebit <- readRDS("../acc_ebit_01.rds")
-acc_ni <- readRDS("../acc_ni_01.rds")
-acc_eps <- readRDS("../acc_eps_01.rds")
+acc_ebit <- readRDS("../acc_ebit.rds")
+acc_ni <- readRDS("../acc_ni.rds")
+acc_eps <- readRDS("../acc_eps.rds")
 
 acc <- rbindlist(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), use.names = TRUE, idcol = "id")
-acc <- acc[dummies, on = .(company = ticker)]
+acc <- acc[dummies, on = "ticker"]
 
 cols <- c("smape", "mase", "smis")
 ```
@@ -28,10 +28,10 @@ fun_sector_table <- function(data, names, var1, var2, label) {
   N_id <- data[, .N, by = "id"]
   
   data[, h := data.table::fcase(
-    h == "Q1", kableExtra::linebreak("Quarter\n(1)", align = "l"),
-    h == "Q1 - Q4", kableExtra::linebreak("Year\n(1-4)", align = "l"),
-    h == "Q5 - Q6", kableExtra::linebreak("Long\n(5-6)", align = "l"),
-    h == "Total", kableExtra::linebreak("Total\n(1-6)", align = "l")
+    h == "short", kableExtra::linebreak("Quarter\n(1)", align = "l"),
+    h == "medium", kableExtra::linebreak("Year\n(1-4)", align = "l"),
+    h == "long", kableExtra::linebreak("Long\n(5-6)", align = "l"),
+    h == "total", kableExtra::linebreak("Total\n(1-6)", align = "l")
   )]
 
   knitr::kable(
@@ -63,10 +63,10 @@ acc_all <- acc[, lapply(.SD, mean), .SDcols = cols, by = c("id", "type", "h")]
 acc_all_kable <-
   acc_all[, lapply(.SD, function(x) type[head(order(x), 3)]), .SDcols = cols, by = c("id", "h")]
 acc_all_kable[, h := data.table::fcase(
-  h == "Q1", kableExtra::linebreak("Quarter\n(1)", align = "l"),
-  h == "Q1 - Q4", kableExtra::linebreak("Year\n(1-4)", align = "l"),
-  h == "Q5 - Q6", kableExtra::linebreak("Long\n(5-6)", align = "l"),
-  h == "Total", kableExtra::linebreak("Total\n(1-6)", align = "l")
+  h == "short", kableExtra::linebreak("Quarter\n(1)", align = "l"),
+  h == "medium", kableExtra::linebreak("Year\n(1-4)", align = "l"),
+  h == "long", kableExtra::linebreak("Long\n(5-6)", align = "l"),
+  h == "total", kableExtra::linebreak("Total\n(1-6)", align = "l")
 )]
 
 N_id <- acc_all_kable[, .N, by = "id"]

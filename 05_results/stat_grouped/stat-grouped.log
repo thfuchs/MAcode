@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  11 FEB 2021 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.8)  3 MAR 2021 19:19
 entering extended mode
 **./stat-grouped.tex
 (stat-grouped.tex
@@ -678,7 +678,7 @@ l.902 \end{document}
 Here is how much of TeX's memory you used:
  14375 strings out of 479590
  209459 string characters out of 2871819
- 702687 words of memory out of 3000000
+ 702436 words of memory out of 3000000
  31250 multiletter control sequences out of 15000+200000
  428894 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -688,7 +688,7 @@ c/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx8.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/lm/lmr8.pfb>
-Output written on stat-grouped.pdf (9 pages, 125873 bytes).
+Output written on stat-grouped.pdf (9 pages, 126457 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)

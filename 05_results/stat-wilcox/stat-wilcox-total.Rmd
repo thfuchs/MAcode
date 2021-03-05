@@ -1,0 +1,141 @@
+---
+  output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(magrittr)
+options(knitr.kable.NA = '')
+```
+
+```{r data, include = FALSE}
+acc_ebit <- readRDS("../acc_ebit.rds")[h == "total"]
+acc_ni <- readRDS("../acc_ni.rds")[h == "total"]
+acc_eps <- readRDS("../acc_eps.rds")[h == "total"]
+
+acc <- data.table::rbindlist(list(ebit = acc_ebit, ni = acc_ni, eps = acc_eps), idcol = "id")
+
+wilcox_order <- c("id", "type", paste(
+  rep(c("w", "w_sign"), 4),
+  rep(c("ARIMA", "LSTM", "GRU", "ARNN"), each = 2), 
+  sep = "_"
+))
+wilcox_order_pf <- c("id", "type", paste(
+  rep(c("w", "w_sign"), 8), 
+  rep(c("smape", "mase"), each = 8), 
+  rep(rep(c("ARIMA", "LSTM", "GRU", "ARNN"), each = 2), 2), 
+  sep = "_"
+))
+
+input_list <- purrr::cross(list(
+  id = c("ebit", "ni", "eps"),
+  model = c("ARIMA", "LSTM", "GRU", "ARNN"), 
+  metric = c("smape", "mase", "smis"),
+  model_opp = c("Naive", "Snaive", "Drift", "Holt", "ARIMA", "LSTM", "GRU")
+))
+wilcox <- purrr::map_df(input_list, function(x) {
+  data_x <- acc[id == x[["id"]] & h == "total" & type == x[["model"]], get(x[["metric"]])]
+  data_y <- acc[id == x[["id"]] & h == "total" & type == x[["model_opp"]], get(x[["metric"]])]
+  
+  if (x[["model"]] != x[["model_opp"]]) {
+    wilcox_result <- stats::wilcox.test(data_x, data_y, alternative = "less")
+    list(
+      id = x[["id"]], model = x[["model"]], type = x[["model_opp"]], metric = x[["metric"]],
+      w = wilcox_result[["statistic"]], p = wilcox_result[["p.value"]]
+    )
+  }
+})
+
+data.table::setDT(wilcox)
+wilcox[, w_sign := data.table::fcase(
+  p < 0.001, "{\\footnotesize ***}",
+  p < 0.01, "{\\footnotesize **}",
+  p < 0.05, "{\\footnotesize *}",
+  p < 0.1, "{\\footnotesize .}",
+  p >= 0.1, ""
+)]
+wilcox[, model := factor(model)]
+wilcox[, type := factor(type, levels = unique(type))]
+
+wilcox_pf <- dcast(
+  wilcox, id + type ~ metric + model, value.var = c("w", "w_sign"),
+  subset = c(metric %in% c("smape", "mase"))
+)
+data.table::setcolorder(wilcox_pf, neworder = wilcox_order_pf)
+cols <- names(wilcox_pf)[grep("w_smape|w_mase", names(wilcox_pf))]
+wilcox_pf[, paste(cols) := lapply(
+  .SD, function(x) data.table::fifelse(is.na(x), "-", as.character(x), "-")
+), .SDcols = cols]
+
+wilcox_smis <- dcast(
+  wilcox, id + type ~ model, value.var = c("w", "w_sign"), 
+  subset = c(metric %in% "smis")
+)
+data.table::setcolorder(wilcox_smis, neworder = wilcox_order)
+cols <- names(wilcox_smis)[grep("w_[ALG]", names(wilcox_smis))]
+wilcox_smis[, paste(cols) := lapply(
+  .SD, function(x) data.table::fifelse(is.na(x), "-", as.character(x), "-")
+), .SDcols = cols]
+```
+
+### Wilcox Tests for point forecast accuracy
+
+```{r wilcox_pf}
+N_id <- wilcox_pf[, .N, by = "id"]
+
+knitr::kable(
+  wilcox_pf[, -"id"],
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Wilcoxon rank sum test with continuity correction for accuracy measured by sMAPE and MASE.",
+  label = "wilcox_pf",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = c("", rep(c("ARIMA", "", "LSTM", "", "GRU", "", "ARNN", ""), 2)),
+  align = c("l", rep(c("r", "l"), 8)),
+  escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 10) %>%
+  kableExtra::add_header_above(c("", "sMAPE" = 8, "MASE" = 8)) %>% 
+  kableExtra::group_rows(index = c(
+    "EBIT" = N_id[id == "ebit", N], 
+    "Net Income" = N_id[id == "ni", N], 
+    "EPS" = N_id[id == "eps", N]
+  )) %>% 
+  kableExtra::footnote(
+    general = ". p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001",
+    footnote_as_chunk = TRUE, escape = FALSE
+  )
+```
+
+### Wilcox Test for prediction interval accuracy
+
+```{r wilcox_pi}
+N_id <- wilcox_smis[, .N, by = "id"]
+
+knitr::kable(
+  wilcox_smis[, -"id"],
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Wilcoxon rank sum test with continuity correction for accuracy measured by sMIS.",
+  label = "wilcox_smis",
+  linesep = "",
+  format.args = list(big.mark = ","),
+  col.names = c("", "ARIMA", "", "LSTM", "", "GRU", "", "ARNN", ""),
+  align = c("l", rep(c("r", "l"), 4)),
+  escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 10) %>%
+  kableExtra::group_rows(index = c(
+    "EBIT" = N_id[id == "ebit", N], 
+    "Net Income" = N_id[id == "ni", N], 
+    "EPS" = N_id[id == "eps", N]
+  )) %>% 
+  kableExtra::footnote(
+    general = ". p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001",
+    footnote_as_chunk = TRUE, escape = FALSE
+  )
+```
