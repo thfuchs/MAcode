@@ -4,13 +4,13 @@ acc_mean_rank_save <- function(..., rank_str, type_old, type_new, file_path) {
 
   # Mean across splits
   acc <- acc_split[
-    , lapply(.SD, mean), by = c("company", "type", "h"), .SDcols = rank_str
+    , lapply(.SD, mean), by = c("ticker", "type", "h"), .SDcols = rank_str
   ]
 
   # Ranks
   acc[
     , paste0("rank_", rank_str) := lapply(.SD, frank, ties.method = "average"),
-    by = c("company", "h"),
+    by = c("ticker", "h"),
     .SDcols = rank_str
   ]
 
@@ -21,11 +21,7 @@ acc_mean_rank_save <- function(..., rank_str, type_old, type_new, file_path) {
     acc[, type := factor(type, levels = type_old, labels = type_new)]
   }
 
-  acc[, h := factor(
-    h,
-    levels = c("short", "medium", "long", "total"),
-    labels = c("Q1", "Q1 - Q4", "Q5 - Q6", "Total")
-  )]
+  acc[, h := factor(h, levels = c("short", "medium", "long", "total"))]
 
   saveRDS(acc, file = file_path, compress = "xz")
 
@@ -39,12 +35,12 @@ acc_rank_mean_save <- function(..., rank_str, type_old, type_new, file_path) {
   # Ranks
   acc_split[
     , paste0("rank_", acc_rank_str) := lapply(.SD, frank, ties.method = "average"),
-    by = c("company", "split", "h"),
+    by = c("ticker", "split", "h"),
     .SDcols = acc_rank_str
   ]
   acc_rank_melt <- data.table::melt(
     acc_split,
-    id.vars = c("company", "split", "type", "h"),
+    id.vars = c("ticker", "split", "type", "h"),
     measure.vars = c("rank_smape", "rank_mase", "rank_smis"),
     variable.name = "metric",
     value.name = "rank"
@@ -58,7 +54,7 @@ acc_rank_mean_save <- function(..., rank_str, type_old, type_new, file_path) {
   # Mean
   acc_rank_avg <- acc_rank_melt[
     , .(rank_mean = mean(rank), rank_median = median(rank)),
-    by = c("company", "type", "h", "metric")
+    by = c("ticker", "type", "h", "metric")
   ]
 
   # Refactor and save
@@ -67,11 +63,7 @@ acc_rank_mean_save <- function(..., rank_str, type_old, type_new, file_path) {
   } else {
     acc_rank_avg[, type := factor(type, levels = type_old, labels = type_new)]
   }
-  acc_rank_avg[, h := factor(
-    h,
-    levels = c("short", "medium", "long", "total"),
-    labels = c("Q1", "Q1 - Q4", "Q5 - Q6", "Total")
-  )]
+  acc_rank_avg[, h := factor(h, levels = c("short", "medium", "long", "total"))]
 
   saveRDS(acc_rank_avg, file = file_path, compress = "xz")
 
