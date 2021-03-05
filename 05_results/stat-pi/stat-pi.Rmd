@@ -1,0 +1,114 @@
+---
+  output: pdf_document
+---
+
+## Actuals covered by PI
+
+```{r setup, include=FALSE}
+# R-Markdown Options
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
+# Dependencies
+library(data.table)
+library(magrittr)
+```
+
+```{r data}
+fc_pred <- readRDS(file = "../../05_results/predictions.rds")
+fc_pred[, pi := (actual >= lo95 & value <= hi95)]
+dummies <- readRDS("../../data/dummies.rds")
+fc_pred <- fc_pred[dummies, on = "ticker"]
+```
+
+```{r fun}
+latex_tab <- function(data, cap, label) knitr::kable(
+  data,
+  format = "latex",
+  booktabs = TRUE,
+  digits = 1,
+  caption = cap,
+  label = label,
+  linesep = "",
+  format.args = list(big.mark = ",")
+)
+```
+
+### 1. Overall
+```{r overall}
+latex_tab(
+  data = fc_pred[, .(Overall = sum(pi) * 100 / .N), by = "type"],
+  cap = "Percentage of actual values covered by prediction Intervals - Overall",
+  label = "overall"
+)
+```
+
+### 2. Per Sector/region/country
+```{r grouped_sector}
+fc_pred_sector <- data.table:::dcast(
+  fc_pred[, sum(pi) * 100 / .N, by = c("type", "gics_sector_name")],
+  type ~ gics_sector_name,
+  value.var = "V1"
+)
+data.table::setnames(
+  fc_pred_sector, 
+  old =  c("Communication Services", "Industrials", "Consumer Staples", "Information Technology", "Consumer Discretionary", "Health Care", "Materials", "Real Estate", "Utilities"),
+  new = c("Com.Ser.", "Industry", "Con.Stpls", "IT", "CD", "HC", "Material", "RE", "Utils")
+)
+
+latex_tab(
+  data = fc_pred_sector,
+  cap = "Percentage of actual values covered by prediction Intervals - Per Sector",
+  label = "grouped_sector"
+)
+```
+
+```{r grouped_region}
+latex_tab(
+  data.table:::dcast(
+    fc_pred[, sum(pi) * 100 / .N, by = c("type", "i.index")],
+    type ~ i.index,
+    value.var = "V1"
+  ),
+  cap = "Percentage of actual values covered by prediction Intervals - Per Region",
+  label = "grouped_region"
+)
+```
+
+```{r grouped_country}
+latex_tab(
+  data = data.table:::dcast(
+    fc_pred[, sum(pi) * 100 / .N, by = c("type", "country_full_name")],
+    type ~ country_full_name,
+    value.var = "V1"
+  ),
+  cap = "Percentage of actual values covered by prediction Intervals - Per Region",
+  label = "gruóuped_country"
+) %>% 
+  kableExtra::kable_styling(latex_options = c("scale_down")) %>% 
+  kableExtra::landscape()
+```
+
+### 3. Per Forecast Horizon
+```{r horizon}
+fc_pred[, h := 1:.N, by = c("id", "ticker", "split", "type")]
+
+latex_tab(
+  data = data.table::dcast(
+    fc_pred[, sum(pi) * 100 / .N, by = c("type", "h")],
+    type ~ h,
+    value.var = "V1"
+  ),
+  cap = "Percentage of actual values covered by prediction Intervals - Per (single) Forecast Horizon",
+  label = "horizon_detail"
+)
+
+latex_tab(
+  data = dcast(data.table::rbindlist(list(
+    Total = fc_pred[, sum(pi) * 100 / .N, by = "type"],
+    Quarter = fc_pred[h == 1, sum(pi) * 100 / .N, by = "type"],
+    Year =  fc_pred[h >= 1 & h <= 4, sum(pi) * 100 / .N, by = "type"],
+    Long = fc_pred[h >= 5 & h <= 6, sum(pi) * 100 / .N, by = "type"]
+  ), idcol = "h"), type ~ h, value.var = "V1"),
+  cap = "Percentage of actual values covered by prediction Intervals - Per Forecast Horizon",
+  label = "horizon"
+)
+```
